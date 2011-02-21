@@ -6,9 +6,26 @@
 # program. If you haven't, please refer to bofh@junge-piraten.de.
 
 from django.conf.urls.defaults import *
+from redirector.models import Redirect
+from pagemanager.models import Page
+from django.shortcuts import get_object_or_404
+import redirector.views
+import pagemanager.views
+import util
 
+# Admin
 from django.contrib import admin
 admin.autodiscover()
+
+# FIXME: Find a nicer solution for this.
+def catchAll(request, url):
+	url = util.stripSlash(url)
+	try:
+		redirect = Redirect.objects.get(url = url)
+		return redirector.views.redirect(request, url)
+	except:
+		get_object_or_404(Page, url = url)
+		return pagemanager.views.show(request, url)
 
 urlpatterns = patterns('',
 	# Admin interface
@@ -19,7 +36,9 @@ urlpatterns = patterns('',
 	(r'^blog/$', 'blog.views.listAll'),
 	(r'^blog/(?P<url>.*)$', 'blog.views.show'),
 	
-	# Catch-all for pagemanager, intentionally last.
-	(r'^(?P<url>.*)$', 'pagemanager.views.show'),
+	# Catch-all for redirector, intentionally last.
+	#(r'^(?P<url>.*)$', 'redirector.views.redirect'),
 
+	# Catch-all for pagemanager, intentionally last.
+	(r'^(?P<url>.*)$', catchAll),
 )
