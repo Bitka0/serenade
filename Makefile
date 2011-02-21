@@ -6,13 +6,13 @@
 # program. If you haven't, please refer to bofh@junge-piraten.de.
 
 all: run
-init: cleardb collectstatic syncdb
+init: cleardb syncdb
 
 run:
 	cd homepage && python2 manage.py runserver 0.0.0.0:8081
-collectstatic:
-	cd homepage && python2 manage.py collectstatic --noinput
 syncdb:
 	cd homepage && python2 manage.py syncdb
+collectstatic:
+	cd homepage && python2 manage.py collectstatic
 cleardb:
 	- cd homepage && rm database.db
