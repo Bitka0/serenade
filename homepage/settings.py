@@ -1,5 +1,5 @@
 try:
-	import secretsettings
+	from secretsettings import *
 except ImportError:
 	print("It seems like you've forgotten to create a secretsettings.py, don't you?")
 	exit(1)
