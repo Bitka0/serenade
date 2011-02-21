@@ -8,4 +8,14 @@
 from models import Page
 from django.contrib import admin
 
-admin.site.register(Page)
+class PageAdmin(admin.ModelAdmin):#
+	# Automatically fill the url field based on what's given as title.
+	prepopulated_fields = {'url': ('title',)}
+
+	fieldsets = [
+		(None,					{'fields': ['title']}),
+		('Further options',		{'fields': ['url', 'comment'], 'classes': ['collapse']}),
+		(None,					{'fields': ['text']}),
+	]
+
+admin.site.register(Page, PageAdmin)
