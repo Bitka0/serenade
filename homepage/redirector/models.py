@@ -13,7 +13,8 @@ class Redirect(models.Model):
 	target = models.CharField(max_length=200)
 
 	def __unicode__(self):
-		return '{0} -> {1}'.format(self.url, self.target)
+		# Translators: As name for redirects, where {0} is the original url and {1} is the target.
+		return _('{0} to {1}').format(self.url, self.target)
 
 	class Meta:
 		verbose_name = _('redirect')

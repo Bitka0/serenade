@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-21 23:17+0100\n"
-"PO-Revision-Date: 2011-02-21 23:17+0100\n"
+"POT-Creation-Date: 2011-02-21 23:22+0100\n"
+"PO-Revision-Date: 2011-02-21 23:24+0100\n"
 "Last-Translator: Lukas Martini <lukas.martini@unionhost.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -129,13 +129,20 @@ msgstr "Seiten"
 msgid "The local URL which should be redirected."
 msgstr "Die lokale weiterzuleitende Adresse (URL)."
 
-#: redirector/models.py:19
+#: redirector/models.py:18
+msgid "{0} to {1}"
+msgstr "{0} nach {1}"
+
+#: redirector/models.py:21
 msgid "redirect"
 msgstr "Weiterleitung"
 
-#: redirector/models.py:20
+#: redirector/models.py:22
 msgid "redirects"
 msgstr "Weiterleitungen"
+
+#~ msgid "to"
+#~ msgstr "nach"
 
 #, fuzzy
 #~ msgid "redirectors"
