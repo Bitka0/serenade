@@ -1,2 +1,3 @@
 homepage/secretsettings.py
+homepage/database.db
 *.pyc
