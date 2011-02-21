@@ -9,6 +9,8 @@ from models import Page
 from django.contrib import admin
 
 class PageAdmin(admin.ModelAdmin):#
+	# Detail display
+
 	# Automatically fill the url field based on what's given as title.
 	prepopulated_fields = {'url': ('title',)}
 
@@ -17,5 +19,11 @@ class PageAdmin(admin.ModelAdmin):#
 		('Further options',		{'fields': ['url', 'comment'], 'classes': ['collapse']}),
 		(None,					{'fields': ['text']}),
 	]
+	
+	# List display
+	
+	list_display = ('title', 'url')
+	# Fields in which should be searched.
+	search_fields = ['title', 'url', 'text']
 
 admin.site.register(Page, PageAdmin)
