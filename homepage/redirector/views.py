@@ -6,14 +6,11 @@
 # program. If you haven't, please refer to bofh@junge-piraten.de.
 
 from django.template import Context, loader
-from models import Page
+from models import Redirect
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render_to_response, get_object_or_404
-from django.core.urlresolvers import reverse
-from django import forms
 import util
 
-def show(request, url):
-	page = get_object_or_404(Page, url=url)
-	context = util.generateContext(request, title = page.title, text = page.text)
-	return render_to_response('pagemanager/standard.html', context)
+def redirect(request, url):
+	redirect = get_object_or_404(Redirect, url=url)
+	return HttpResponseRedirect(redirect.target)

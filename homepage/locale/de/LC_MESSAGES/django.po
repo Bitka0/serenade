@@ -1,0 +1,147 @@
+# Copyright (c) 2011 Lukas Martini, Phillip Thelen.
+# This file may be used and distributed under the terms found in the
+# file COPYING, which you should have received along with this
+# program. If you haven't, please refer to bofh@junge-piraten.de.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-02-21 23:17+0100\n"
+"PO-Revision-Date: 2011-02-21 23:17+0100\n"
+"Last-Translator: Lukas Martini <lukas.martini@unionhost.de>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: __init__.py:3
+msgid "pagemanager"
+msgstr "Seitenverwaltung"
+
+#: __init__.py:4
+msgid "redirector"
+msgstr "Weiterleiter"
+
+#: __init__.py:5
+msgid "blog"
+msgstr "Blog"
+
+#: __init__.py:6
+msgid "auth"
+msgstr "Authentifikation"
+
+#: __init__.py:7
+msgid "Pagemanager"
+msgstr "Seitenverwaltung"
+
+#: __init__.py:8
+msgid "Redirector"
+msgstr "Weiterleiter"
+
+#: __init__.py:9
+msgid "Blog"
+msgstr "Blog"
+
+#: __init__.py:10
+msgid "Auth"
+msgstr "Authentifikation"
+
+#: blog/models.py:13
+#: blog/models.py:23
+msgid "name"
+msgstr "Name"
+
+#: blog/models.py:19
+msgid "group"
+msgstr "Gruppe"
+
+#: blog/models.py:20
+msgid "groups"
+msgstr "Gruppen"
+
+#: blog/models.py:29
+msgid "tag"
+msgstr "Tag"
+
+#: blog/models.py:30
+msgid "tags"
+msgstr "Tags"
+
+#: blog/models.py:33
+#: pagemanager/models.py:12
+msgid "URL"
+msgstr "Adresse (URL)"
+
+#: blog/models.py:33
+#: pagemanager/models.py:12
+msgid "This field is automatically filled based on the title you enter, however if you want to customize the URL, here you can."
+msgstr "Dieses Feld wird automatisch auf der Basis des von dir eingegebenen Titels gefüllt, wenn du jedoch eine eigene Adresse angeben willst, kannst du das hier."
+
+#: blog/models.py:36
+msgid "publication date"
+msgstr "Veröffentlichungsdatum"
+
+#: blog/models.py:37
+msgid "date of last modification"
+msgstr "Datum der letzten Modifikation"
+
+#: blog/models.py:41
+#: pagemanager/models.py:14
+msgid "title"
+msgstr "Titel"
+
+#: blog/models.py:42
+#: pagemanager/models.py:16
+msgid "text"
+msgstr "Text"
+
+#: blog/models.py:48
+msgid "blogentry"
+msgstr "Blogeintrag"
+
+#: blog/models.py:49
+msgid "blogentries"
+msgstr "Blogeinträge"
+
+#: pagemanager/admin.py:20
+msgid "Further options"
+msgstr "Weitere Optionen"
+
+#: pagemanager/models.py:15
+msgid "comment"
+msgstr "Kommentar"
+
+#: pagemanager/models.py:15
+msgid "Internal comment on the page, never displayed publicly."
+msgstr "Interner Kommentar zu der Seite, wird nie öffentlich gezeigt."
+
+#: pagemanager/models.py:22
+msgid "page"
+msgstr "Seite"
+
+#: pagemanager/models.py:23
+msgid "pages"
+msgstr "Seiten"
+
+#: redirector/models.py:12
+msgid "The local URL which should be redirected."
+msgstr "Die lokale weiterzuleitende Adresse (URL)."
+
+#: redirector/models.py:19
+msgid "redirect"
+msgstr "Weiterleitung"
+
+#: redirector/models.py:20
+msgid "redirects"
+msgstr "Weiterleitungen"
+
+#, fuzzy
+#~ msgid "redirectors"
+#~ msgstr "Weiterleitungen"
+
+#, fuzzy
+#~ msgid "blogs"
+#~ msgstr "Blogeinträge"
+

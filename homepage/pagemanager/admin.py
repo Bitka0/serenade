@@ -5,6 +5,7 @@
 # file COPYING, which you should have received along with this
 # program. If you haven't, please refer to bofh@junge-piraten.de.
 
+from django.utils.translation import ugettext_lazy as _
 from models import Page
 from django.contrib import admin
 
@@ -16,7 +17,7 @@ class PageAdmin(admin.ModelAdmin):
 
 	fieldsets = [
 		(None,					{'fields': ['title']}),
-		('Further options',		{'fields': ['url', 'comment'], 'classes': ['collapse']}),
+		(_('Further options'),		{'fields': ['url', 'comment'], 'classes': ['collapse']}),
 		(None,					{'fields': ['text']}),
 	]
 	

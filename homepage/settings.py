@@ -76,4 +76,5 @@ INSTALLED_APPS = (
 
 	'homepage.pagemanager',
 	'homepage.blog',
+	'homepage.redirector'
 )
