@@ -11,7 +11,7 @@ class Page(models.Model):
 	url = models.CharField('URL', max_length=200)
 
 	title = models.CharField(max_length=200)
-	comment = models.TextField()
+	comment = models.TextField(help_text = 'Internal comment on the page, never displayed publicly.', blank = True)
 	text = models.TextField()
 
 	def __unicode__(self):
