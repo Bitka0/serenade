@@ -2,14 +2,13 @@
 # This file may be used and distributed under the terms found in the
 # file COPYING, which you should have received along with this
 # program. If you haven't, please refer to bofh@junge-piraten.de.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-21 23:02+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2011-02-21 23:17+0100\n"
+"PO-Revision-Date: 2011-02-21 23:17+0100\n"
+"Last-Translator: Lukas Martini <lukas.martini@unionhost.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -17,7 +16,40 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
-#: blog/models.py:13 blog/models.py:23
+#: __init__.py:3
+msgid "pagemanager"
+msgstr "Seitenverwaltung"
+
+#: __init__.py:4
+msgid "redirector"
+msgstr "Weiterleiter"
+
+#: __init__.py:5
+msgid "blog"
+msgstr "Blog"
+
+#: __init__.py:6
+msgid "auth"
+msgstr "Authentifikation"
+
+#: __init__.py:7
+msgid "Pagemanager"
+msgstr "Seitenverwaltung"
+
+#: __init__.py:8
+msgid "Redirector"
+msgstr "Weiterleiter"
+
+#: __init__.py:9
+msgid "Blog"
+msgstr "Blog"
+
+#: __init__.py:10
+msgid "Auth"
+msgstr "Authentifikation"
+
+#: blog/models.py:13
+#: blog/models.py:23
 msgid "name"
 msgstr "Name"
 
@@ -37,18 +69,15 @@ msgstr "Tag"
 msgid "tags"
 msgstr "Tags"
 
-#: blog/models.py:33 pagemanager/models.py:12
+#: blog/models.py:33
+#: pagemanager/models.py:12
 msgid "URL"
 msgstr "Adresse (URL)"
 
-#: blog/models.py:33 pagemanager/models.py:12
-msgid ""
-"This field is automatically filled based on the title you enter, however if "
-"you want to customize the URL, here you can."
-msgstr ""
-"Dieses Feld wird automatisch auf der Basis des von dir eingegebenen Titels "
-"gefüllt, wenn du jedoch eine eigene Adresse angeben willst, kannst du das "
-"hier."
+#: blog/models.py:33
+#: pagemanager/models.py:12
+msgid "This field is automatically filled based on the title you enter, however if you want to customize the URL, here you can."
+msgstr "Dieses Feld wird automatisch auf der Basis des von dir eingegebenen Titels gefüllt, wenn du jedoch eine eigene Adresse angeben willst, kannst du das hier."
 
 #: blog/models.py:36
 msgid "publication date"
@@ -58,11 +87,13 @@ msgstr "Veröffentlichungsdatum"
 msgid "date of last modification"
 msgstr "Datum der letzten Modifikation"
 
-#: blog/models.py:41 pagemanager/models.py:14
+#: blog/models.py:41
+#: pagemanager/models.py:14
 msgid "title"
 msgstr "Titel"
 
-#: blog/models.py:42 pagemanager/models.py:16
+#: blog/models.py:42
+#: pagemanager/models.py:16
 msgid "text"
 msgstr "Text"
 
@@ -106,12 +137,11 @@ msgstr "Weiterleitung"
 msgid "redirects"
 msgstr "Weiterleitungen"
 
-#: redirector/models.py:23
 #, fuzzy
-msgid "Redirector"
-msgstr "Weiterleitung"
+#~ msgid "redirectors"
+#~ msgstr "Weiterleitungen"
 
-#: redirector/models.py:24
 #, fuzzy
-msgid "Redirectors"
-msgstr "Weiterleitungen"
+#~ msgid "blogs"
+#~ msgstr "Blogeinträge"
+
