@@ -32,12 +32,16 @@ class Tag(models.Model):
 		verbose_name_plural = _('tags')
 		
 class Comment(models.Model):
-	sender = models.CharField(max_length=80)
-	date = models.DateTimeField(auto_now=True)
-	homepage = models.CharField(max_length=200)
+	sender = models.CharField(_('author'), max_length=80)
+	date = models.DateTimeField(_('date of creation'), auto_now=True)
+	homepage = models.CharField(_('homepage'), max_length=200)
 	
-	subject = models.CharField(max_length=100)
-	comment = models.TextField()
+	subject = models.CharField(_('subject'), max_length=100)
+	comment = models.TextField(_('comment'))
+
+	class Meta:
+		verbose_name = _('comment')
+		verbose_name_plural = _('comments')
 
 class CommentForm(forms.Form):
 	subject = forms.CharField(max_length=100)

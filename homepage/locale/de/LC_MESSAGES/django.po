@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-21 23:22+0100\n"
-"PO-Revision-Date: 2011-02-21 23:24+0100\n"
+"POT-Creation-Date: 2011-02-21 23:40+0100\n"
+"PO-Revision-Date: 2011-02-21 23:41+0100\n"
 "Last-Translator: Lukas Martini <lukas.martini@unionhost.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -48,70 +48,92 @@ msgstr "Blog"
 msgid "Auth"
 msgstr "Authentifikation"
 
-#: blog/models.py:13
-#: blog/models.py:23
+#: blog/models.py:15
+#: blog/models.py:25
 msgid "name"
 msgstr "Name"
 
-#: blog/models.py:19
+#: blog/models.py:21
 msgid "group"
 msgstr "Gruppe"
 
-#: blog/models.py:20
+#: blog/models.py:22
 msgid "groups"
 msgstr "Gruppen"
 
-#: blog/models.py:29
+#: blog/models.py:31
 msgid "tag"
 msgstr "Tag"
 
-#: blog/models.py:30
+#: blog/models.py:32
 msgid "tags"
 msgstr "Tags"
 
-#: blog/models.py:33
+#: blog/models.py:35
+msgid "author"
+msgstr "Author"
+
+#: blog/models.py:36
+msgid "date of creation"
+msgstr "Erstellungsdatum"
+
+#: blog/models.py:37
+msgid "homepage"
+msgstr "Homepage"
+
+#: blog/models.py:39
+msgid "subject"
+msgstr "Betreff"
+
+#: blog/models.py:40
+#: blog/models.py:43
+#: pagemanager/models.py:15
+msgid "comment"
+msgstr "Kommentar"
+
+#: blog/models.py:44
+msgid "comments"
+msgstr "Kommentare"
+
+#: blog/models.py:54
 #: pagemanager/models.py:12
 msgid "URL"
 msgstr "Adresse (URL)"
 
-#: blog/models.py:33
+#: blog/models.py:54
 #: pagemanager/models.py:12
 msgid "This field is automatically filled based on the title you enter, however if you want to customize the URL, here you can."
 msgstr "Dieses Feld wird automatisch auf der Basis des von dir eingegebenen Titels gefüllt, wenn du jedoch eine eigene Adresse angeben willst, kannst du das hier."
 
-#: blog/models.py:36
+#: blog/models.py:57
 msgid "publication date"
 msgstr "Veröffentlichungsdatum"
 
-#: blog/models.py:37
+#: blog/models.py:58
 msgid "date of last modification"
 msgstr "Datum der letzten Modifikation"
 
-#: blog/models.py:41
+#: blog/models.py:62
 #: pagemanager/models.py:14
 msgid "title"
 msgstr "Titel"
 
-#: blog/models.py:42
+#: blog/models.py:63
 #: pagemanager/models.py:16
 msgid "text"
 msgstr "Text"
 
-#: blog/models.py:48
+#: blog/models.py:71
 msgid "blogentry"
 msgstr "Blogeintrag"
 
-#: blog/models.py:49
+#: blog/models.py:72
 msgid "blogentries"
 msgstr "Blogeinträge"
 
 #: pagemanager/admin.py:20
 msgid "Further options"
 msgstr "Weitere Optionen"
-
-#: pagemanager/models.py:15
-msgid "comment"
-msgstr "Kommentar"
 
 #: pagemanager/models.py:15
 msgid "Internal comment on the page, never displayed publicly."
@@ -129,15 +151,15 @@ msgstr "Seiten"
 msgid "The local URL which should be redirected."
 msgstr "Die lokale weiterzuleitende Adresse (URL)."
 
-#: redirector/models.py:18
+#: redirector/models.py:17
 msgid "{0} to {1}"
 msgstr "{0} nach {1}"
 
-#: redirector/models.py:21
+#: redirector/models.py:20
 msgid "redirect"
 msgstr "Weiterleitung"
 
-#: redirector/models.py:22
+#: redirector/models.py:21
 msgid "redirects"
 msgstr "Weiterleitungen"
 
