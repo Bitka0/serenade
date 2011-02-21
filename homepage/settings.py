@@ -4,6 +4,8 @@ except ImportError:
 	print("It seems like you've forgotten to create a secretsettings.py, don't you?")
 	exit(1)
 
+import os
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -39,17 +41,15 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'homepage.urls'
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
+	'{0}/../templates'.format(os.getcwd())
 )
 
 INSTALLED_APPS = (
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.sites',
-    'django.contrib.messages',
-    'django.contrib.admin',
-    'django.contrib.admindocs',
+	'django.contrib.auth',
+	'django.contrib.contenttypes',
+	'django.contrib.sessions',
+	'django.contrib.sites',
+	'django.contrib.messages',
+	'django.contrib.admin',
+	'django.contrib.admindocs',
 )
