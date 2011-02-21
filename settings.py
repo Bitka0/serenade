@@ -1,7 +1,7 @@
 try:
-	import secretconfig
+	import secretsettings
 except ImportError:
-	print("It seems like you've forgotten to create a secretconfig.py, don't you?")
+	print("It seems like you've forgotten to create a secretsettings.py, don't you?")
 	exit(1)
 
 DEBUG = True
