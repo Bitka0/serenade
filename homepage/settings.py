@@ -71,7 +71,6 @@ INSTALLED_APPS = (
 	
 	# Admin interface
 	'grappelli',
-	'tinymce',
 	'django.contrib.admin',
 	'django.contrib.admindocs',
 
