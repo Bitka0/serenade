@@ -8,7 +8,7 @@
 from django.http import HttpResponseRedirect, HttpResponse
 from django.template import Context, loader
 from django.core.mail import send_mail
-from settings import DEBUG, MAIL_PREFIX, MAIL_SENDER
+from settings import DEBUG, EMAIL_PREFIX, EMAIL_SENDER
 import random
 import base64
 import hashlib
