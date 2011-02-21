@@ -1,0 +1,57 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-02-21 22:47+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: pagemanager/admin.py:20
+msgid "Further options"
+msgstr ""
+
+#: pagemanager/models.py:12
+msgid "URL"
+msgstr ""
+
+#: pagemanager/models.py:12
+msgid ""
+"This field is automatically filled based on the title you enter, however if "
+"you want to customize the URL, here you can."
+msgstr ""
+
+#: pagemanager/models.py:14
+msgid "title"
+msgstr ""
+
+#: pagemanager/models.py:15
+msgid "comment"
+msgstr ""
+
+#: pagemanager/models.py:15
+msgid "Internal comment on the page, never displayed publicly."
+msgstr ""
+
+#: pagemanager/models.py:16
+msgid "text"
+msgstr ""
+
+#: pagemanager/models.py:22
+msgid "page"
+msgstr ""
+
+#: pagemanager/models.py:23
+msgid "pages"
+msgstr ""

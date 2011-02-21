@@ -1,4 +1,5 @@
 homepage/secretsettings.py
 homepage/database.db
 *.pyc
+*.mo
 tmp/*
