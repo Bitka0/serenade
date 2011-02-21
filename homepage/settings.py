@@ -29,7 +29,11 @@ USE_I18N = True
 USE_L10N = True
 MEDIA_ROOT = ''
 MEDIA_URL = ''
-ADMIN_MEDIA_PREFIX = '/media/'
+
+STATIC_URL = '/static/'
+STATIC_ROOT = '{0}/../static/'.format(os.getcwd())
+
+ADMIN_MEDIA_PREFIX = STATIC_URL + "grappelli/"
 
 EMAIL_PREFIX = '[Junge Piraten]'
 EMAIL_SENDER = 'it@junge-piraten.de'
@@ -59,8 +63,13 @@ INSTALLED_APPS = (
 	'django.contrib.contenttypes',
 	'django.contrib.sessions',
 	'django.contrib.messages',
+	'staticfiles',
+	
+	# Admin interface
+	'grappelli',
 	'django.contrib.admin',
 	'django.contrib.admindocs',
+
 	'homepage.pagemanager',
 	'homepage.blog',
 )
