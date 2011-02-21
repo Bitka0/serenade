@@ -6,9 +6,9 @@
 # program. If you haven't, please refer to bofh@junge-piraten.de.
 
 all: run
-init: cleardb syncdb
-
+init: cleardb collectstatic syncdb
 run:
+	- mkdir tmp
 	cd homepage && python2 manage.py runserver 0.0.0.0:8081
 syncdb:
 	cd homepage && python2 manage.py syncdb

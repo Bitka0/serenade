@@ -31,7 +31,11 @@ MEDIA_ROOT = ''
 MEDIA_URL = ''
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '{0}/../static/'.format(os.getcwd())
+STATIC_ROOT = '{0}/../tmp/'.format(os.getcwd())
+
+STATICFILES_DIRS = (
+	'{0}/../static/'.format(os.getcwd()),
+)
 
 ADMIN_MEDIA_PREFIX = STATIC_URL + "grappelli/"
 
@@ -67,6 +71,7 @@ INSTALLED_APPS = (
 	
 	# Admin interface
 	'grappelli',
+	'tinymce',
 	'django.contrib.admin',
 	'django.contrib.admindocs',
 
