@@ -22,5 +22,17 @@ Author: {{ created_by.get_full_name }}
 </p>
 <p>{{ text|safe }}</p>
 </div>
+<hr />
+<div>
+{% for comment in comments %}
+{{ comment.subject }}
+{{ comment.sender }}
+{% endfor %}
+</div>
+<form action="/blog/testeintrag/" method="post">{% csrf_token %}
+{{ commentform.as_p }}
+<input type="submit" value="Submit" />
+</form>
+
 {% endblock %}
 

@@ -8,6 +8,8 @@
 from django.utils.translation import ugettext_lazy as _
 from django.db import models
 from django.contrib.auth.models import User
+from django import forms
+
 
 class Group(models.Model):
 	name = models.CharField(_('name'), max_length=200)
@@ -24,10 +26,25 @@ class Tag(models.Model):
 	
 	def __unicode__(self):
 		return self.name
-
+		
 	class Meta:
 		verbose_name = _('tag')
 		verbose_name_plural = _('tags')
+		
+class Comment(models.Model):
+	sender = models.CharField(max_length=80)
+	date = models.DateTimeField(auto_now=True)
+	homepage = models.CharField(max_length=200)
+	
+	subject = models.CharField(max_length=100)
+	comment = models.TextField()
+
+class CommentForm(forms.Form):
+	subject = forms.CharField(max_length=100)
+	message = forms.CharField()
+	sender = forms.CharField(max_length=100)
+	homepage = forms.CharField(max_length=200)
+
 
 class Blogentry(models.Model):
 	url = models.SlugField(_('URL'), max_length=200, help_text = _('This field is automatically filled based on the title you enter, however if you want to customize the URL, here you can.'))
@@ -41,10 +58,11 @@ class Blogentry(models.Model):
 	title = models.CharField(_('title'), max_length=200)
 	text = models.TextField(_('text'))
 	
+	comment = models.ManyToManyField(Comment)
+	
 	def __unicode__(self):
 		return self.title
 
 	class Meta:
 		verbose_name = _('blogentry')
 		verbose_name_plural = _('blogentries')
-

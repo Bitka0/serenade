@@ -5,7 +5,7 @@
 # file COPYING, which you should have received along with this
 # program. If you haven't, please refer to bofh@junge-piraten.de.
 
-from models import Blogentry, Group, Tag
+from models import Blogentry, Group, Tag, Comment
 from django.contrib import admin
 from django.contrib.auth.models import User
 
@@ -18,7 +18,7 @@ class BlogAdmin(admin.ModelAdmin):#
 	
 	# List display
 	
-	list_display = ('title', 'url')
+	list_display = ('title', 'url', 'lastModified')
 	# Fields in which should be searched.
 	search_fields = ['title', 'url', 'text']
 
@@ -32,3 +32,4 @@ class Tagadmin(admin.ModelAdmin):
 admin.site.register(Blogentry, BlogAdmin)
 admin.site.register(Group, Groupadmin)
 admin.site.register(Tag, Tagadmin)
+admin.site.register(Comment)
