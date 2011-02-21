@@ -8,7 +8,7 @@
 from models import Page
 from django.contrib import admin
 
-class PageAdmin(admin.ModelAdmin):#
+class PageAdmin(admin.ModelAdmin):
 	# Detail display
 
 	# Automatically fill the url field based on what's given as title.
