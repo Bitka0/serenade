@@ -1,8 +1,8 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# Copyright (c) 2011 Lukas Martini, Phillip Thelen.
+# This file may be used and distributed under the terms found in the
+# file COPYING, which you should have received along with this
+# program. If you haven't, please refer to bofh@junge-piraten.de.
+
 #, fuzzy
 msgid ""
 msgstr ""
@@ -20,38 +20,38 @@ msgstr ""
 
 #: pagemanager/admin.py:20
 msgid "Further options"
-msgstr ""
+msgstr "Weitere Optionen"
 
 #: pagemanager/models.py:12
 msgid "URL"
-msgstr ""
+msgstr "Adresse (URL)"
 
 #: pagemanager/models.py:12
 msgid ""
 "This field is automatically filled based on the title you enter, however if "
 "you want to customize the URL, here you can."
-msgstr ""
+msgstr "Dieses Feld wird automatisch auf der Basis des von dir eingegebenen Titels gefüllt, wenn du jedoch eine eigene Adresse angeben willst, kannst du das hier."
 
 #: pagemanager/models.py:14
 msgid "title"
-msgstr ""
+msgstr "Titel"
 
 #: pagemanager/models.py:15
 msgid "comment"
-msgstr ""
+msgstr "Kommentar"
 
 #: pagemanager/models.py:15
 msgid "Internal comment on the page, never displayed publicly."
-msgstr ""
+msgstr "Interner Kommentar zu der Seite, wird nie öffentlich gezeigt."
 
 #: pagemanager/models.py:16
 msgid "text"
-msgstr ""
+msgstr "Text"
 
 #: pagemanager/models.py:22
 msgid "page"
-msgstr ""
+msgstr "Seite"
 
 #: pagemanager/models.py:23
 msgid "pages"
-msgstr ""
+msgstr "Seiten"
