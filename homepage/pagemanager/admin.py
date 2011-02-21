@@ -5,7 +5,7 @@
 # file COPYING, which you should have received along with this
 # program. If you haven't, please refer to bofh@junge-piraten.de.
 
-from pagemanager.models import Page
+from models import Page
 from django.contrib import admin
 
 admin.site.register(Page)

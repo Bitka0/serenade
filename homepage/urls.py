@@ -13,4 +13,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
 	(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 	(r'^admin/', include(admin.site.urls)),
+	
+	# Catch-all for pagemanager, intentionally last.
+	(r'^(?P<url>.*)$', 'pagemanager.views.show'),
 )
