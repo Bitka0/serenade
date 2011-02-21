@@ -8,3 +8,7 @@
 all: run
 run:
 	cd homepage && python2 manage.py runserver 0.0.0.0:8081
+init:
+	- cd homepage && rm database.db
+	cd homepage && python2 manage.py collectstatic --noinput
+	cd homepage && python2 manage.py syncdb

@@ -1,5 +1,16 @@
-Dependencies:
+(Local) installation:
+	make init
+	make
+
+(Production) installation:
+	Change database settings
+	Add Memcached
+	Configure Lighttpd or the webserver of your choice to handle Django as fastcgi app
+
+Dependencies (Yes, the -Z's at those easy_installs _are_ important.):
 	Django
 	python-docutils
+	django-grappelli (easy_install -Z django-grappelli)
+	django-staticfiles (easy_install -Z django-staticfiles)
 
 ... More to follow
