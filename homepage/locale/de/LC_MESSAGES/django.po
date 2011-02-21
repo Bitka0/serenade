@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-21 23:40+0100\n"
-"PO-Revision-Date: 2011-02-21 23:41+0100\n"
+"POT-Creation-Date: 2011-02-21 23:56+0100\n"
+"PO-Revision-Date: 2011-02-21 23:57+0100\n"
 "Last-Translator: Lukas Martini <lukas.martini@unionhost.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -58,6 +58,7 @@ msgid "group"
 msgstr "Gruppe"
 
 #: blog/models.py:22
+#: blog/models.py:40
 msgid "groups"
 msgstr "Gruppen"
 
@@ -66,70 +67,80 @@ msgid "tag"
 msgstr "Tag"
 
 #: blog/models.py:32
+#: blog/models.py:41
 msgid "tags"
 msgstr "Tags"
 
 #: blog/models.py:35
-msgid "author"
-msgstr "Author"
-
-#: blog/models.py:36
-msgid "date of creation"
-msgstr "Erstellungsdatum"
-
-#: blog/models.py:37
-msgid "homepage"
-msgstr "Homepage"
-
-#: blog/models.py:39
-msgid "subject"
-msgstr "Betreff"
-
-#: blog/models.py:40
-#: blog/models.py:43
-#: pagemanager/models.py:15
-msgid "comment"
-msgstr "Kommentar"
-
-#: blog/models.py:44
-msgid "comments"
-msgstr "Kommentare"
-
-#: blog/models.py:54
 #: pagemanager/models.py:12
 msgid "URL"
 msgstr "Adresse (URL)"
 
-#: blog/models.py:54
+#: blog/models.py:35
 #: pagemanager/models.py:12
 msgid "This field is automatically filled based on the title you enter, however if you want to customize the URL, here you can."
 msgstr "Dieses Feld wird automatisch auf der Basis des von dir eingegebenen Titels gefüllt, wenn du jedoch eine eigene Adresse angeben willst, kannst du das hier."
 
-#: blog/models.py:57
+#: blog/models.py:37
+msgid "creator"
+msgstr "Autor"
+
+#: blog/models.py:38
 msgid "publication date"
 msgstr "Veröffentlichungsdatum"
 
-#: blog/models.py:58
+#: blog/models.py:39
 msgid "date of last modification"
 msgstr "Datum der letzten Modifikation"
 
-#: blog/models.py:62
+#: blog/models.py:43
 #: pagemanager/models.py:14
 msgid "title"
 msgstr "Titel"
 
-#: blog/models.py:63
+#: blog/models.py:44
 #: pagemanager/models.py:16
 msgid "text"
 msgstr "Text"
 
-#: blog/models.py:71
+#: blog/models.py:46
+#: blog/models.py:66
+msgid "comments"
+msgstr "Kommentare"
+
+#: blog/models.py:52
 msgid "blogentry"
 msgstr "Blogeintrag"
 
-#: blog/models.py:72
+#: blog/models.py:53
 msgid "blogentries"
 msgstr "Blogeinträge"
+
+#: blog/models.py:56
+msgid "related blog entry"
+msgstr "Zugehöriger Blogeintrag"
+
+#: blog/models.py:57
+msgid "author"
+msgstr "Author"
+
+#: blog/models.py:58
+msgid "date of creation"
+msgstr "Erstellungsdatum"
+
+#: blog/models.py:59
+msgid "homepage"
+msgstr "Homepage"
+
+#: blog/models.py:61
+msgid "subject"
+msgstr "Betreff"
+
+#: blog/models.py:62
+#: blog/models.py:65
+#: pagemanager/models.py:15
+msgid "comment"
+msgstr "Kommentar"
 
 #: pagemanager/admin.py:20
 msgid "Further options"
