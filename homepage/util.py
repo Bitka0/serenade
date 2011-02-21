@@ -8,23 +8,10 @@
 from django.http import HttpResponseRedirect, HttpResponse
 from django.template import Context, loader
 from django.core.mail import send_mail
-from kundenmanager.models import Customer
 from settings import DEBUG, MAIL_PREFIX, MAIL_SENDER
 import random
 import base64
 import hashlib
-
-def checkLogin(request, redirectTo = "/"):
-	username = request.session.get('username', default=False)
-	if not username:
-		return (username, HttpResponseRedirect(redirectTo))
-
-	try:
-		c = Customer.objects.get(username = username)
-	except Customer.DoesNotExist:
-		request.session.flush()
-		c = None
-	return (c, HttpResponseRedirect(redirectTo))	
 
 def generateSalt(length = 5):
 	nbits = length * 6 + 1
