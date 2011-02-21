@@ -2,13 +2,12 @@
 # This file may be used and distributed under the terms found in the
 # file COPYING, which you should have received along with this
 # program. If you haven't, please refer to bofh@junge-piraten.de.
-
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-21 22:47+0100\n"
+"POT-Creation-Date: 2011-02-21 23:02+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,23 +17,66 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
-#: pagemanager/admin.py:20
-msgid "Further options"
-msgstr "Weitere Optionen"
+#: blog/models.py:13 blog/models.py:23
+msgid "name"
+msgstr "Name"
 
-#: pagemanager/models.py:12
+#: blog/models.py:19
+msgid "group"
+msgstr "Gruppe"
+
+#: blog/models.py:20
+msgid "groups"
+msgstr "Gruppen"
+
+#: blog/models.py:29
+msgid "tag"
+msgstr "Tag"
+
+#: blog/models.py:30
+msgid "tags"
+msgstr "Tags"
+
+#: blog/models.py:33 pagemanager/models.py:12
 msgid "URL"
 msgstr "Adresse (URL)"
 
-#: pagemanager/models.py:12
+#: blog/models.py:33 pagemanager/models.py:12
 msgid ""
 "This field is automatically filled based on the title you enter, however if "
 "you want to customize the URL, here you can."
-msgstr "Dieses Feld wird automatisch auf der Basis des von dir eingegebenen Titels gefüllt, wenn du jedoch eine eigene Adresse angeben willst, kannst du das hier."
+msgstr ""
+"Dieses Feld wird automatisch auf der Basis des von dir eingegebenen Titels "
+"gefüllt, wenn du jedoch eine eigene Adresse angeben willst, kannst du das "
+"hier."
 
-#: pagemanager/models.py:14
+#: blog/models.py:36
+msgid "publication date"
+msgstr "Veröffentlichungsdatum"
+
+#: blog/models.py:37
+msgid "date of last modification"
+msgstr "Datum der letzten Modifikation"
+
+#: blog/models.py:41 pagemanager/models.py:14
 msgid "title"
 msgstr "Titel"
+
+#: blog/models.py:42 pagemanager/models.py:16
+msgid "text"
+msgstr "Text"
+
+#: blog/models.py:48
+msgid "blogentry"
+msgstr "Blogeintrag"
+
+#: blog/models.py:49
+msgid "blogentries"
+msgstr "Blogeinträge"
+
+#: pagemanager/admin.py:20
+msgid "Further options"
+msgstr "Weitere Optionen"
 
 #: pagemanager/models.py:15
 msgid "comment"
@@ -44,10 +86,6 @@ msgstr "Kommentar"
 msgid "Internal comment on the page, never displayed publicly."
 msgstr "Interner Kommentar zu der Seite, wird nie öffentlich gezeigt."
 
-#: pagemanager/models.py:16
-msgid "text"
-msgstr "Text"
-
 #: pagemanager/models.py:22
 msgid "page"
 msgstr "Seite"
@@ -55,3 +93,25 @@ msgstr "Seite"
 #: pagemanager/models.py:23
 msgid "pages"
 msgstr "Seiten"
+
+#: redirector/models.py:12
+msgid "The local URL which should be redirected."
+msgstr "Die lokale weiterzuleitende Adresse (URL)."
+
+#: redirector/models.py:19
+msgid "redirect"
+msgstr "Weiterleitung"
+
+#: redirector/models.py:20
+msgid "redirects"
+msgstr "Weiterleitungen"
+
+#: redirector/models.py:23
+#, fuzzy
+msgid "Redirector"
+msgstr "Weiterleitung"
+
+#: redirector/models.py:24
+#, fuzzy
+msgid "Redirectors"
+msgstr "Weiterleitungen"

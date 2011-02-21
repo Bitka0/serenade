@@ -5,12 +5,17 @@
 # file COPYING, which you should have received along with this
 # program. If you haven't, please refer to bofh@junge-piraten.de.
 
-
+from django.utils.translation import ugettext_lazy as _
 from django.db import models
 
 class Redirect(models.Model):
-	url = models.SlugField('URL', max_length=200, help_text = 'The local URL which should be redirected.')
+	url = models.SlugField('URL', max_length=200, help_text = _('The local URL which should be redirected.'))
 	target = models.CharField(max_length=200)
 
 	def __unicode__(self):
 		return '{0} -> {1}'.format(self.url, self.target)
+
+	class Meta:
+		verbose_name = _('redirect')
+		verbose_name_plural = _('redirects')
+
