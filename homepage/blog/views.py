@@ -26,5 +26,5 @@ def show(request, url):
 		url = '/'
 
 	entry = get_object_or_404(Blogentry, url=url)
-	context = util.generateContext(request, title = entry.title, text = entry.text, groups = entry.group.all(), tags = entry.tag.all(), pubDate = entry.publishingDate)
+	context = util.generateContext(request, title = entry.title, text = entry.text, groups = entry.group.all(), tags = entry.tag.all(), pubDate = entry.publishingDate, created_by = entry.created_by)
 	return render_to_response('blog/show.html', context)
