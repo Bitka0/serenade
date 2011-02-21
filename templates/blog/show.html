@@ -7,21 +7,19 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 {% endcomment %}
 
 {% block content %}
-{% for entry in entries %}
 <div>
-<h2><a href="{{entry.url}}/">{{ entry.title }}</a></h2>
+<p>{{ pubDate }}</p>
 <p>Groups:
-{% for group in entry.group.all %}
+{% for group in groups %}
 {{ group }}&nbsp;
 {% endfor %}
-   Tags:
-{% for tag in entry.tag.all %}
+</p>
+<p>Tags:
+{% for tag in tags %}
 {{ tag }}&nbsp;
 {% endfor %}
 </p>
-<span>{{ entry.text|safe }}</span>
-<hr />
+<p>{{ text|safe }}</p>
 </div>
-{% endfor %}
 {% endblock %}
 
