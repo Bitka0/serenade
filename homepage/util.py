@@ -56,4 +56,4 @@ def doubleRange(a, b, **kwargs):
 	return d
 
 def sendMail(to, subject, message):
-	send_mail('{0} {1}'.format(MAIL_PREFIX, subject), message, MAIL_SENDER, to, fail_silently = (DEBUG == False))
+	send_mail('{0} {1}'.format(EMAIL_PREFIX, subject), message, EMAIL_SENDER, to, fail_silently = (DEBUG == False))
