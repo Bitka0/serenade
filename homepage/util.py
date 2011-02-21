@@ -7,7 +7,6 @@
 
 from django.http import HttpResponseRedirect, HttpResponse
 from django.template import Context, loader
-import django.template
 from django.core.mail import send_mail
 from settings import DEBUG, EMAIL_PREFIX, EMAIL_SENDER
 import random
@@ -39,9 +38,9 @@ def stripSlash(string):
 
 def generateContext(request, contextType = 'Context', **kwargs):
 	if contextType.lower() == 'requestcontext':
-		context = getattr(django.template, contextType)(request, kwargs)
+		context = getattr(__import__('django').template, contextType)(request, kwargs)
 	else:
-		context = getattr(django.template, contextType)(kwargs)
+		context = getattr(__import__('django').template, contextType)(kwargs)
 	try:
 		context['infoMessage'] = request.session['nextInfo']
 		request.session['nextInfo'] = None
