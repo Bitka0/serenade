@@ -7,32 +7,32 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 {% endcomment %}
 
 {% block content %}
-<div>
-<p>{{ pubDate }}</p>
-<p>Groups:
-{% for group in groups %}
-{{ group }}&nbsp;
-{% endfor %}
-</p>
-<p>Tags:
-{% for tag in tags %}
-{{ tag }}&nbsp;
-{% endfor %}
-Author: {{ created_by.get_full_name }}
-</p>
-<p>{{ text|safe }}</p>
-</div>
-<hr />
-<div>
-{% for comment in comments %}
-{{ comment.subject }}
-{{ comment.sender }}
-{% endfor %}
-</div>
-<form action="/blog/testeintrag/" method="post">{% csrf_token %}
-{{ commentform.as_p }}
-<input type="submit" value="Submit" />
-</form>
+	<div>
+		<p>{{ entry.pubDate }}</p>
+		<p>Groups:
+			{% for group in groups %}
+				{{ group }}&nbsp;
+			{% endfor %}
+		</p>
+		<p>Tags:
+			{% for tag in tags %}
+				{{ tag }}&nbsp;
+			{% endfor %}
+			Author: {{ entry.created_by.get_full_name }}
+		</p>
+		<p>{{ entry.text|safe }}</p>
+	</div>
+	<hr />
+	<div>
+		{% for comment in comments %}
+			{{ comment.subject }}
+			{{ comment.sender }}
+		{% endfor %}
+	</div>
+	<form action="/blog/{{ entry.url }}/" method="post">{% csrf_token %}
+		{{ commentform.as_p }}
+		<input type="submit" value="Submit" />
+	</form>
 
 {% endblock %}
 
