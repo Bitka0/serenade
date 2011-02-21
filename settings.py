@@ -1,4 +1,8 @@
-import secretconfig
+try:
+	import secretconfig
+except ImportError:
+	print("It seems like you've forgotten to create a secretconfig.py, don't you?")
+	exit(1)
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
