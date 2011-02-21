@@ -31,6 +31,9 @@ MEDIA_ROOT = ''
 MEDIA_URL = ''
 ADMIN_MEDIA_PREFIX = '/media/'
 
+EMAIL_PREFIX = '[Junge Piraten]'
+EMAIL_SENDER = 'it@junge-piraten.de'
+
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
