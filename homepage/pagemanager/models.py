@@ -8,11 +8,11 @@
 from django.db import models
 
 class Page(models.Model):
-	url = models.CharField('URL', max_length=200)
+	url = models.SlugField('URL', max_length=200, help_text = 'This field is automatically filled based on the title you enter, however if you want to customize the URL, here you can.')
 
 	title = models.CharField(max_length=200)
-	comment = models.TextField()
+	comment = models.TextField(help_text = 'Internal comment on the page, never displayed publicly.', blank = True)
 	text = models.TextField()
 
 	def __unicode__(self):
-		return "{0} ({1})".format(self.title, self.url)
+		return self.title
