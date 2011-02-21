@@ -14,11 +14,6 @@ from django import forms
 import util
 
 def show(request, url):
-	url = util.stripSlash(url)
-
-	if url == '' or url == None:
-		url = '/'
-
 	page = get_object_or_404(Page, url=url)
 	context = util.generateContext(request, title = page.title, text = page.text)
 	return render_to_response('pagemanager/standard.html', context)
