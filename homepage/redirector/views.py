@@ -12,8 +12,5 @@ from django.shortcuts import render_to_response, get_object_or_404
 import util
 
 def redirect(request, url):
-	if url == '' or url == None:
-		url = '/'
-
 	redirect = get_object_or_404(Redirect, url=url)
 	return HttpResponseRedirect(redirect.target)

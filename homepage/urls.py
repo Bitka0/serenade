@@ -20,6 +20,9 @@ admin.autodiscover()
 # FIXME: Find a nicer solution for this.
 def catchAll(request, url):
 	url = util.stripSlash(url)
+	if url == '' or url == None:
+		url = 'home'
+
 	try:
 		redirect = Redirect.objects.get(url = url)
 		return redirector.views.redirect(request, url)
