@@ -6,6 +6,7 @@
 # program. If you haven't, please refer to bofh@junge-piraten.de.
 
 from django.db import models
+from django.contrib.auth.models import User
 
 class Group(models.Model):
 	name = models.CharField(max_length=200)
@@ -22,6 +23,7 @@ class Tag(models.Model):
 class Blogentry(models.Model):
 	url = models.SlugField('URL', max_length=200, help_text = 'This field is automatically filled based on the title you enter, however if you want to customize the URL, here you can.')
 
+	created_by = models.ForeignKey(User)
 	publishingDate = models.DateTimeField(auto_now_add=True)
 	lastModified = models.DateTimeField(auto_now=True)
 	group = models.ManyToManyField(Group)

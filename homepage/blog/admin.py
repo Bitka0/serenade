@@ -7,6 +7,7 @@
 
 from models import Blogentry, Group, Tag
 from django.contrib import admin
+from django.contrib.auth.models import User
 
 class BlogAdmin(admin.ModelAdmin):#
 	# Detail display
@@ -20,6 +21,7 @@ class BlogAdmin(admin.ModelAdmin):#
 	list_display = ('title', 'url')
 	# Fields in which should be searched.
 	search_fields = ['title', 'url', 'text']
+
 
 class Groupadmin(admin.ModelAdmin):
 	list_display= ('name',)
