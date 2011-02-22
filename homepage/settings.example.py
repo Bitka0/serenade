@@ -72,17 +72,14 @@ MANAGERS = ADMINS
 SITE_ID = 1
 USE_I18N = True
 USE_L10N = True
-MEDIA_ROOT = ''
-MEDIA_URL = ''
 GRAPPELLI_INDEX_DASHBOARD = 'homepage.dashboard.CustomIndexDashboard'
 GRAPPELLI_ADMIN_TITLE = 'Serenade'
 FORCE_SCRIPT_NAME = ''
-STATIC_URL = '/static/'
-STATIC_ROOT = '{0}/../tmp/'.format(os.getcwd())
-
-STATICFILES_DIRS = (
-	'{0}/../static/'.format(os.getcwd()),
-)
+STATIC_URL = '/assets/'
+STATIC_ROOT = '{0}/../assets/'.format(os.getcwd())
+MEDIA_ROOT = '{0}media/'.format(STATIC_ROOT)
+MEDIA_URL = '{0}media/'.format(STATIC_URL)
+FILEBROWSER_DIRECTORY = MEDIA_ROOT
 
 ADMIN_MEDIA_PREFIX = STATIC_URL + "grappelli/"
 
@@ -136,6 +133,7 @@ INSTALLED_APPS = (
 	'grappelli.dashboard',
 	'grappelli',
 	'django.contrib.admin',
+	'filebrowser',
 
 	# Static pages
 	'django.contrib.flatpages',

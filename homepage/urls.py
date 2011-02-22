@@ -14,6 +14,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 	# Admin interface
+	(r'^admin/filebrowser/', include('filebrowser.urls')),
 	(r'^grappelli/', include('grappelli.urls')),
 	(r'^admin/', include(admin.site.urls)),
 	

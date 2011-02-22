@@ -2,4 +2,5 @@ homepage/settings.py
 homepage/database.db
 *.pyc
 *.mo
-tmp/*
+assets/admin
+assets/grappelli

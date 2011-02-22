@@ -9,6 +9,7 @@ from django.utils.translation import ugettext_lazy as _
 from models import Entry, Group, Tag, Comment
 from django.contrib import admin
 from django.contrib.auth.models import User
+from settings import STATIC_URL
 
 class EntryAdmin(admin.ModelAdmin):
 	# Detail display
@@ -29,7 +30,7 @@ class EntryAdmin(admin.ModelAdmin):
 	search_fields = ['title', 'url', 'text']
 	
 	class Media:
-		js = ['/static/grappelli/tinymce/jscripts/tiny_mce/tiny_mce.js', '/static/grappelli/tinymce_setup/tinymce_setup.js',]
+		js = [STATIC_URL + 'grappelli/tinymce/jscripts/tiny_mce/tiny_mce.js', STATIC_URL + 'grappelli/tinymce_setup/tinymce_setup.js',]
 
 class Commentadmin(admin.ModelAdmin):
 	list_display = ('sender', 'subject', 'date')
