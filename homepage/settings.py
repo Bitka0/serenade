@@ -37,7 +37,7 @@ STATICFILES_DIRS = (
 	'{0}/../static/'.format(os.getcwd()),
 )
 
-ADMIN_MEDIA_PREFIX = STATIC_URL + "grappelli/"
+ADMIN_MEDIA_PREFIX = STATIC_URL + "admin/"
 
 EMAIL_PREFIX = '[Junge Piraten]'
 EMAIL_SENDER = 'it@junge-piraten.de'
@@ -54,9 +54,23 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    
+
     # Intentionally last
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+	# default template context processors
+	'django.core.context_processors.auth',
+	'django.core.context_processors.debug',
+	'django.core.context_processors.i18n',
+	'django.core.context_processors.media',
+
+	# django 1.2 only
+	'django.contrib.messages.context_processors.messages',
+
+	# required by django-admin-tools
+	'django.core.context_processors.request',
 )
 
 ROOT_URLCONF = 'homepage.urls'
@@ -74,7 +88,10 @@ INSTALLED_APPS = (
 	'staticfiles',
 	
 	# Admin interface
-	'grappelli',
+	'admin_tools',
+	'admin_tools.theming',
+	'admin_tools.menu',
+	'admin_tools.dashboard',
 	'django.contrib.admin',
 	'django.contrib.admindocs',
 

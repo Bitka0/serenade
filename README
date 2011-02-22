@@ -10,7 +10,8 @@
 Dependencies (Yes, the -Z's at those easy_installs _are_ important.):
 	Django
 	python-docutils
-	django-grappelli (easy_install -Z django-grappelli)
+	python-feedparser
 	django-staticfiles (easy_install -Z django-staticfiles)
+	django-admin-tools (easy_install -Z django-admin-tools)
 
 ... More to follow
