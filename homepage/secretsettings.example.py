@@ -1,3 +1,4 @@
+# coding: utf-8
 # Make this one unique
 SECRET_KEY = 't2t(^@=^b^dw049t#3)e_@_z5d_trnojd$t6+)97(7ei#cnpqz'
 
