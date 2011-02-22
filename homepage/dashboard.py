@@ -20,7 +20,7 @@ class CustomIndexDashboard(Dashboard):
 			_('General'),
 			column=1,
 			css_classes = ('collapse open',),
-			models = ('homepage.*', 'django.contrib.flatpages.*'),
+			models = ('homepage.*', 'django.contrib.flatpages.*', 'django.contrib.redirects.*'),
 		))
 				
 		self.children.append(modules.AppList(
@@ -28,7 +28,7 @@ class CustomIndexDashboard(Dashboard):
 			column=1,
 			css_classes = ('collapse open',),
 			models = ('django.contrib.*',),
-			exclude = ('django.contrib.flatpages.*',),
+			exclude = ('django.contrib.flatpages.*', 'django.contrib.redirects.*'),
 		))		
 				
 		# append another link list module for "support".

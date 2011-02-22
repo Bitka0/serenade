@@ -7,6 +7,7 @@
 
 from django.conf.urls.defaults import *
 from feed.feeds import blogAll
+
 # Admin
 from django.contrib import admin
 admin.autodiscover()
@@ -21,7 +22,4 @@ urlpatterns = patterns('',
 	(r'^blog/tag/(?P<url>.*)$', 'blog.views.listTags'),
 	(r'^blog/(?P<url>.*)$', 'blog.views.show'),
 	(r'^blog/feed/$', blogAll()),
-	
-	# Catch-all for redirector, intentionally last.
-	(r'^(?P<url>.*)$', 'redirector.views.redirect'),
 )

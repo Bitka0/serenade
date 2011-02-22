@@ -93,14 +93,15 @@ TEMPLATE_LOADERS = (
 )
 
 MIDDLEWARE_CLASSES = (
-    'django.middleware.common.CommonMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    
-    # Intentionally last
-    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
+	'django.middleware.common.CommonMiddleware',
+	'django.contrib.sessions.middleware.SessionMiddleware',
+	'django.middleware.csrf.CsrfViewMiddleware',
+	'django.contrib.auth.middleware.AuthenticationMiddleware',
+	'django.contrib.messages.middleware.MessageMiddleware',
+	
+	# Intentionally last
+	'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
+	'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -138,8 +139,9 @@ INSTALLED_APPS = (
 
 	# Static pages
 	'django.contrib.flatpages',
+	# Redirects
+	'django.contrib.redirects',
 
 	'homepage.navigation',
-	'homepage.redirector',
 	'homepage.blog',
 )
