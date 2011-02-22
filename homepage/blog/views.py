@@ -35,6 +35,6 @@ def show(request, url):
 	else:
 		form = CommentForm()
 		
-	context = util.generateContext(request, contextType = 'RequestContext', title = entry.title, entry = entry, groups = entry.group.all(), tags = entry.tag.all(), commentform = form, comments = Comment.objects.filter(entry = entry))
+	context = util.generateContext(request, contextType = 'RequestContext', title = entry.title, entry = entry, commentform = form, comments = Comment.objects.filter(entry = entry).order_by('-date'))
 	return render_to_response('blog/show.html', context)
 

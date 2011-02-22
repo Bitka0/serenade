@@ -25,6 +25,8 @@ class EntryAdmin(admin.ModelAdmin):#
 	class Media:
 		js = ['/static/grappelli/tinymce/jscripts/tiny_mce/tiny_mce.js', '/static/grappelli/tinymce_setup/tinymce_setup.js',]
 
+class Commentadmin(admin.ModelAdmin):
+	list_display = ('sender', 'subject', 'date')
 
 class Groupadmin(admin.ModelAdmin):
 	list_display= ('name',)
@@ -35,4 +37,4 @@ class Tagadmin(admin.ModelAdmin):
 admin.site.register(Entry, EntryAdmin)
 admin.site.register(Group, Groupadmin)
 admin.site.register(Tag, Tagadmin)
-admin.site.register(Comment)
+admin.site.register(Comment, Commentadmin)
