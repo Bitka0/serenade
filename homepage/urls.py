@@ -13,8 +13,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 	# Admin interface
-	#(r'^grappelli/', include('grappelli.urls')),
-	url(r'^admin_tools/', include('admin_tools.urls')),
+	(r'^grappelli/', include('grappelli.urls')),
 	(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 	(r'^admin/', include(admin.site.urls)),
 	
