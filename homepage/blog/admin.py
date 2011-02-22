@@ -10,7 +10,7 @@ from models import Entry, Group, Tag, Comment
 from django.contrib import admin
 from django.contrib.auth.models import User
 
-class EntryAdmin(admin.ModelAdmin):#
+class EntryAdmin(admin.ModelAdmin):
 	# Detail display
 
 	fieldsets = [
