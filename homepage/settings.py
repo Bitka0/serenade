@@ -29,6 +29,7 @@ USE_I18N = True
 USE_L10N = True
 MEDIA_ROOT = ''
 MEDIA_URL = ''
+GRAPPELLI_INDEX_DASHBOARD = 'homepage.dashboard.CustomIndexDashboard'
 
 STATIC_URL = '/static/'
 STATIC_ROOT = '{0}/../tmp/'.format(os.getcwd())
@@ -88,6 +89,7 @@ INSTALLED_APPS = (
 	'staticfiles',
 	
 	# Admin interface
+	'grappelli.dashboard',
 	'grappelli',
 	'django.contrib.admin',
 	'django.contrib.admindocs',
