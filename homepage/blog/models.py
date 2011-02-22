@@ -37,11 +37,12 @@ class Entry(models.Model):
 	created_by = models.ForeignKey(User, verbose_name = _('creator'))
 	publishingDate = models.DateTimeField(_('publication date'), auto_now_add=True)
 	lastModified = models.DateTimeField(_('date of last modification'), auto_now=True)
-	group = models.ManyToManyField(Group, verbose_name = _('groups'), blank=True)
-	tag = models.ManyToManyField(Tag, verbose_name = _('tags'), blank=True)
+	groups = models.ManyToManyField(Group, verbose_name = _('groups'), blank=True)
+	tags = models.ManyToManyField(Tag, verbose_name = _('tags'), blank=True)
 
 	title = models.CharField(_('title'), max_length=200)
 	text = models.TextField(_('text'))
+	admincomment = models.TextField(_('comment'), help_text = _('What you enter here is only displayed in the admin area.'))
 	
 	def __unicode__(self):
 		return self.title
