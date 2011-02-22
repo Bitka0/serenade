@@ -10,16 +10,17 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 	<div>
 		<p>{{ entry.pubDate }}</p>
 		<p>Groups:
-			{% for group in groups %}
-				{{ group }}&nbsp;
+			{% for group in entry.group.all %}
+				<a href="/blog/group/{{ group }}/">{{ group }}</a>,&nbsp;
 			{% endfor %}
 		</p>
 		<p>Tags:
-			{% for tag in tags %}
-				{{ tag }}&nbsp;
+			{% for tag in entry.tag.all %}
+				<a href="/blog/tag/{{ tag }}/">{{ tag }}</a>,&nbsp;
 			{% endfor %}
-			Author: {{ entry.created_by.get_full_name }}
+			
 		</p>
+		<p>Author: {{ entry.created_by.get_full_name }}</p>
 		<p>{{ entry.text|safe }}</p>
 	</div>
 	<hr />
@@ -37,4 +38,3 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 	</form>
 
 {% endblock %}
-

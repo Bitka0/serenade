@@ -9,14 +9,14 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 {% block content %}
 {% for entry in entries %}
 <div>
-<h2><a href="{{entry.url}}/">{{ entry.title }}</a></h2>
+<h2><a href="/blog/{{entry.url}}/">{{ entry.title }}</a></h2>
 <p>Groups:
 {% for group in entry.group.all %}
-{{ group }}&nbsp;
+<a href="/blog/group/{{ group }}/">{{ group }}</a>&nbsp;
 {% endfor %}
    Tags:
 {% for tag in entry.tag.all %}
-{{ tag }}&nbsp;
+<a href="/blog/tag/{{ tag }}/">{{ tag }}</a>,&nbsp;
 {% endfor %}
 Author: {{  entry.created_by.get_full_name }}
 </p>

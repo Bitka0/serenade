@@ -18,6 +18,8 @@ urlpatterns = patterns('',
 	(r'^admin/', include(admin.site.urls)),
 	
 	(r'^blog/$', 'blog.views.listAll'),
+	(r'^blog/group/(?P<url>.*)$', 'blog.views.listGroups'),
+	(r'^blog/tag/(?P<url>.*)$', 'blog.views.listTags'),
 	(r'^blog/(?P<url>.*)$', 'blog.views.show'),
 	
 	# Catch-all for redirector, intentionally last.

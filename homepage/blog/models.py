@@ -64,7 +64,7 @@ class Comment(models.Model):
 		verbose_name_plural = _('comments')
 
 class CommentForm(forms.Form):
-	subject = forms.CharField(max_length=100)
+	subject = forms.CharField(max_length=100, required=False)
 	message = forms.CharField()
 	sender = forms.CharField(max_length=100)
-	homepage = forms.CharField(max_length=200)
+	homepage = forms.CharField(max_length=200, required=False)
