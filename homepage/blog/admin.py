@@ -21,6 +21,9 @@ class EntryAdmin(admin.ModelAdmin):#
 	list_display = ('title', 'url', 'lastModified')
 	# Fields in which should be searched.
 	search_fields = ['title', 'url', 'text']
+	
+	class Media:
+		js = ['/static/grappelli/tinymce/jscripts/tiny_mce/tiny_mce.js', '/static/grappelli/tinymce_setup/tinymce_setup.js',]
 
 
 class Groupadmin(admin.ModelAdmin):
