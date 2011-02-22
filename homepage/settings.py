@@ -30,7 +30,7 @@ USE_L10N = True
 MEDIA_ROOT = ''
 MEDIA_URL = ''
 GRAPPELLI_INDEX_DASHBOARD = 'homepage.dashboard.CustomIndexDashboard'
-
+FORCE_SCRIPT_NAME = ''
 STATIC_URL = '/static/'
 STATIC_ROOT = '{0}/../tmp/'.format(os.getcwd())
 
