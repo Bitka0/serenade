@@ -4,6 +4,8 @@ This file may be used and distributed under the terms found in the
 file COPYING, which you should have received along with this
 program. If you haven't, please refer to bofh@junge-piraten.de.
 {% endcomment %}
+{% load static %}
+{% get_static_prefix as STATIC_URL %}
 
 <?xml version="1.0"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -12,19 +14,27 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 		<meta http-equiv="Content-Language" content="de" />
-		<title>Junge Piraten &raquo; {{ title }}</title>
+		<title>
+			Junge Piraten 
+			{% if title or flatpage.title %}
+				&raquo;
+				{% if title %}{{ title }}{% endif %}
+				{% if flatpage.title %}{{ flatpage.title }}{% endif %}
+			{% endif %}
+		</title>
 		<style type="text/css" media="all">
 			body { font-family: 'Liberation Sans', 'Linux Liberation Sans', 'Arial', sans-serif; }
 		</style>
-		<script type="text/javascript" src="//media.unionhost.de/jquery.js"></script>
+		<link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}css/main.css" />
 	</head>
 
 	<body>
+			{% block aboveTitle %}{% endblock %}
+			{% if title %}<h1>{{ title|upper }}</h1>{% endif %}
+			{% if flatpage.title %}<h1>{{ flatpage.title|upper }}</h1>{% endif %}
+
 			<div id="content">
-				{% block aboveTitle %}{% endblock %}
-				<h1>{{ title|upper }}</h1>
 				{% block content %}{% endblock %}
 			</div>
 	</body>
 </html>
-
