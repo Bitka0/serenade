@@ -9,6 +9,9 @@
 # General Settings
 # –––––––––––––––––––––
 
+# Do we run in production mode?
+PRODUCTION = False
+
 # Enter your name and email here. You can define multiple admins.
 ADMINS = (
 	('Lazy Admin', 'lazy@admin.org'),
@@ -63,7 +66,7 @@ DATABASES = {
 
 import os
 
-TEMPLATE_DEBUG = DEBUG = False
+TEMPLATE_DEBUG = DEBUG = (PRODUCTION == False)
 
 MANAGERS = ADMINS
 SITE_ID = 1
@@ -72,6 +75,7 @@ USE_L10N = True
 MEDIA_ROOT = ''
 MEDIA_URL = ''
 GRAPPELLI_INDEX_DASHBOARD = 'homepage.dashboard.CustomIndexDashboard'
+GRAPPELLI_ADMIN_TITLE = 'Serenade'
 FORCE_SCRIPT_NAME = ''
 STATIC_URL = '/static/'
 STATIC_ROOT = '{0}/../tmp/'.format(os.getcwd())
