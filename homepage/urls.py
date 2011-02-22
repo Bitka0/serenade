@@ -20,7 +20,7 @@ urlpatterns = patterns('',
 	(r'^blog/group/(?P<url>.*)$', 'blog.views.listGroups'),
 	(r'^blog/tag/(?P<url>.*)$', 'blog.views.listTags'),
 	(r'^blog/(?P<url>.*)$', 'blog.views.show'),
-	(r'^feed/$', blogAll()),
+	(r'^blog/feed/$', blogAll()),
 	
 	# Catch-all for redirector, intentionally last.
 	(r'^(?P<url>.*)$', 'redirector.views.redirect'),
