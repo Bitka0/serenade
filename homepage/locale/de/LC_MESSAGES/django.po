@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-22 07:04+0100\n"
-"PO-Revision-Date: 2011-02-22 07:06+0100\n"
+"POT-Creation-Date: 2011-02-22 19:05+0100\n"
+"PO-Revision-Date: 2011-02-22 19:06+0100\n"
 "Last-Translator: Lukas Martini <lukas.martini@unionhost.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -83,6 +83,7 @@ msgstr "Kürzliche Aktionen"
 
 #: blog/models.py:15
 #: blog/models.py:25
+#: navigation/models.py:12
 msgid "name"
 msgstr "Name"
 
@@ -168,6 +169,34 @@ msgstr "Kommentar"
 #: blog/models.py:64
 msgid "comments"
 msgstr "Kommentare"
+
+#: navigation/models.py:12
+msgid "This name will be shown in the navigation."
+msgstr "Dieser Name wird in der Navigation gezeigt."
+
+#: navigation/models.py:13
+msgid "target"
+msgstr "Ziel"
+
+#: navigation/models.py:13
+msgid "Where the entry should point to."
+msgstr "Wo der Eintrag hinzeigen soll."
+
+#: navigation/models.py:14
+msgid "position"
+msgstr "Position"
+
+#: navigation/models.py:14
+msgid "An integer, describing the position of this entry in the Navigation. Smaller numbers come first."
+msgstr "Eine Zahl, die die Position dieses Eintrags in der Navigation bestimmt. Kleinere Nummern kommen zuerst."
+
+#: navigation/models.py:17
+msgid "navigation entry"
+msgstr "Navigationseintrag"
+
+#: navigation/models.py:18
+msgid "navigation entries"
+msgstr "Navigationseinträge"
 
 #: redirector/models.py:12
 msgid "The local URL which should be redirected."

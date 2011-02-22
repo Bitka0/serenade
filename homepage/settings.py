@@ -70,7 +70,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 	# django 1.2 only
 	'django.contrib.messages.context_processors.messages',
 
-	# required by django-admin-tools
+	# required by grappelli
 	'django.core.context_processors.request',
 )
 
@@ -97,6 +97,7 @@ INSTALLED_APPS = (
 	# Static pages
 	'django.contrib.flatpages',
 
+	'homepage.navigation',
+	'homepage.redirector',
 	'homepage.blog',
-	'homepage.redirector'
 )
