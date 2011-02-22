@@ -42,10 +42,13 @@ class Entry(models.Model):
 
 	title = models.CharField(_('title'), max_length=200)
 	text = models.TextField(_('text'))
-	admincomment = models.TextField(_('comment'), help_text = _('What you enter here is only displayed in the admin area.'))
+	admincomment = models.TextField(_('comment'), help_text = _('What you enter here is only displayed in the admin area.'), blank=True)
 	
 	def __unicode__(self):
 		return self.title
+	
+	def get_absolute_url(self):
+		return "/blog/" + self.url + "/"
 
 	class Meta:
 		verbose_name = _('blogentry')
