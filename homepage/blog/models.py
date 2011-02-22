@@ -37,8 +37,8 @@ class Entry(models.Model):
 	created_by = models.ForeignKey(User, verbose_name = _('creator'))
 	publishingDate = models.DateTimeField(_('publication date'), auto_now_add=True)
 	lastModified = models.DateTimeField(_('date of last modification'), auto_now=True)
-	group = models.ManyToManyField(Group, verbose_name = _('groups'))
-	tag = models.ManyToManyField(Tag, verbose_name = _('tags'))
+	group = models.ManyToManyField(Group, verbose_name = _('groups'), blank=True)
+	tag = models.ManyToManyField(Tag, verbose_name = _('tags'), blank=True)
 
 	title = models.CharField(_('title'), max_length=200)
 	text = models.TextField(_('text'))
@@ -54,10 +54,10 @@ class Comment(models.Model):
 	entry = models.ForeignKey(Entry, verbose_name = _('related blog entry'))
 	sender = models.CharField(_('author'), max_length=80)
 	date = models.DateTimeField(_('date of creation'), auto_now=True)
-	homepage = models.CharField(_('homepage'), max_length=200)
+	homepage = models.CharField(_('homepage'), max_length=200, blank=True)
 	
-	subject = models.CharField(_('subject'), max_length=100)
-	comment = models.TextField(_('comment'))
+	subject = models.CharField(_('subject'), max_length=100, blank=True)
+	message = models.TextField(_('comment'))
 
 	class Meta:
 		verbose_name = _('comment')
