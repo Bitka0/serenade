@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-21 23:56+0100\n"
-"PO-Revision-Date: 2011-02-21 23:57+0100\n"
+"POT-Creation-Date: 2011-02-22 07:04+0100\n"
+"PO-Revision-Date: 2011-02-22 07:06+0100\n"
 "Last-Translator: Lukas Martini <lukas.martini@unionhost.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -16,37 +16,70 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
-#: __init__.py:3
+#: __init__.py:10
 msgid "pagemanager"
 msgstr "Seitenverwaltung"
 
-#: __init__.py:4
+#: __init__.py:11
 msgid "redirector"
 msgstr "Weiterleiter"
 
-#: __init__.py:5
+#: __init__.py:12
 msgid "blog"
 msgstr "Blog"
 
-#: __init__.py:6
+#: __init__.py:13
 msgid "auth"
 msgstr "Authentifikation"
 
-#: __init__.py:7
+#: __init__.py:14
 msgid "Pagemanager"
 msgstr "Seitenverwaltung"
 
-#: __init__.py:8
+#: __init__.py:15
 msgid "Redirector"
 msgstr "Weiterleiter"
 
-#: __init__.py:9
+#: __init__.py:16
+#: blog/views.py:18
 msgid "Blog"
 msgstr "Blog"
 
-#: __init__.py:10
+#: __init__.py:17
 msgid "Auth"
 msgstr "Authentifikation"
+
+#: dashboard.py:20
+msgid "General"
+msgstr "Allgemein"
+
+#: dashboard.py:27
+msgid "Administration"
+msgstr "Administration"
+
+#: dashboard.py:36
+msgid "Support"
+msgstr "Support"
+
+#: dashboard.py:40
+msgid "Young Pirates Helpdesk"
+msgstr "Junge Piraten Helpdesk"
+
+#: dashboard.py:45
+msgid "Django Documentation"
+msgstr "Django-Dokumentation"
+
+#: dashboard.py:50
+msgid "Grappelli Documentation"
+msgstr "Grappelli-Dokumentation"
+
+#: dashboard.py:59
+msgid "Latest wiki edits"
+msgstr "Letzte Wiki-Änderungen"
+
+#: dashboard.py:67
+msgid "Recent Actions"
+msgstr "Kürzliche Aktionen"
 
 #: blog/models.py:15
 #: blog/models.py:25
@@ -72,12 +105,10 @@ msgid "tags"
 msgstr "Tags"
 
 #: blog/models.py:35
-#: pagemanager/models.py:12
 msgid "URL"
 msgstr "Adresse (URL)"
 
 #: blog/models.py:35
-#: pagemanager/models.py:12
 msgid "This field is automatically filled based on the title you enter, however if you want to customize the URL, here you can."
 msgstr "Dieses Feld wird automatisch auf der Basis des von dir eingegebenen Titels gefüllt, wenn du jedoch eine eigene Adresse angeben willst, kannst du das hier."
 
@@ -94,69 +125,49 @@ msgid "date of last modification"
 msgstr "Datum der letzten Modifikation"
 
 #: blog/models.py:43
-#: pagemanager/models.py:14
 msgid "title"
 msgstr "Titel"
 
 #: blog/models.py:44
-#: pagemanager/models.py:16
 msgid "text"
 msgstr "Text"
 
-#: blog/models.py:46
-#: blog/models.py:66
-msgid "comments"
-msgstr "Kommentare"
-
-#: blog/models.py:52
+#: blog/models.py:50
 msgid "blogentry"
 msgstr "Blogeintrag"
 
-#: blog/models.py:53
+#: blog/models.py:51
 msgid "blogentries"
 msgstr "Blogeinträge"
 
-#: blog/models.py:56
+#: blog/models.py:54
 msgid "related blog entry"
 msgstr "Zugehöriger Blogeintrag"
 
-#: blog/models.py:57
+#: blog/models.py:55
 msgid "author"
 msgstr "Author"
 
-#: blog/models.py:58
+#: blog/models.py:56
 msgid "date of creation"
 msgstr "Erstellungsdatum"
 
-#: blog/models.py:59
+#: blog/models.py:57
 msgid "homepage"
 msgstr "Homepage"
 
-#: blog/models.py:61
+#: blog/models.py:59
 msgid "subject"
 msgstr "Betreff"
 
-#: blog/models.py:62
-#: blog/models.py:65
-#: pagemanager/models.py:15
+#: blog/models.py:60
+#: blog/models.py:63
 msgid "comment"
 msgstr "Kommentar"
 
-#: pagemanager/admin.py:20
-msgid "Further options"
-msgstr "Weitere Optionen"
-
-#: pagemanager/models.py:15
-msgid "Internal comment on the page, never displayed publicly."
-msgstr "Interner Kommentar zu der Seite, wird nie öffentlich gezeigt."
-
-#: pagemanager/models.py:22
-msgid "page"
-msgstr "Seite"
-
-#: pagemanager/models.py:23
-msgid "pages"
-msgstr "Seiten"
+#: blog/models.py:64
+msgid "comments"
+msgstr "Kommentare"
 
 #: redirector/models.py:12
 msgid "The local URL which should be redirected."
@@ -174,6 +185,14 @@ msgstr "Weiterleitung"
 msgid "redirects"
 msgstr "Weiterleitungen"
 
+#~ msgid "Further options"
+#~ msgstr "Weitere Optionen"
+#~ msgid "Internal comment on the page, never displayed publicly."
+#~ msgstr "Interner Kommentar zu der Seite, wird nie öffentlich gezeigt."
+#~ msgid "page"
+#~ msgstr "Seite"
+#~ msgid "pages"
+#~ msgstr "Seiten"
 #~ msgid "to"
 #~ msgstr "nach"
 
