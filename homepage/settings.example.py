@@ -5,25 +5,67 @@
 # file COPYING, which you should have received along with this
 # program. If you haven't, please refer to bofh@junge-piraten.de.
 
-try:
-	from secretsettings import *
-except ImportError:
-	print("It seems like you've forgotten to create a secretsettings.py, don't you?")
-	exit(1)
+# –––––––––––––––––––––
+# General Settings
+# –––––––––––––––––––––
+
+# Enter your name and email here. You can define multiple admins.
+ADMINS = (
+	('Lazy Admin', 'lazy@admin.org'),
+)
+
+# Choose whatever you want.
+TIME_ZONE = 'Europe/Berlin'
+LANGUAGE_CODE = 'de-de'
+
+# Make this one unique
+SECRET_KEY = 'this-is-not-unique'
+
+# –––––––––––––––––––––
+# Email Settings
+# –––––––––––––––––––––
+
+EMAIL_PREFIX = '[Serenade]'
+EMAIL_SENDER = 'lazy@admin.org'
+
+
+# –––––––––––––––––––––
+# Database settings
+# –––––––––––––––––––––
+
+DATABASES = {
+	'default': {
+		'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+		'NAME': 'database.db',                      # Or path to database file if using sqlite3.
+		'USER': '',                      # Not used with sqlite3.
+		'PASSWORD': '',                  # Not used with sqlite3.
+		'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+		'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+	}
+}
+
+# –––––––––––––––––––––
+# Caching
+# –––––––––––––––––––––
+
+# Uncomment if you want caching.
+#CACHES = {
+#	'default': {
+#		'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+#		'LOCATION': '127.0.0.1:11211',
+#	}
+#}
+
+
+
+
+# DO NOT EDIT AFTER THIS LINE UNLESS YOU KNOW WHAT YOU'RE DOING (Most probably you don't).
 
 import os
 
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
-
-ADMINS = (
-	('Lukas Martini', 'lukas.martini@unionhost.de'),
-	('Phillip Thelen', 'phillip.thelen@junge-piraten.de'),
-)
+TEMPLATE_DEBUG = DEBUG = False
 
 MANAGERS = ADMINS
-TIME_ZONE = 'Europe/Berlin'
-LANGUAGE_CODE = 'de-de'
 SITE_ID = 1
 USE_I18N = True
 USE_L10N = True
@@ -39,9 +81,6 @@ STATICFILES_DIRS = (
 )
 
 ADMIN_MEDIA_PREFIX = STATIC_URL + "grappelli/"
-
-EMAIL_PREFIX = '[Junge Piraten]'
-EMAIL_SENDER = 'it@junge-piraten.de'
 
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',

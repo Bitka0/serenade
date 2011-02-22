@@ -1,4 +1,4 @@
-homepage/secretsettings.py
+homepage/settings.py
 homepage/database.db
 *.pyc
 *.mo
