@@ -21,3 +21,5 @@ messages:
 	cd homepage && python2 manage.py makemessages -l de
 compilemessages:
 	- cd homepage && python2 manage.py compilemessages
+fastcgi:
+	cd homepage && python2 manage.py runfcgi daemonize=True socket=/tmp/django.sock pidfile=/tmp/django.pid
