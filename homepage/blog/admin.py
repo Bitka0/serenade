@@ -5,11 +5,11 @@
 # file COPYING, which you should have received along with this
 # program. If you haven't, please refer to bofh@junge-piraten.de.
 
-from models import Blogentry, Group, Tag, Comment
+from models import Entry, Group, Tag, Comment
 from django.contrib import admin
 from django.contrib.auth.models import User
 
-class BlogAdmin(admin.ModelAdmin):#
+class EntryAdmin(admin.ModelAdmin):#
 	# Detail display
 
 	# Automatically fill the url field based on what's given as title.
@@ -29,7 +29,7 @@ class Groupadmin(admin.ModelAdmin):
 class Tagadmin(admin.ModelAdmin):
 	list_display= ('name',)
 
-admin.site.register(Blogentry, BlogAdmin)
+admin.site.register(Entry, EntryAdmin)
 admin.site.register(Group, Groupadmin)
 admin.site.register(Tag, Tagadmin)
 admin.site.register(Comment)

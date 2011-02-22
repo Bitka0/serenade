@@ -31,7 +31,7 @@ class Tag(models.Model):
 		verbose_name = _('tag')
 		verbose_name_plural = _('tags')
 
-class Blogentry(models.Model):
+class Entry(models.Model):
 	url = models.SlugField(_('URL'), max_length=200, help_text = _('This field is automatically filled based on the title you enter, however if you want to customize the URL, here you can.'))
 
 	created_by = models.ForeignKey(User, verbose_name = _('creator'))
@@ -51,7 +51,7 @@ class Blogentry(models.Model):
 		verbose_name_plural = _('blogentries')
 
 class Comment(models.Model):
-	blogentry = models.ForeignKey(Blogentry, verbose_name = _('related blog entry'))
+	entry = models.ForeignKey(Entry, verbose_name = _('related blog entry'))
 	sender = models.CharField(_('author'), max_length=80)
 	date = models.DateTimeField(_('date of creation'), auto_now=True)
 	homepage = models.CharField(_('homepage'), max_length=200)
