@@ -135,7 +135,6 @@ INSTALLED_APPS = (
 	'grappelli.dashboard',
 	'grappelli',
 	'django.contrib.admin',
-	'django.contrib.admindocs',
 
 	# Static pages
 	'django.contrib.flatpages',
