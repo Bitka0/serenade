@@ -12,6 +12,7 @@ run: compilemessages
 syncdb:
 	cd homepage && python2 manage.py syncdb
 collectstatic:
+	- mkdir static
 	cd homepage && python2 manage.py collectstatic --noinput
 cleardb:
 	- cd homepage && rm database.db
