@@ -54,6 +54,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    
+    # Intentionally last
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
 
 ROOT_URLCONF = 'homepage.urls'
@@ -67,6 +70,7 @@ INSTALLED_APPS = (
 	'django.contrib.contenttypes',
 	'django.contrib.sessions',
 	'django.contrib.messages',
+	'django.contrib.sites',
 	'staticfiles',
 	
 	# Admin interface
@@ -74,7 +78,9 @@ INSTALLED_APPS = (
 	'django.contrib.admin',
 	'django.contrib.admindocs',
 
-	'homepage.pagemanager',
+	# Static pages
+	'django.contrib.flatpages',
+
 	'homepage.blog',
 	'homepage.redirector'
 )
