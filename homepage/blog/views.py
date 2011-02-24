@@ -14,13 +14,13 @@ from django import forms
 import util
 
 def listAll(request):
-	entrylist = Entry.objects.all().order_by('-publishingDate')
+	entrylist = Entry.objects.all().order_by('-creationDate').filter(published = True)
 	context = util.generateContext(request, title = _('Blog'), entries = entrylist)
 	return render_to_response('blog/standard.html', context)
 
 def show(request, url):
 	url = util.stripSlash(url)
-	entry = get_object_or_404(Entry, url = url)
+	entry = get_object_or_404(Entry, url = url, published = True)
 		
 	if request.method == 'POST':
 		form = CommentForm(request.POST)
@@ -41,14 +41,14 @@ def show(request, url):
 
 def listGroups(request, url):
 	url = util.stripSlash(url)
-	entrylist = get_list_or_404(Entry, group__name = url)
+	entrylist = get_list_or_404(Entry, groups__name = url, published = True)
 	title = "Blog: " + url
 	context = util.generateContext(request, title = title, entries = entrylist)
 	return render_to_response('blog/standard.html', context)
 
 def listTags(request, url):
 	url = util.stripSlash(url)
-	entrylist = get_list_or_404(Entry, tag__name = url)
+	entrylist = get_list_or_404(Entry, tags__name = url, published = True)
 	title = "Blog: " + url
 	context = util.generateContext(request, title = title, entries = entrylist)
 	return render_to_response('blog/standard.html', context)

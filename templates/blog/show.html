@@ -8,7 +8,7 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 
 {% block content %}
 	<div>
-		<p>{{ entry.pubDate }}</p>
+		<p>{{ entry.creationDate }}</p>
 		<p>Groups:
 			{% for group in entry.groups.all %}
 				<a href="/blog/group/{{ group }}/">{{ group }}</a>,&nbsp;
@@ -20,7 +20,7 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 			{% endfor %}
 			
 		</p>
-		<p>Author: {{ entry.created_by.get_full_name }}</p>
+		<p>Author: {{ entry.author.get_full_name }}</p>
 		<p>{{ entry.text|safe }}</p>
 	</div>
 	<hr />
