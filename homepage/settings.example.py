@@ -79,7 +79,9 @@ STATIC_URL = '/assets/'
 STATIC_ROOT = '{0}/../assets/'.format(os.getcwd())
 MEDIA_ROOT = '{0}media/'.format(STATIC_ROOT)
 MEDIA_URL = '{0}media/'.format(STATIC_URL)
-FILEBROWSER_DIRECTORY = MEDIA_ROOT
+FILEBROWSER_DIRECTORY = MEDIA_ROOT + 'uploads/'
+FILEBROWSER_URL_FILEBROWSER_MEDIA = '{0}filebrowser/'.format(STATIC_URL)
+FILEBROWSER_PATH_FILEBROWSER_MEDIA = MEDIA_ROOT
 
 ADMIN_MEDIA_PREFIX = STATIC_URL + "grappelli/"
 
@@ -142,4 +144,5 @@ INSTALLED_APPS = (
 
 	'homepage.navigation',
 	'homepage.blog',
+	'homepage.timemanager',
 )

@@ -33,22 +33,29 @@ class CustomIndexDashboard(Dashboard):
 				
 		# append another link list module for "support".
 		self.children.append(modules.LinkList(
+			_('Media Management'),
+				column=2,
+				children=[
+					 {
+						  'title': _('File browser'),
+						  'url': '/admin/filebrowser/browse/',
+						  'external': False,
+					 },
+				]
+		))
+
+		self.children.append(modules.LinkList(
 			_('Support'),
 			column=2,
 			children=[
 				{
-					'title': _('Young Pirates Helpdesk'),
-					'url': 'http://helpdesk.junge-piraten.de/',
+					'title': _('Serenade Documentation'),
+					'url': 'http://serenade.readthedocs.org/',
 					'external': True,
 				},
 				{
 					'title': _('Django Documentation'),
 					'url': 'http://docs.djangoproject.com/',
-					'external': True,
-				},
-				{
-					'title': _('Grappelli Documentation'),
-					'url': 'http://packages.python.org/django-grappelli/',
 					'external': True,
 				},
 			]

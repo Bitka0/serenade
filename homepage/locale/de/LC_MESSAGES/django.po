@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-22 19:29+0100\n"
-"PO-Revision-Date: 2011-02-22 19:30+0100\n"
+"POT-Creation-Date: 2011-02-23 00:56+0100\n"
+"PO-Revision-Date: 2011-02-23 00:56+0100\n"
 "Last-Translator: Lukas Martini <lukas.martini@unionhost.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -58,34 +58,38 @@ msgid "Administration"
 msgstr "Administration"
 
 #: dashboard.py:36
+msgid "Media Management"
+msgstr "Medienverwaltung"
+
+#: dashboard.py:40
+msgid "File browser"
+msgstr "Dateiverwalter"
+
+#: dashboard.py:48
 msgid "Support"
 msgstr "Support"
 
-#: dashboard.py:40
-msgid "Young Pirates Helpdesk"
-msgstr "Junge Piraten Helpdesk"
+#: dashboard.py:52
+msgid "Serenade Documentation"
+msgstr "Serenade-Dokumentation"
 
-#: dashboard.py:45
+#: dashboard.py:57
 msgid "Django Documentation"
 msgstr "Django-Dokumentation"
 
-#: dashboard.py:50
-msgid "Grappelli Documentation"
-msgstr "Grappelli-Dokumentation"
-
-#: dashboard.py:59
+#: dashboard.py:66
 msgid "Latest wiki edits"
 msgstr "Letzte Wiki-Änderungen"
 
-#: dashboard.py:67
+#: dashboard.py:74
 msgid "Recent Actions"
 msgstr "Kürzliche Aktionen"
 
-#: blog/admin.py:19
+#: blog/admin.py:20
 msgid "Categorisation"
 msgstr "Einordnung"
 
-#: blog/admin.py:20
+#: blog/admin.py:21
 msgid "Further options"
 msgstr "Weitere Optionen"
 
@@ -142,8 +146,8 @@ msgid "text"
 msgstr "Text"
 
 #: blog/models.py:45
-#: blog/models.py:61
 #: blog/models.py:64
+#: blog/models.py:67
 msgid "comment"
 msgstr "Kommentar"
 
@@ -151,35 +155,35 @@ msgstr "Kommentar"
 msgid "What you enter here is only displayed in the admin area."
 msgstr "Was du hier eingibst wird nur im Admin-Bereich angezeigt."
 
-#: blog/models.py:51
+#: blog/models.py:54
 msgid "blogentry"
 msgstr "Blogeintrag"
 
-#: blog/models.py:52
+#: blog/models.py:55
 msgid "blogentries"
 msgstr "Blogeinträge"
 
-#: blog/models.py:55
+#: blog/models.py:58
 msgid "related blog entry"
 msgstr "Zugehöriger Blogeintrag"
 
-#: blog/models.py:56
+#: blog/models.py:59
 msgid "author"
 msgstr "Author"
 
-#: blog/models.py:57
+#: blog/models.py:60
 msgid "date of creation"
 msgstr "Erstellungsdatum"
 
-#: blog/models.py:58
+#: blog/models.py:61
 msgid "homepage"
 msgstr "Homepage"
 
-#: blog/models.py:60
+#: blog/models.py:63
 msgid "subject"
 msgstr "Betreff"
 
-#: blog/models.py:65
+#: blog/models.py:68
 msgid "comments"
 msgstr "Kommentare"
 
@@ -211,22 +215,16 @@ msgstr "Navigationseintrag"
 msgid "navigation entries"
 msgstr "Navigationseinträge"
 
-#: redirector/models.py:12
-msgid "The local URL which should be redirected."
-msgstr "Die lokale weiterzuleitende Adresse (URL)."
-
-#: redirector/models.py:17
-msgid "{0} to {1}"
-msgstr "{0} nach {1}"
-
-#: redirector/models.py:20
-msgid "redirect"
-msgstr "Weiterleitung"
-
-#: redirector/models.py:21
-msgid "redirects"
-msgstr "Weiterleitungen"
-
+#~ msgid "Young Pirates Helpdesk"
+#~ msgstr "Junge Piraten Helpdesk"
+#~ msgid "The local URL which should be redirected."
+#~ msgstr "Die lokale weiterzuleitende Adresse (URL)."
+#~ msgid "{0} to {1}"
+#~ msgstr "{0} nach {1}"
+#~ msgid "redirect"
+#~ msgstr "Weiterleitung"
+#~ msgid "redirects"
+#~ msgstr "Weiterleitungen"
 #~ msgid "Internal comment on the page, never displayed publicly."
 #~ msgstr "Interner Kommentar zu der Seite, wird nie öffentlich gezeigt."
 #~ msgid "page"
