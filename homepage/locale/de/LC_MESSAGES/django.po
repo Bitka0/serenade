@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-23 00:56+0100\n"
-"PO-Revision-Date: 2011-02-23 00:56+0100\n"
+"POT-Creation-Date: 2011-02-24 17:33+0100\n"
+"PO-Revision-Date: 2011-02-24 17:33+0100\n"
 "Last-Translator: Lukas Martini <lukas.martini@unionhost.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -85,17 +85,26 @@ msgstr "Letzte Wiki-Änderungen"
 msgid "Recent Actions"
 msgstr "Kürzliche Aktionen"
 
+#: blog/admin.py:16
+msgid "Publish selected blog entries"
+msgstr "Ausgewählte Blogeinträge veröffentlichen"
+
 #: blog/admin.py:20
+msgid "Unpublish selected blog entries"
+msgstr "Ausgewählte Blogeinträge als Entwurf markieren"
+
+#: blog/admin.py:26
 msgid "Categorisation"
 msgstr "Einordnung"
 
-#: blog/admin.py:21
+#: blog/admin.py:27
 msgid "Further options"
 msgstr "Weitere Optionen"
 
 #: blog/models.py:15
 #: blog/models.py:25
 #: navigation/models.py:12
+#: timemanager/models.py:12
 msgid "name"
 msgstr "Name"
 
@@ -104,7 +113,7 @@ msgid "group"
 msgstr "Gruppe"
 
 #: blog/models.py:22
-#: blog/models.py:40
+#: blog/models.py:41
 msgid "groups"
 msgstr "Gruppen"
 
@@ -113,11 +122,12 @@ msgid "tag"
 msgstr "Tag"
 
 #: blog/models.py:32
-#: blog/models.py:41
+#: blog/models.py:42
 msgid "tags"
 msgstr "Tags"
 
 #: blog/models.py:35
+#: blog/models.py:58
 msgid "URL"
 msgstr "Adresse (URL)"
 
@@ -126,64 +136,69 @@ msgid "This field is automatically filled based on the title you enter, however 
 msgstr "Dieses Feld wird automatisch auf der Basis des von dir eingegebenen Titels gefüllt, wenn du jedoch eine eigene Adresse angeben willst, kannst du das hier."
 
 #: blog/models.py:37
-msgid "creator"
-msgstr "Autor"
+#: blog/models.py:66
+msgid "author"
+msgstr "Author"
 
 #: blog/models.py:38
 msgid "publication date"
 msgstr "Veröffentlichungsdatum"
 
 #: blog/models.py:39
+msgid "published"
+msgstr "Veröffentlicht"
+
+#: blog/models.py:40
 msgid "date of last modification"
 msgstr "Datum der letzten Modifikation"
 
-#: blog/models.py:43
+#: blog/models.py:44
 msgid "title"
 msgstr "Titel"
 
-#: blog/models.py:44
+#: blog/models.py:45
 msgid "text"
 msgstr "Text"
 
-#: blog/models.py:45
-#: blog/models.py:64
-#: blog/models.py:67
+#: blog/models.py:46
+#: blog/models.py:71
+#: blog/models.py:74
 msgid "comment"
 msgstr "Kommentar"
 
-#: blog/models.py:45
+#: blog/models.py:46
 msgid "What you enter here is only displayed in the admin area."
 msgstr "Was du hier eingibst wird nur im Admin-Bereich angezeigt."
 
-#: blog/models.py:54
+#: blog/models.py:53
+msgid "absolute URL"
+msgstr "Absolute URL (Adresse)"
+
+#: blog/models.py:61
 msgid "blogentry"
 msgstr "Blogeintrag"
 
-#: blog/models.py:55
+#: blog/models.py:62
 msgid "blogentries"
 msgstr "Blogeinträge"
 
-#: blog/models.py:58
+#: blog/models.py:65
 msgid "related blog entry"
 msgstr "Zugehöriger Blogeintrag"
 
-#: blog/models.py:59
-msgid "author"
-msgstr "Author"
-
-#: blog/models.py:60
+#: blog/models.py:67
 msgid "date of creation"
 msgstr "Erstellungsdatum"
 
-#: blog/models.py:61
+#: blog/models.py:68
 msgid "homepage"
 msgstr "Homepage"
 
-#: blog/models.py:63
+#: blog/models.py:70
 msgid "subject"
 msgstr "Betreff"
 
-#: blog/models.py:68
+#: blog/models.py:75
 msgid "comments"
 msgstr "Kommentare"
 
@@ -215,6 +230,51 @@ msgstr "Navigationseintrag"
 msgid "navigation entries"
 msgstr "Navigationseinträge"
 
+#: timemanager/models.py:13
+msgid "description"
+msgstr "Beschreibung"
+
+#: timemanager/models.py:16
+msgid "start day"
+msgstr "Starttag"
+
+#: timemanager/models.py:17
+msgid "end day"
+msgstr "Endtag"
+
+#: timemanager/models.py:19
+msgid "start time"
+msgstr "Startzeit"
+
+#: timemanager/models.py:19
+#: timemanager/models.py:20
+msgid "If you omit this field, it is assumed this event takes part the whole day."
+msgstr "Wenn du dieses Feld auslässt, wird angenommen, dass diese Veranstaltung den ganzen Tag stattfindet."
+
+#: timemanager/models.py:20
+msgid "end time"
+msgstr "Endzeit"
+
+#: timemanager/models.py:27
+msgid "Whole day"
+msgstr "Ganztägig"
+
+#: timemanager/models.py:30
+msgid "Calendar entry"
+msgstr "Kalendereintrag"
+
+#: timemanager/models.py:31
+msgid "Calendar entries"
+msgstr "Kalendereinträge"
+
+#~ msgid "Published"
+#~ msgstr "Veröffentlicht"
+#~ msgid "Draft"
+#~ msgstr "Entwurf"
+#~ msgid "Mark selected entries as published"
+#~ msgstr "Ausgewählte Blogeinträge veröffentlichen"
+#~ msgid "creator"
+#~ msgstr "Autor"
 #~ msgid "Young Pirates Helpdesk"
 #~ msgstr "Junge Piraten Helpdesk"
 #~ msgid "The local URL which should be redirected."

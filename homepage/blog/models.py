@@ -34,8 +34,9 @@ class Tag(models.Model):
 class Entry(models.Model):
 	url = models.SlugField(_('URL'), max_length=200, help_text = _('This field is automatically filled based on the title you enter, however if you want to customize the URL, here you can.'))
 
-	created_by = models.ForeignKey(User, verbose_name = _('creator'))
-	publishingDate = models.DateTimeField(_('publication date'), auto_now_add=True)
+	author = models.ForeignKey(User, verbose_name = _('author'))
+	creationDate = models.DateTimeField(_('publication date'), auto_now_add=True)
+	published = models.BooleanField(_('published'))
 	lastModified = models.DateTimeField(_('date of last modification'), auto_now=True)
 	groups = models.ManyToManyField(Group, verbose_name = _('groups'), blank=True)
 	tags = models.ManyToManyField(Tag, verbose_name = _('tags'), blank=True)
@@ -47,8 +48,16 @@ class Entry(models.Model):
 	def __unicode__(self):
 		return self.title
 	
-	def get_absolute_url(self):
-		return "/blog/" + self.url + "/"
+	def getAbsoluteUrl(self):
+		return '/blog/{0}/'.format(self.url)
+	getAbsoluteUrl.short_description = _('absolute URL')
+	getAbsoluteUrl.admin_order_field = 'url'
+
+	def getLink(self):
+		return '<a href="{0}">{1}</a>'.format(self.getAbsoluteUrl(), self.url)
+	getLink.allow_tags = True
+	getLink.short_description = _('URL')
+	getLink.admin_order_field = 'url'
 
 	class Meta:
 		verbose_name = _('blogentry')

@@ -11,11 +11,17 @@ from django.contrib import admin
 from django.contrib.auth.models import User
 from settings import STATIC_URL
 
-class EntryAdmin(admin.ModelAdmin):
-	# Detail display
+def makePublished(modeladmin, request, queryset):
+    queryset.update(published = True)
+makePublished.short_description = _('Publish selected blog entries')
 
+def makeDraft(modeladmin, request, queryset):
+    queryset.update(published = False)
+makeDraft.short_description = _('Unpublish selected blog entries')
+
+class EntryAdmin(admin.ModelAdmin):
 	fieldsets = [
-		(None,						{'fields': ['title', 'created_by']}),
+		(None,						{'fields': ['title', 'author', 'published']}),
 		(None,						{'fields': ['text']}),
 		(_('Categorisation'),		{'fields': ['groups', 'tags'], 'classes': ['collapse open']}),
 		(_('Further options'),		{'fields': ['url', 'admincomment'], 'classes': ['collapse closed']}),
@@ -25,10 +31,17 @@ class EntryAdmin(admin.ModelAdmin):
 	prepopulated_fields = {'url': ('title',)}
 
 	# List display
-	list_display = ('title', 'url', 'created_by', 'lastModified')
+	list_display = ('title', 'getLink', 'author', 'lastModified', 'published')
+	
+	list_filter = ['published', 'author']
+	date_hierarchy = 'creationDate'
+	
 	# Fields in which should be searched.
 	search_fields = ['title', 'url', 'text']
 	
+	actions = [makePublished, makeDraft]
+	
+	# WYSIWTF-Editor
 	class Media:
 		js = [STATIC_URL + 'grappelli/tinymce/jscripts/tiny_mce/tiny_mce.js', STATIC_URL + 'grappelli/tinymce_setup/tinymce_setup.js',]
 
