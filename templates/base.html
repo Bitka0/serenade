@@ -23,7 +23,7 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 				{% if flatpage.title %}{{ flatpage.title }}{% endif %}
 				&raquo;
 			{% endif %}
-			Junge Piraten 
+			Junge Piraten
 		</title>
 		<style type="text/css" media="all">
 			body { font-family: 'Liberation Sans', 'Linux Liberation Sans', 'Arial', sans-serif; }
@@ -33,7 +33,7 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 
 	<body>
 		{% comment %}{% flatpage_menu %}{% endcomment %}
-		{% simpleMenu %}
+		{% simpleMenu main %}
 		{% tmSidebar %}
 			{% block aboveTitle %}{% endblock %}
 			{% if title %}<h1>{{ title|upper }}</h1>{% endif %}

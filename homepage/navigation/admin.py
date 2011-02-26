@@ -8,4 +8,7 @@
 from models import Entry
 from django.contrib import admin
 
-admin.site.register(Entry)
+class EntryAdmin(admin.ModelAdmin):
+	list_display = ('name', 'target', 'menu')
+
+admin.site.register(Entry, EntryAdmin)
