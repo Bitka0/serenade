@@ -1,0 +1,46 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+body {
+	padding: 25px;
+	padding-top: 5px;
+	width:90%;
+}
+
+h1, h2 {
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+h1 {
+	font-size: 30px;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #000;
+}
+
+h2 {
+	font-size: 20px;
+}
+
+div, table, tr, td {
+	background-color: #eee;
+}
+
+div {
+	padding: 5px;
+}
+
+table {
+	margin-top: 10px;
+}
+
+td {
+	width: 250px;
+}
+
+.today {
+	background-color:#999999;
+}

@@ -23,3 +23,4 @@ class Entry(models.Model):
 	class Meta:
 		verbose_name = _('navigation entry')
 		verbose_name_plural = _('navigation entries')
+		ordering = ['position']

@@ -7,5 +7,27 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 {% endcomment %}
 
 {% block content %}
-
+{{
+<table class="calendar" border="1">
+	<tr>
+		<th>MO</th>
+		<th>DI</th>
+		<th>MI</th>
+		<th>DO</th>
+		<th>FR</th>
+		<th>SA</th>
+		<th>SO</th>
+	</tr>
+	{% for row in entries %}
+	<tr>
+	{% for day in row %}
+	<td class="{{ day.1 }}">{{ day.0 }}<br>
+	{% for event in day.2 %}
+	{{ event.name }}<br>
+	{% endfor %}
+	</td>
+	{% endfor %}
+	</tr>
+	{% endfor %}
+</table>
 {% endblock %}

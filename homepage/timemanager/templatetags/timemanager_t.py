@@ -16,7 +16,7 @@ class TmSidebarNode(Node):
 		calendar = '<ul>'
 		for entry in entrylist:
 			calendar += '<li>{0} ({1})</li>'.format(entry.name, entry.startDay)
-		calendar += '</ul>'
+		calendar += '</ul><a href="/calendar/">More...</a>'
 		return calendar
 
 def tmSidebar(parser, token):
