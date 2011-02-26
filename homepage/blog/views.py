@@ -14,7 +14,7 @@ from django import forms
 import util
 
 def listAll(request):
-	entrylist = Entry.objects.all().order_by('-creationDate').filter(published = True)
+	entrylist = Entry.objects.all().filter(published = True)
 	context = util.generateContext(request, title = _('Blog'), entries = entrylist)
 	return render_to_response('blog/standard.html', context)
 
@@ -35,7 +35,7 @@ def show(request, url):
 	else:
 		form = CommentForm()
 		
-	context = util.generateContext(request, contextType = 'RequestContext', title = entry.title, entry = entry, commentform = form, comments = Comment.objects.filter(entry = entry).order_by('-date'))
+	context = util.generateContext(request, contextType = 'RequestContext', title = entry.title, entry = entry, commentform = form, comments = Comment.objects.filter(entry = entry))
 	return render_to_response('blog/show.html', context)
 
 

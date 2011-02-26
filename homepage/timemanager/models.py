@@ -11,7 +11,9 @@ from django.db import models
 class Entry(models.Model):
 	name = models.CharField(_('name'), max_length = 200)
 	description = models.TextField(_('description'), blank = True)
-
+	
+	published = models.BooleanField(_('published'))
+	
 	# When
 	startDay = models.DateField(_('start day'))
 	endDay = models.DateField(_('end day'))

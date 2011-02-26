@@ -1,3 +1,6 @@
+{% comment %}{% load flatpage_menu %}{% endcomment %}
+{% load timemanager_t %}
+{% load navigation_t %}
 {% comment %}
 Copyright (c) 2011 Lukas Martini, Phillip Thelen.
 This file may be used and distributed under the terms found in the
@@ -29,6 +32,9 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 	</head>
 
 	<body>
+		{% comment %}{% flatpage_menu %}{% endcomment %}
+		{% simpleMenu %}
+		{% tmSidebar %}
 			{% block aboveTitle %}{% endblock %}
 			{% if title %}<h1>{{ title|upper }}</h1>{% endif %}
 			{% if flatpage.title %}<h1>{{ flatpage.title|upper }}</h1>{% endif %}

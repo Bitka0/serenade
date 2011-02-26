@@ -62,6 +62,7 @@ class Entry(models.Model):
 	class Meta:
 		verbose_name = _('blogentry')
 		verbose_name_plural = _('blogentries')
+		ordering = ['-creationDate']
 
 class Comment(models.Model):
 	entry = models.ForeignKey(Entry, verbose_name = _('related blog entry'))
@@ -75,6 +76,7 @@ class Comment(models.Model):
 	class Meta:
 		verbose_name = _('comment')
 		verbose_name_plural = _('comments')
+		ordering = ['-date']
 
 class CommentForm(forms.Form):
 	subject = forms.CharField(max_length=100, required=False)
