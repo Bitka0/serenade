@@ -30,13 +30,13 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 		<div id="header">
 			<h1><a href="/" title="Junge PIRATEN">Junge PIRATEN</a></h1>
 			<div id="navigation"><ul>
-				{% simpleMenu main %}
+				{% simpleMenu top %}
 			</ul></div>
 			<div class="cl"></div>
 			<div id="subnavigation"></div>
 		</div>
 		<div id="sidebar-left" class="sidebar">
-			{% tmSidebar %}
+			{% simpleMenu main %}
 		</div>
 		{% block aboveTitle %}{% endblock %}
 		{% if title %}<h1>{{ title|upper }}</h1>{% endif %}
@@ -46,12 +46,12 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 			{% block content %}{% endblock %}
 		</div>	
 		<div id="sidebar-right" class="sidebar">
-			Blubb.
+			{% tmSidebar %}
 		</div>
 		<br class="cl" />
 		<div id="footer">
 			<div><p style="float:left; width:50%;">Diese Website ist unter einer <a href="http://creativecommons.org/licenses/by-sa/2.0/de/" title="Creative Commons: Attribution-ShareAlike 2.0" target="_new" rel="license">Creative Commons: BY-SA 2.0 Lizenz</a> lizenziert.</p>
-			<p style="float:right; width:50%; text-align:right;"><a href="/impressum/" title="Impressum">Impressum</a> | <a href="/impressum/datenschutzerklaerung/" title="Datenschutzerkl&auml;rung">Datenschutzerkl&auml;rung</a> | <a href="/impressum/kontakt/" title="Kontakt">Kontakt</a></p>
+			{% simpleMenu footer %}
 			<br class="cl" /></div>
 		</div>
 	</div>
