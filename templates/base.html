@@ -38,11 +38,10 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 		<div id="sidebar-left" class="sidebar">
 			{% simpleMenu main %}
 		</div>
+		<div id="content">
 		{% block aboveTitle %}{% endblock %}
 		{% if title %}<h1>{{ title|upper }}</h1>{% endif %}
 		{% if flatpage.title %}<h1>{{ flatpage.title|upper }}</h1>{% endif %}
-
-		<div id="content">
 			{% block content %}{% endblock %}
 		</div>	
 		<div id="sidebar-right" class="sidebar">

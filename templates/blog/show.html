@@ -8,21 +8,16 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 
 {% block content %}
 	<div>
-		<p>{{ entry.creationDate }}</p>
-		<p>Groups:
-			{% for group in entry.groups.all %}
-				<a href="/blog/group/{{ group }}/">{{ group }}</a>,&nbsp;
-			{% endfor %}
-		</p>
-		<p>Tags:
-			{% for tag in entry.tags.all %}
-				<a href="/blog/tag/{{ tag }}/">{{ tag }}</a>,&nbsp;
-			{% endfor %}
-			
-		</p>
-		<p>Author: {{ entry.author.get_full_name }}</p>
+<p class="meta">{{  entry.author.get_full_name }} - 
+{% for group in entry.groups.all %}
+<a href="/blog/group/{{ group }}/">{{ group }}</a>,&nbsp;
+{% endfor %} - 
+{{ entry.creationDate }}</p>
 		<p>{{ entry.text|safe }}</p>
 	</div>
+{% for tag in entry.tags.all %}
+<a href="/blog/tag/{{ tag }}/">{{ tag }}</a>,&nbsp;
+{% endfor %}
 	<hr />
 	<div>
 		{% for comment in comments %}
