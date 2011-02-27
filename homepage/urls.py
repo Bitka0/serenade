@@ -6,7 +6,7 @@
 # program. If you haven't, please refer to bofh@junge-piraten.de.
 
 from django.conf.urls.defaults import *
-from feed.feeds import blogAll
+from feed.feeds import blogAll, selectGroup, selectTag
 
 # Admin
 from django.contrib import admin
@@ -19,9 +19,11 @@ urlpatterns = patterns('',
 	(r'^admin/', include(admin.site.urls)),
 	
 	(r'^blog/$', 'blog.views.listAll'),
+	(r'^blog/group/feed/(?P<url>.*)$', selectGroup()),
 	(r'^blog/group/(?P<url>.*)$', 'blog.views.listGroups'),
+	(r'^blog/tag/feed/(?P<url>.*)$', selectTag()),
 	(r'^blog/tag/(?P<url>.*)$', 'blog.views.listTags'),
-	(r'^blog/(?P<url>.*)$', 'blog.views.show'),
 	(r'^blog/feed/$', blogAll()),
+	(r'^blog/(?P<url>.*)$', 'blog.views.show'),
 	(r'^calendar/(?P<url>.*)$', 'timemanager.views.showCalendar'),
 )

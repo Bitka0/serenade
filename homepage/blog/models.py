@@ -48,13 +48,13 @@ class Entry(models.Model):
 	def __unicode__(self):
 		return self.title
 	
-	def getAbsoluteUrl(self):
+	def get_absolute_url(self):
 		return '/blog/{0}/'.format(self.url)
-	getAbsoluteUrl.short_description = _('absolute URL')
-	getAbsoluteUrl.admin_order_field = 'url'
+	get_absolute_url.short_description = _('absolute URL')
+	get_absolute_url.admin_order_field = 'url'
 
 	def getLink(self):
-		return '<a href="{0}">{1}</a>'.format(self.getAbsoluteUrl(), self.url)
+		return '<a href="{0}">{1}</a>'.format(self.get_absolute_url(), self.url)
 	getLink.allow_tags = True
 	getLink.short_description = _('URL')
 	getLink.admin_order_field = 'url'
