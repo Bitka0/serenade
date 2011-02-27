@@ -1,46 +1,102 @@
-* {
-	padding: 0px;
-	margin: 0px;
+/*
+Theme Name: Junge Piraten Orange
+Theme URI: http://junge-piraten.de/
+Author: Dennis Morhardt & Patrick Rauscher & Daniel Sabinizak
+Author URI: http://www.dennismorhardt.de/
+*/
+
+/* reset.css um einen einheitlichen Stand in allen Browsern zu haben */
+@import url("reset.css");
+
+/* Body */
+body { font:14px/20px sans-serif; color:#000; background:url("../images/background.png") repeat-x 0px 40px; }
+
+/* Basisklassen */
+.cl { clear:both; }
+
+/* Basiselemente */
+a { color:#2884D2; color: #f7931e; text-decoration:none; }
+a:hover { color:#333; text-decoration:underline; }
+h1 { font:bold 23px/normal sans-serif; margin:0 0 15px; }
+h3 { margin:0 0 10px; }
+
+/* Grundrahmen */
+#wrapper { width:960px; margin:0 auto; }
+
+/* Header mit Navigation und Subnavigation */
+#header { margin:22px 0px 25px; }
+#header h1 { width:180px; height:75px; float:left; }
+#header h1 a { display:block; width:180px; height:75px; text-indent:-9999999px; background:url("../images/logo.png") no-repeat; }
+#header #navigation { width:780px; float:right; font:bold 15px/normal sans-serif; }
+#header #navigation a { color:#fff; }
+#header #navigation ul { margin:27px 0 0 5px; }
+#header #navigation ul li { float:left; padding:0 0 0 15px; }
+#header #subnavigation { font:12px/normal sans-serif; padding:10px 0 0 200px; color:#999; margin:-20px 0 0; }
+
+.sidebar>ul>li { list-style:none; }
+.sidebar h2 { font:18px sans-serif; color:#0099FF; color: #f7931e; font-weight: bold; margin-top: 10px; margin-bottom:0px; padding-bottom:5px; }
+
+/* Hauptnavigation links */
+#sidebar-left { width:178px; float:left; margin:0 20px 30px 0; border-right:1px solid #e2e2e2;  }
+#sidebar-left>ul { /*background:#F1F7FD; background-color: #fff3e5; */ border-top:1px solid #D0E5F7; border-bottom:1px solid #D0E5F7; border: none; padding:10px 15px; font:bold 15px/25px sans-serif; color:#000; }
+#sidebar-left ul { padding:3px 0 7px 15px; color:#D0E5F7; list-style:square; font:normal 12px/21px sans-serif; color: #000; }
+
+#sidebar-left a, #sidebar-right  a {
+	color: #2884d2;
 }
 
-body {
-	padding: 25px;
-	padding-top: 5px;
-	width:90%;
+/* Inhaltsbereich */
+#content { width:530px; margin:10px 30px 30px 0; float:left; }
+#content p {	margin:0 0 15px; }
+#content .more { font:normal 12px/21px sans-serif; border-top:1px dotted #d5d5d5; padding:5px 0 0; color:#999; }
+#content .more a { color:#666; }
+
+/* Sidebar */
+/*#sidebar-right { width:179px; float:right; margin:20px 0 30px; border-left:1px solid #e2e2e2; padding:15px 0 0 20px; font:12px/18px sans-serif; }*/
+#sidebar-right { width:179px; float:right; margin:20px 0 30px; border-left:1px solid #e2e2e2; padding:0 0 0 20px; font:12px/18px sans-serif; }
+
+#sidebar-right .widget { margin:5px 0 15px; }
+#sidebar-right p { padding:0 0 10px 0; }
+#sidebar-right>ul { list-style:square; padding:0 0 10px 0px; }
+
+/* Footer */
+#footer { border-top:1px solid #e2e2e2; padding:15px 0 20px; margin:10px 0 0; font:12px/18px "Lucida Grande","Lucida Sans Unicode",Helvetica,Tahoma,Verdana,Arial,sans-serif;color:#999; }
+#footer a { color:#666; }
+
+/* WordPress Pflicht CSS */
+.aligncenter, div.aligncenter { display:block; margin-left:auto; margin-right:auto;
 }
 
-h1, h2 {
-	margin-bottom: 10px;
-	margin-top: 10px;
+.alignleft {
+   float: left; margin:4px 20px 5px 0;
 }
 
-h1 {
-	font-size: 30px;
-	border-bottom-width: 1px;
-	border-bottom-style: dotted;
-	border-bottom-color: #000;
+.alignright {
+   float: right; margin:4px 0 20px 5px;
 }
 
-h2 {
-	font-size: 20px;
+.wp-caption {
+   border: 1px solid #ddd;
+   text-align: center;
+   background-color: #f3f3f3;
+   padding-top: 4px;
+   
+   /* optional rounded corners for browsers that support it */
+   -moz-border-radius: 3px;
+   -khtml-border-radius: 3px;
+   -webkit-border-radius: 3px;
+   border-radius: 3px;
 }
 
-div, table, tr, td {
-	background-color: #eee;
+.wp-caption img {
+   margin: 0;
+   padding: 0;
+   border: 0 none;
 }
 
-div {
-	padding: 5px;
-}
-
-table {
-	margin-top: 10px;
-}
-
-td {
-	width: 250px;
-}
-
-.today {
-	background-color:#999999;
+.wp-caption p.wp-caption-text {
+   font-size: 11px;
+   line-height: 17px;
+   padding: 0 4px 0;
+   margin: 0 0 5px !important;
 }
