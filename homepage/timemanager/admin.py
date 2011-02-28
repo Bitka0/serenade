@@ -10,6 +10,31 @@ from models import Entry
 from django.contrib import admin
 
 class EntryAdmin(admin.ModelAdmin):
-	list_display = ('name', 'wholeDay')
+	def save_model(self, request, obj, form, change):
+		if obj.startTime == None:
+			obj.startTime = '00:00:00'
+		if obj.endTime == None:
+			obj.endTime = '23:59:00'
+		if obj.startTime == '00:00:00' and obj.endTime == '23:59:00':
+			obj.wholeDay = True
+		else:
+			obj.wholeDay = False
+		obj.save()
+
+	
+	fieldsets = [
+		(None,						{'fields': ['name', 'published']}),
+		(None,						{'fields': ['description']}),
+		(_('Date'),					{'fields': [('startDay', 'endDay'), ('startTime', 'endTime')]}),
+		(_('Further options'),		{'fields': ['url']}),
+	]
+	
+	# Automatically fill the url field based on what's given as title.
+	prepopulated_fields = {'url': ('name',)}
+	
+	search_fields = ['name', 'url', 'description']
+	
+	list_display = ('name', 'wholeDay', 'startDay', 'endDay', 'startTime', 'endTime', 'published')
+	list_filter = ('published',)
 
 admin.site.register(Entry, EntryAdmin)

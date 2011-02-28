@@ -10,6 +10,8 @@ from django.db import models
 
 class Entry(models.Model):
 	name = models.CharField(_('name'), max_length = 200)
+	url = models.SlugField(_('URL'), max_length=200, help_text = _('This field is automatically filled based on the title you enter, however if you want to customize the URL, here you can.'))
+	
 	description = models.TextField(_('description'), blank = True)
 	
 	published = models.BooleanField(_('published'))
@@ -18,13 +20,11 @@ class Entry(models.Model):
 	startDay = models.DateField(_('start day'))
 	endDay = models.DateField(_('end day'))
 	
+	wholeDay = models.BooleanField(_('whole day'))
+	
 	startTime = models.TimeField(_('start time'), blank = True, help_text = _('If you omit this field, it is assumed this event takes part the whole day.'))
 	endTime = models.TimeField(_('end time'), blank = True, help_text = _('If you omit this field, it is assumed this event takes part the whole day.'))
 	
-	def wholeDay(self):
-		if not self.startTime or not self.endTime:
-			return True
-		return False
 	
 	wholeDay.short_description = _('Whole day')
 	
