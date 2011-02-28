@@ -17,7 +17,7 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 <h2><a href="/blog/{{entry.url}}/">{{ entry.title }}</a></h2>
 <div class="post-content">
 </div>
-<p>{{ entry.text|safe }}</p>
+<p>{{ entry.text|safe|truncatewords:500 }}</p>
 {% for tag in entry.tags.all %}
 <a href="/blog/tag/{{ tag }}/">{{ tag }}</a>,&nbsp;
 {% endfor %}

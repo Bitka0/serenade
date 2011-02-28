@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-24 17:33+0100\n"
+"POT-Creation-Date: 2011-02-28 19:38+0100\n"
 "PO-Revision-Date: 2011-02-24 17:33+0100\n"
 "Last-Translator: Lukas Martini <lukas.martini@unionhost.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,8 +40,7 @@ msgstr "Seitenverwaltung"
 msgid "Redirector"
 msgstr "Weiterleiter"
 
-#: __init__.py:16
-#: blog/views.py:18
+#: __init__.py:16 blog/views.py:18
 msgid "Blog"
 msgstr "Blog"
 
@@ -97,13 +96,11 @@ msgstr "Ausgewählte Blogeinträge als Entwurf markieren"
 msgid "Categorisation"
 msgstr "Einordnung"
 
-#: blog/admin.py:27
+#: blog/admin.py:27 timemanager/admin.py:29
 msgid "Further options"
 msgstr "Weitere Optionen"
 
-#: blog/models.py:15
-#: blog/models.py:25
-#: navigation/models.py:12
+#: blog/models.py:15 blog/models.py:25 navigation/models.py:18
 #: timemanager/models.py:12
 msgid "name"
 msgstr "Name"
@@ -112,8 +109,7 @@ msgstr "Name"
 msgid "group"
 msgstr "Gruppe"
 
-#: blog/models.py:22
-#: blog/models.py:41
+#: blog/models.py:22 blog/models.py:41
 msgid "groups"
 msgstr "Gruppen"
 
@@ -121,22 +117,24 @@ msgstr "Gruppen"
 msgid "tag"
 msgstr "Tag"
 
-#: blog/models.py:32
-#: blog/models.py:42
+#: blog/models.py:32 blog/models.py:42
 msgid "tags"
 msgstr "Tags"
 
-#: blog/models.py:35
-#: blog/models.py:58
+#: blog/models.py:35 blog/models.py:59 timemanager/models.py:13
 msgid "URL"
 msgstr "Adresse (URL)"
 
-#: blog/models.py:35
-msgid "This field is automatically filled based on the title you enter, however if you want to customize the URL, here you can."
-msgstr "Dieses Feld wird automatisch auf der Basis des von dir eingegebenen Titels gefüllt, wenn du jedoch eine eigene Adresse angeben willst, kannst du das hier."
+#: blog/models.py:35 timemanager/models.py:13
+msgid ""
+"This field is automatically filled based on the title you enter, however if "
+"you want to customize the URL, here you can."
+msgstr ""
+"Dieses Feld wird automatisch auf der Basis des von dir eingegebenen Titels "
+"gefüllt, wenn du jedoch eine eigene Adresse angeben willst, kannst du das "
+"hier."
 
-#: blog/models.py:37
-#: blog/models.py:66
+#: blog/models.py:37 blog/models.py:69
 msgid "author"
 msgstr "Author"
 
@@ -144,7 +142,7 @@ msgstr "Author"
 msgid "publication date"
 msgstr "Veröffentlichungsdatum"
 
-#: blog/models.py:39
+#: blog/models.py:39 timemanager/models.py:17
 msgid "published"
 msgstr "Veröffentlicht"
 
@@ -160,9 +158,7 @@ msgstr "Titel"
 msgid "text"
 msgstr "Text"
 
-#: blog/models.py:46
-#: blog/models.py:71
-#: blog/models.py:74
+#: blog/models.py:46 blog/models.py:74 blog/models.py:77
 msgid "comment"
 msgstr "Kommentar"
 
@@ -174,123 +170,212 @@ msgstr "Was du hier eingibst wird nur im Admin-Bereich angezeigt."
 msgid "absolute URL"
 msgstr "Absolute URL (Adresse)"
 
-#: blog/models.py:61
+#: blog/models.py:63
 msgid "blogentry"
 msgstr "Blogeintrag"
 
-#: blog/models.py:62
+#: blog/models.py:64
 msgid "blogentries"
 msgstr "Blogeinträge"
 
-#: blog/models.py:65
+#: blog/models.py:68
 msgid "related blog entry"
 msgstr "Zugehöriger Blogeintrag"
 
-#: blog/models.py:67
+#: blog/models.py:70
 msgid "date of creation"
 msgstr "Erstellungsdatum"
 
-#: blog/models.py:68
+#: blog/models.py:71
 msgid "homepage"
 msgstr "Homepage"
 
-#: blog/models.py:70
+#: blog/models.py:73
 msgid "subject"
 msgstr "Betreff"
 
-#: blog/models.py:75
+#: blog/models.py:78
 msgid "comments"
 msgstr "Kommentare"
 
-#: navigation/models.py:12
+#: navigation/models.py:14
+msgid "Main Menu"
+msgstr "Hauptmenü"
+
+#: navigation/models.py:15
+msgid "Footer Menu"
+msgstr "Fußleistenmenü"
+
+#: navigation/models.py:16
+msgid "Top Menu"
+msgstr "Kopfleistenmenü"
+
+#: navigation/models.py:18
 msgid "This name will be shown in the navigation."
 msgstr "Dieser Name wird in der Navigation gezeigt."
 
-#: navigation/models.py:13
+#: navigation/models.py:19
 msgid "target"
 msgstr "Ziel"
 
-#: navigation/models.py:13
+#: navigation/models.py:19
 msgid "Where the entry should point to."
 msgstr "Wo der Eintrag hinzeigen soll."
 
-#: navigation/models.py:14
+#: navigation/models.py:20
+msgid "menu"
+msgstr "Menü"
+
+#: navigation/models.py:20
+msgid "To which menu the entry will be assigned"
+msgstr "Das Menü, welchem der Eintrag zugewiesen wird"
+
+#: navigation/models.py:21
 msgid "position"
 msgstr "Position"
 
-#: navigation/models.py:14
-msgid "An integer, describing the position of this entry in the Navigation. Smaller numbers come first."
-msgstr "Eine Zahl, die die Position dieses Eintrags in der Navigation bestimmt. Kleinere Nummern kommen zuerst."
+#: navigation/models.py:21
+msgid ""
+"An integer, describing the position of this entry in the Navigation. Smaller "
+"numbers come first."
+msgstr ""
+"Eine Zahl, die die Position dieses Eintrags in der Navigation bestimmt. "
+"Kleinere Nummern kommen zuerst."
 
-#: navigation/models.py:17
+#: navigation/models.py:24
 msgid "navigation entry"
 msgstr "Navigationseintrag"
 
-#: navigation/models.py:18
+#: navigation/models.py:25
 msgid "navigation entries"
 msgstr "Navigationseinträge"
 
-#: timemanager/models.py:13
+#: timemanager/admin.py:28
+msgid "Date"
+msgstr "Datum"
+
+#: timemanager/models.py:15
 msgid "description"
 msgstr "Beschreibung"
 
-#: timemanager/models.py:16
+#: timemanager/models.py:20
 msgid "start day"
 msgstr "Starttag"
 
-#: timemanager/models.py:17
+#: timemanager/models.py:21
 msgid "end day"
 msgstr "Endtag"
 
-#: timemanager/models.py:19
+#: timemanager/models.py:23
+#, fuzzy
+msgid "whole day"
+msgstr "Ganztägig"
+
+#: timemanager/models.py:25
 msgid "start time"
 msgstr "Startzeit"
 
-#: timemanager/models.py:19
-#: timemanager/models.py:20
-msgid "If you omit this field, it is assumed this event takes part the whole day."
-msgstr "Wenn du dieses Feld auslässt, wird angenommen, dass diese Veranstaltung den ganzen Tag stattfindet."
+#: timemanager/models.py:25 timemanager/models.py:26
+msgid ""
+"If you omit this field, it is assumed this event takes part the whole day."
+msgstr ""
+"Wenn du dieses Feld auslässt, wird angenommen, dass diese Veranstaltung den "
+"ganzen Tag stattfindet."
 
-#: timemanager/models.py:20
+#: timemanager/models.py:26
 msgid "end time"
 msgstr "Endzeit"
 
-#: timemanager/models.py:27
+#: timemanager/models.py:29
 msgid "Whole day"
 msgstr "Ganztägig"
 
-#: timemanager/models.py:30
+#: timemanager/models.py:32
 msgid "Calendar entry"
 msgstr "Kalendereintrag"
 
-#: timemanager/models.py:31
+#: timemanager/models.py:33
 msgid "Calendar entries"
 msgstr "Kalendereinträge"
 
+#: timemanager/views.py:50
+msgid "Mo"
+msgstr "Mo"
+
+#: timemanager/views.py:50
+msgid "Tu"
+msgstr "Di"
+
+#: timemanager/views.py:50
+msgid "We"
+msgstr "Mi"
+
+#: timemanager/views.py:50
+msgid "Th"
+msgstr "Do"
+
+#: timemanager/views.py:50
+msgid "Fr"
+msgstr "Fr"
+
+#: timemanager/views.py:50
+msgid "Sa"
+msgstr "Sa"
+
+#: timemanager/views.py:50
+msgid "Su"
+msgstr "So"
+
+#: timemanager/views.py:51
+#, fuzzy
+msgid "Calendar"
+msgstr "Kalendereintrag"
+
+#: timemanager/views.py:59
+#, fuzzy
+msgid "Event"
+msgstr "Ereignis: {0}"
+
+#: timemanager/templatetags/timemanager_t.py:20
+msgid "More..."
+msgstr "Mehr..."
+
 #~ msgid "Published"
 #~ msgstr "Veröffentlicht"
+
 #~ msgid "Draft"
 #~ msgstr "Entwurf"
+
 #~ msgid "Mark selected entries as published"
 #~ msgstr "Ausgewählte Blogeinträge veröffentlichen"
+
 #~ msgid "creator"
 #~ msgstr "Autor"
+
 #~ msgid "Young Pirates Helpdesk"
 #~ msgstr "Junge Piraten Helpdesk"
+
 #~ msgid "The local URL which should be redirected."
 #~ msgstr "Die lokale weiterzuleitende Adresse (URL)."
+
 #~ msgid "{0} to {1}"
 #~ msgstr "{0} nach {1}"
+
 #~ msgid "redirect"
 #~ msgstr "Weiterleitung"
+
 #~ msgid "redirects"
 #~ msgstr "Weiterleitungen"
+
 #~ msgid "Internal comment on the page, never displayed publicly."
 #~ msgstr "Interner Kommentar zu der Seite, wird nie öffentlich gezeigt."
+
 #~ msgid "page"
 #~ msgstr "Seite"
+
 #~ msgid "pages"
 #~ msgstr "Seiten"
+
 #~ msgid "to"
 #~ msgstr "nach"
 
@@ -301,4 +386,3 @@ msgstr "Kalendereinträge"
 #, fuzzy
 #~ msgid "blogs"
 #~ msgstr "Blogeinträge"
-

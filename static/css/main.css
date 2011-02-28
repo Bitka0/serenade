@@ -110,3 +110,62 @@ h2 {
    padding: 0 4px 0;
    margin: 0 0 5px !important;
 }
+
+.calendar {
+	width: 100%;
+	table-layout:auto;
+}
+
+.calendar td {
+	border:1px solid black;
+}
+
+.dayrow {
+	background-color: #EEE;
+	border:1px solid black;
+	padding:3px;
+}
+
+.noday {
+	background-color: #DDD;
+}
+
+.today .date {
+	background-color:#FFAA00;
+}
+
+.date {
+	float:right;
+	border-left:1px solid grey;
+	border-bottom:1px solid grey;
+	font-size:11px;
+	width:17px;
+	height:17px;
+	text-align:center;
+	font-weight:bold;
+	background-color:#EEE;
+	margin-bottom:20px;
+}
+
+.monthdisplay {
+	border:1px solid black;
+	background-color: #EEE;
+	padding:3px;
+	color: #666;
+	font-weight:bold;
+}
+
+.calevent {
+	padding:0px;
+	margin:0px;
+	background-color:#FFFFCC;
+	border:1px solid #EEEEBB;
+}
+
+.calprev {
+	float:left;
+}
+
+.calnext {
+	float:right;
+}

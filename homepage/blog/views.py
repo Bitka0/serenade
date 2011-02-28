@@ -32,9 +32,8 @@ def show(request, url):
 			comment.sender = form.cleaned_data['sender']
 			comment.homepage = form.cleaned_data['homepage']
 			comment.save()	
-	else:
-		form = CommentForm()
-		
+	
+	form = CommentForm()
 	context = util.generateContext(request, contextType = 'RequestContext', title = entry.title, entry = entry, commentform = form, comments = Comment.objects.filter(entry = entry))
 	return render_to_response('blog/show.html', context)
 
