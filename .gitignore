@@ -4,3 +4,4 @@ homepage/database.db
 *.mo
 assets/admin
 assets/grappelli
+assets/*
