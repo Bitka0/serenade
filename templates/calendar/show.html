@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% comment %}
 Copyright (c) 2011 Lukas Martini, Phillip Thelen.
 This file may be used and distributed under the terms found in the
@@ -7,24 +8,34 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 {% endcomment %}
 
 {% block content %}
-<table class="calendar" border="1">
+<table class="calendar">
 	<tr>
-		<th>MO</th>
-		<th>DI</th>
-		<th>MI</th>
-		<th>DO</th>
-		<th>FR</th>
-		<th>SA</th>
-		<th>SO</th>
+		<th class="monthdisplay" colspan="7"><a class="calprev" href="/calendar/{% if month == 1 %}
+		{{year|add:"-1"}}/12
+		{% else %}
+		{{year}}/{{month|add:"-1"}}
+		{% endif %}">« {% trans Previous %}</a>
+		{{ monthname }} {{ year }}
+		<a class="calnext" href="/calendar/{% if month == 12 %}
+		{{year|add:"1"}}/1
+		{% else %}
+		{{year}}/{{month|add:"1"}}
+		{% endif %}">{% trans Next %} »</a></th>
+	</tr>
+	<tr>
+		{% for weekday in weekdays %}
+			<th class="dayrow">{{weekday}}</th>
+		{% endfor %}
 	</tr>
 	{% for row in entries %}
 	<tr>
 	{% for day in row %}
-	<td class="{{ day.1 }}">{{ day.0 }}<br>
+	<td class="{{ day.1 }}">{% if day.0 != "" %}
+	<div class="date">{{ day.0 }}</div><br>
 	{% for event in day.2 %}
-	{{ event.name }}<br>
+	<p class="calevent"><a href="/calendar/show/{{event.url}}">{{ event.name|wordwrap:15 }}</a> ({{event.startTime}} - {{event.endTime}})</p>
 	{% endfor %}
-	</td>
+	{% endif %}</td>
 	{% endfor %}
 	</tr>
 	{% endfor %}

@@ -43,10 +43,18 @@ def showCalendar(request, url):
 					htmlclass = "day"
 			eventlist = []
 			for entry in entrylist:
-				if entry.startDay.day == day:
+				if entry.startDay.day <= day and entry.endDay.day >= day:
 					eventlist.append(entry)
 			weeks[i][o] = [day, htmlclass, eventlist]
-	
-	context = util.generateContext(request, title = _('Calendar'), entries = weeks, url = url)
+	monthname = calendar.month_name[month]
+	weekdays = [_("Mo"), _("Tu"), _("We"), _("Th"), _("Fr"), _("Sa"), _("Su")] 
+	context = util.generateContext(request, title = _('Calendar'), entries = weeks, url = url, year = year, month = month, monthname = monthname, weekdays = weekdays)
 	return render_to_response('calendar/show.html', context)
 
+
+def showEvent(request, url):
+	url = util.stripSlash(url)
+	entry = get_object_or_404(Entry, url = url, published = True)
+	
+	context = util.generateContext(request, title = _('Event'), event = entry, url = url)
+	return render_to_response('calendar/single.html', context)

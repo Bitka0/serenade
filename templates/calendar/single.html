@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% comment %}
+Copyright (c) 2011 Lukas Martini, Phillip Thelen.
+This file may be used and distributed under the terms found in the
+file COPYING, which you should have received along with this
+program. If you haven't, please refer to bofh@junge-piraten.de.
+{% endcomment %}
+
+{% block content %}
+{{ event.name }}<br />
+{{event.startDay }} - {{event.endDay}}<br />
+{%  if event.wholeDay %}
+{% trans Whole Day %}
+{% else %}{{event.startTime}} - {{event.endTime}}
+{% endif %}<br />
+{{event.description}}
+{% endblock %}

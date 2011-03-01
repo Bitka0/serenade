@@ -25,5 +25,6 @@ urlpatterns = patterns('',
 	(r'^blog/tag/(?P<url>.*)$', 'blog.views.listTags'),
 	(r'^blog/feed/$', blogAll()),
 	(r'^blog/(?P<url>.*)$', 'blog.views.show'),
+	(r'^calendar/show/(?P<url>.*)$', 'timemanager.views.showEvent'),
 	(r'^calendar/(?P<url>.*)$', 'timemanager.views.showCalendar'),
 )

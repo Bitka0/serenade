@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-02-28 13:17+0100\n"
-"PO-Revision-Date: 2011-02-28 13:20+0100\n"
+"PO-Revision-Date: 2011-03-01 14:36+0100\n"
 "Last-Translator: Lukas Martini <lukas.martini@unionhost.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -241,7 +241,7 @@ msgstr "Menü"
 
 #: navigation/models.py:20
 msgid "To which menu the entry will be assigned"
-msgstr "Welchem Menü der Eintrag zugeordnet wird"
+msgstr "Das Menü, welchem der Eintrag zugewiesen wird"
 
 #: navigation/models.py:21
 msgid "position"
@@ -307,6 +307,42 @@ msgstr "Kalendereinträge"
 #: timemanager/views.py:50
 msgid "Calendar"
 msgstr "Kalender"
+
+msgid "Mo"
+msgstr "Mo"
+
+#: timemanager/views.py:50
+msgid "Tu"
+msgstr "Di"
+
+#: timemanager/views.py:50
+msgid "We"
+msgstr "Mi"
+
+#: timemanager/views.py:50
+msgid "Th"
+msgstr "Do"
+
+#: timemanager/views.py:50
+msgid "Fr"
+msgstr "Fr"
+
+#: timemanager/views.py:50
+msgid "Sa"
+msgstr "Sa"
+
+#: timemanager/views.py:50
+msgid "Su"
+msgstr "So"
+
+#: timemanager/views.py:59
+#, fuzzy
+msgid "Event"
+msgstr "Ereignis: {0}"
+
+#: timemanager/templatetags/timemanager_t.py:20
+msgid "More..."
+msgstr "Mehr..."
 
 #~ msgid "Published"
 #~ msgstr "Veröffentlicht"
