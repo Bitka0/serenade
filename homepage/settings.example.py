@@ -149,4 +149,5 @@ INSTALLED_APPS = (
 	'homepage.navigation',
 	'homepage.blog',
 	'homepage.timemanager',
+	'homepage.search',
 )

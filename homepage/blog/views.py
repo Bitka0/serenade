@@ -10,12 +10,17 @@ from django.template import Context, loader
 from models import Entry, Group, Tag, Comment, CommentForm
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render_to_response, get_object_or_404, get_list_or_404
+from search.models import Searchform
 from django import forms
 import util
 
-def listAll(request):
-	entrylist = Entry.objects.all().filter(published = True)
-	context = util.generateContext(request, title = _('Blog'), entries = entrylist)
+def listAll(request, url=None):
+	if url != None:
+		url = int(util.stripSlash(url))
+	else:
+		url = 0
+	entrylist = Entry.objects.all().filter(published = True)[url:15]
+	context = util.generateContext(request, contextType = 'RequestContext', title = _('Blog'), entries = entrylist)
 	return render_to_response('blog/standard.html', context)
 
 def show(request, url):
@@ -34,7 +39,8 @@ def show(request, url):
 			comment.save()	
 	
 	form = CommentForm()
-	context = util.generateContext(request, contextType = 'RequestContext', title = entry.title, entry = entry, commentform = form, comments = Comment.objects.filter(entry = entry))
+	searchform = Searchform()
+	context = util.generateContext(request, contextType = 'RequestContext', title = entry.title, entry = entry, commentform = form, comments = Comment.objects.filter(entry = entry), searchform = searchform)
 	return render_to_response('blog/show.html', context)
 
 
