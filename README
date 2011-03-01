@@ -12,6 +12,7 @@ Dependencies (Yes, the -Z's at those easy_installs _are_ important.):
 	python-docutils
 	python-feedparser
 	PIL (Python Imaging Library)
+	gettext (Specifically, msgfmt).
 	python-flup (For FastCGI support)
 	django-grappelli (easy_install -Z django-grappelli)
 	django-staticfiles (easy_install -Z django-staticfiles)
