@@ -18,14 +18,19 @@ urlpatterns = patterns('',
 	(r'^grappelli/', include('grappelli.urls')),
 	(r'^admin/', include(admin.site.urls)),
 	
-	(r'^blog/$', 'blog.views.listAll'),
+	(r'^blog/(?P<url>\d{1})$', 'blog.views.listAll'),
+	(r'^blog/(?P<url>\d*)$', 'blog.views.listAll'),
 	(r'^blog/group/feed/(?P<url>.*)$', selectGroup()),
 	(r'^blog/group/(?P<url>.*)$', 'blog.views.listGroups'),
 	(r'^blog/tag/feed/(?P<url>.*)$', selectTag()),
 	(r'^blog/tag/(?P<url>.*)$', 'blog.views.listTags'),
 	(r'^blog/feed/$', blogAll()),
 	(r'^blog/(?P<url>.*)$', 'blog.views.show'),
+	
 	(r'^calendar/show/(?P<url>.*)$', 'timemanager.views.showEvent'),
 	(r'^calendar/(?P<url>.*)$', 'timemanager.views.showCalendar'),
+	
 	(r'^search/$', 'search.views.searchAll'),
+	
+	(r'^comments/', include('django.contrib.comments.urls')),
 )

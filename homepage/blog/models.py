@@ -45,6 +45,8 @@ class Entry(models.Model):
 	text = models.TextField(_('text'))
 	admincomment = models.TextField(_('comment'), help_text = _('What you enter here is only displayed in the admin area.'), blank=True)
 	
+	enable_comments = models.BooleanField(_('enable comments'), default=True)
+	
 	def __unicode__(self):
 		return self.title
 	
@@ -63,23 +65,3 @@ class Entry(models.Model):
 		verbose_name = _('blogentry')
 		verbose_name_plural = _('blogentries')
 		ordering = ['-creationDate']
-
-class Comment(models.Model):
-	entry = models.ForeignKey(Entry, verbose_name = _('related blog entry'))
-	sender = models.CharField(_('author'), max_length=80)
-	date = models.DateTimeField(_('date of creation'), auto_now=True)
-	homepage = models.CharField(_('homepage'), max_length=200, blank=True)
-	
-	subject = models.CharField(_('subject'), max_length=100, blank=True)
-	message = models.TextField(_('comment'))
-
-	class Meta:
-		verbose_name = _('comment')
-		verbose_name_plural = _('comments')
-		ordering = ['-date']
-
-class CommentForm(forms.Form):
-	subject = forms.CharField(max_length=100, required=False)
-	message = forms.CharField()
-	sender = forms.CharField(max_length=100)
-	homepage = forms.CharField(max_length=200, required=False)

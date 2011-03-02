@@ -6,10 +6,11 @@
 # program. If you haven't, please refer to bofh@junge-piraten.de.
 
 from django.utils.translation import ugettext_lazy as _
-from models import Entry, Group, Tag, Comment
+from models import Entry, Group, Tag
 from django.contrib import admin
 from django.contrib.auth.models import User
 from settings import STATIC_URL
+from django.contrib.comments.moderation import CommentModerator, moderator
 
 def makePublished(modeladmin, request, queryset):
     queryset.update(published = True)
@@ -24,7 +25,7 @@ class EntryAdmin(admin.ModelAdmin):
 		(None,						{'fields': ['title', 'author', 'published']}),
 		(None,						{'fields': ['text']}),
 		(_('Categorisation'),		{'fields': ['groups', 'tags'], 'classes': ['collapse open']}),
-		(_('Further options'),		{'fields': ['url', 'admincomment'], 'classes': ['collapse closed']}),
+		(_('Further options'),		{'fields': ['url', 'enable_comments', 'admincomment'], 'classes': ['collapse closed']}),
 	]
 
 	# Automatically fill the url field based on what's given as title.
@@ -53,8 +54,12 @@ class Groupadmin(admin.ModelAdmin):
 
 class Tagadmin(admin.ModelAdmin):
 	list_display= ('name',)
+	
+class EntryModerator(CommentModerator):
+    email_notification = False
+    enable_field = 'enable_comments'
 
+moderator.register(Entry, EntryModerator)
 admin.site.register(Entry, EntryAdmin)
 admin.site.register(Group, Groupadmin)
 admin.site.register(Tag, Tagadmin)
-admin.site.register(Comment, Commentadmin)

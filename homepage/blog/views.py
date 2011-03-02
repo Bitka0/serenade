@@ -7,40 +7,34 @@
 
 from django.utils.translation import ugettext_lazy as _
 from django.template import Context, loader
-from models import Entry, Group, Tag, Comment, CommentForm
+from models import Entry, Group, Tag
 from django.http import HttpResponseRedirect, HttpResponse
-from django.shortcuts import render_to_response, get_object_or_404, get_list_or_404
+from django.shortcuts import render_to_response, get_object_or_404, get_list_or_404, redirect
 from search.models import Searchform
 from django import forms
+from django.core.paginator import Paginator, InvalidPage, EmptyPage
 import util
 
 def listAll(request, url=None):
-	if url != None:
+	try:
 		url = int(util.stripSlash(url))
-	else:
-		url = 0
-	entrylist = Entry.objects.all().filter(published = True)[url:15]
+	except:
+		url = 1
+	entrylist = Entry.objects.all().filter(published = True)
+	paginator = Paginator(entrylist, 15) # Show 25 contacts per page
+	try:
+		entrylist = paginator.page(url)
+	except (EmptyPage, InvalidPage):
+		return redirect("/blog/")
+
 	context = util.generateContext(request, contextType = 'RequestContext', title = _('Blog'), entries = entrylist)
 	return render_to_response('blog/standard.html', context)
 
 def show(request, url):
 	url = util.stripSlash(url)
 	entry = get_object_or_404(Entry, url = url, published = True)
-		
-	if request.method == 'POST':
-		form = CommentForm(request.POST)
-		
-		if form.is_valid():
-			comment = Comment(entry = entry)
-			comment.subject = form.cleaned_data['subject']
-			comment.message = form.cleaned_data['message']
-			comment.sender = form.cleaned_data['sender']
-			comment.homepage = form.cleaned_data['homepage']
-			comment.save()	
-	
-	form = CommentForm()
 	searchform = Searchform()
-	context = util.generateContext(request, contextType = 'RequestContext', title = entry.title, entry = entry, commentform = form, comments = Comment.objects.filter(entry = entry), searchform = searchform)
+	context = util.generateContext(request, contextType = 'RequestContext', title = entry.title, entry = entry, searchform = searchform, url = url)
 	return render_to_response('blog/show.html', context)
 
 

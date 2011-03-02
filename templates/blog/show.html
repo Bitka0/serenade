@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load comments %}
 {% comment %}
 Copyright (c) 2011 Lukas Martini, Phillip Thelen.
 This file may be used and distributed under the terms found in the
@@ -20,16 +21,35 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 {% endfor %}
 	<hr />
 	<div>
-		{% for comment in comments %}
-			<p>{{ comment.subject }}
-			by {{ comment.sender }}</p>
-			<p>Homepage: {{ comment.homepage }} Date: {{ comment.date }}</p>
-			<p>{{ comment.message }}/p>
+		{% get_comment_list for entry as comment_list %}
+		{% for comment in comment_list %}
+	<dt id="c{{ comment.id }}">
+	<a name="c{{ comment.id }}"></a>
+	<a href="{% get_comment_permalink comment %}">{{ comment.submit_date }}</a> - 
+	{% if comment.user != None %}
+		{{ comment.user.username }} (A)
+	{% else %}
+		{{ comment.user_name }}
+	{% endif %}
+	</dt>
+    <dd>
+        <p>{{ comment.comment }}</p>
+    </dd>
 		{% endfor %}
 	</div>
-	<form action="/blog/{{ entry.url }}/" method="post">{% csrf_token %}
-		{{ commentform.as_p }}
-		<input type="submit" value="Submit" />
+	{% get_comment_form for entry as form %}
+<form action="{% comment_form_target %}" method="post">{% csrf_token %}
+  {{ form }}
+  <tr>
+	<td></td>
+	<input type="hidden" name="next" value="{% url blog.views.show url=url %}" />
+	<p class="submit">
+	<input type="submit" value="Abschicken" class="submit-post" name="post">
+	<input type="submit" value="Vorschau" class="submit-preview" name="preview">
+  </p>
+  </tr>
+</form>
+
 	</form>
 
 {% endblock %}

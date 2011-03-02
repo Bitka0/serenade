@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load comments %}
 {% comment %}
 Copyright (c) 2011 Lukas Martini, Phillip Thelen.
 This file may be used and distributed under the terms found in the
@@ -7,13 +8,35 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 {% endcomment %}
 
 {% block content %}
-{% for entry in entries %}
+{% if entries.has_previous %}
+     <a href="{{ entries.previous_page_number }}">previous</a>
+{% endif %}
+<span class="current">
+            Page {{ entries.number }} of {{ entries.paginator.num_pages }}.
+</span>
+
+{% if entries.has_next %}
+            <a href="{{ entries.next_page_number }}">next</a>
+{% endif %}
+
+{% for entry in entries.object_list %}
 <div class="post">
 <p class="meta">{{  entry.author.get_full_name }} - 
 {% for group in entry.groups.all %}
 <a href="/blog/group/{{ group }}/">{{ group }}</a>,&nbsp;
 {% endfor %} - 
-{{ entry.creationDate }}</p>
+{{ entry.creationDate }} - 
+{% get_comment_count for entry as comment_count %}
+{% if comment_count == 1 %}
+1 Comment.
+{% else %}
+{% if comment_count == 0 %}
+No
+{% else %}
+{{comment_count}}
+{% endif %}
+Comments.
+{% endif %}</p>
 <h2><a href="/blog/{{entry.url}}/">{{ entry.title }}</a></h2>
 <div class="post-content">
 </div>
@@ -25,4 +48,14 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 <br class="cl" />
 </div>
 {% endfor %}
+{% if entries.has_previous %}
+     <a href="{{ entries.previous_page_number }}">previous</a>
+{% endif %}
+<span class="current">
+            Page {{ entries.number }} of {{ entries.paginator.num_pages }}.
+</span>
+
+{% if entries.has_next %}
+            <a href="{{ entries.next_page_number }}">next</a>
+{% endif %}
 {% endblock %}

@@ -145,6 +145,8 @@ INSTALLED_APPS = (
 	'django.contrib.flatpages',
 	# Redirects
 	'django.contrib.redirects',
+	# Comments
+	'django.contrib.comments',
 
 	'homepage.navigation',
 	'homepage.blog',
