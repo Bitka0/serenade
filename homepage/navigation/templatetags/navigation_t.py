@@ -18,12 +18,11 @@ class SimpleMenuNode(Node):
 			self.menu = 1
 	
 	def addmenu(self, parentid = None):
-		entrylist = Entry.objects.all().filter(menu = self.menu, parent__id = parentid)
+		entrylist = Entry.objects.all().filter(menu__menuname = self.menu, parent__id = parentid)
 		self.menuhtml += '<ul>'
 		for entry in entrylist:
 			self.menuhtml  += '<li><a href="{0}">{1}</a></li>'.format(entry.target, entry.name)
-			children = entry.children.all()
-			if children != None:
+			if entry.children.count() != 0:
 				self.addmenu(entry.id)
 		self.menuhtml  += '</ul>'
 	

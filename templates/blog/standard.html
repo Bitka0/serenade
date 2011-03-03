@@ -8,17 +8,6 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 {% endcomment %}
 
 {% block content %}
-{% if entries.has_previous %}
-     <a href="{{ entries.previous_page_number }}">previous</a>
-{% endif %}
-<span class="current">
-            Page {{ entries.number }} of {{ entries.paginator.num_pages }}.
-</span>
-
-{% if entries.has_next %}
-            <a href="{{ entries.next_page_number }}">next</a>
-{% endif %}
-
 {% for entry in entries.object_list %}
 <div class="post">
 <p class="meta">{{  entry.author.get_full_name }} - 

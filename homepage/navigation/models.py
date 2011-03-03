@@ -9,15 +9,9 @@ from django.utils.translation import ugettext_lazy as _
 from django.db import models
 
 class Entry(models.Model):
-	
-	menuChoices = (
-		("main", _('Main Menu')),
-		("footer", _('Footer Menu')),
-		("top", _('Top Menu')))
-	
 	name = models.CharField(_('name'), max_length=200, help_text = _('This name will be shown in the navigation.'))
 	target = models.CharField(_('target'), max_length=200, help_text = _('Where the entry should point to.'), unique=True)
-	menu = models.CharField(_('menu'), max_length=200, choices=menuChoices, help_text = _('To which menu the entry will be assigned'))
+	menu = models.ForeignKey('Menu',  help_text = _('To which menu the entry will be assigned'))
 	position = models.SmallIntegerField(_('position'), help_text = _('An integer, describing the position of this entry in the Navigation. Smaller numbers come first.'))
 	
 	parent = models.ForeignKey('self', related_name='children', blank=True, null=True)
@@ -32,3 +26,10 @@ class Entry(models.Model):
 		verbose_name = _('navigation entry')
 		verbose_name_plural = _('navigation entries')
 		ordering = ['position']
+
+class Menu(models.Model):
+	name = models.CharField(_('name'), max_length=50, help_text = _('The name of the Menu'))
+	menuname = models.SlugField(_('menuname'), max_length=50, unique=True, help_text = _('The name the menu, that will later be available under in the Template'))
+	
+	def __unicode__(self):
+		return self.name

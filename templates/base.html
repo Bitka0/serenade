@@ -30,28 +30,15 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 		<div id="header">
 			<h1><a href="/" title="Junge PIRATEN">Junge PIRATEN</a></h1>
 			<div id="navigation"><ul>
-				{% simpleMenu top %}
 			</ul></div>
 			{% if user.is_authenticated %}
-			<p> Welcome {{ user.username }}. <a href="{% url usermanag.views.userlogout %}">Logout</a></p>
+			<p> Welcome {{ user.username }}. <a href="{% url usermanag.views.userlogout %}">Logout</a>
 			{% else %}
-			not logged in
-			<form method="post" action="{% url usermanag.views.userlogin %}">
-{% csrf_token %}
-<table>
-<tr>
-    <td>Username</td>
-    <td><input type="text" name="username" /></td>
-</tr>
-<tr>
-    <td>Password</td>
-    <td><input type="pass" name="password" /></td>
-</tr>
-</table>
-
+			<form method="post" action="{% url usermanag.views.userlogin %}">{% csrf_token %}
+Username:<input type="text" name="username" />  Password: <input type="password" name="password" />
 <input type="submit" value="login" />
 <input type="hidden" name="next" value="{{ next }}" />
-</form>
+</form></p>
 
 			{% endif %}
 			<div class="cl"></div>

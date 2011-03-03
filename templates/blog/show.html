@@ -68,6 +68,11 @@ Comments.
     <span>{{ form.comment.label_tag}}</span><br />
     {{ form.comment }}
 	<input type="hidden" name="next" value="{% url blog.views.show url=url %}" />
+	{{ form.honeypot }}
+	{{ form.content_type }}
+	{{ form.object_pk }}
+	{{ form.timestamp }}
+	{{ form.security_hash }}
 	<p class="submit">
 	<input type="submit" value="Abschicken" class="submit-post" name="post">
 	<input type="submit" value="Vorschau" class="submit-preview" name="preview">

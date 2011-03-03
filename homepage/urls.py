@@ -7,8 +7,8 @@
 
 from django.conf.urls.defaults import *
 from feed.feeds import blogAll, selectGroup, selectTag
-from django.contrib.sitemaps import FlatPageSitemap
 from feed.sitemap import MainSitemap
+
 # Admin
 from django.contrib import admin
 admin.autodiscover()
