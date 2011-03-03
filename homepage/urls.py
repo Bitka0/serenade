@@ -33,4 +33,7 @@ urlpatterns = patterns('',
 	(r'^search/$', 'search.views.searchAll'),
 	
 	(r'^comments/', include('django.contrib.comments.urls')),
+	
+	(r'^user/login/$', 'usermanag.views.userlogin'),
+	(r'^user/logout/$', 'usermanag.views.userlogout'),
 )

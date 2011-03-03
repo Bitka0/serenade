@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% comment %}
+Copyright (c) 2011 Lukas Martini, Phillip Thelen.
+This file may be used and distributed under the terms found in the
+file COPYING, which you should have received along with this
+program. If you haven't, please refer to bofh@junge-piraten.de.
+{% endcomment %}
+
+{% block content %}
+
+{{ message }}
+{% if not user.is_authenticated %}
+<form method="post" action="/user/login/">{% csrf_token %}
+<table>
+<tr>
+    <td>Username</td>
+    <td><input type="text" name="username" /></td>
+</tr>
+<tr>
+    <td>Password</td>
+    <td><input type="pass" name="password" /></td>
+</tr>
+</table>
+{% endif %}
+
+{% endblock %}

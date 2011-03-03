@@ -32,6 +32,28 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 			<div id="navigation"><ul>
 				{% simpleMenu top %}
 			</ul></div>
+			{% if user.is_authenticated %}
+			<p> Welcome {{ user.username }}. <a href="/user/logout">Logout</a></p>
+			{% else %}
+			not logged in
+			<form method="post" action="/user/login/">
+{% csrf_token %}
+<table>
+<tr>
+    <td>Username</td>
+    <td><input type="text" name="username" /></td>
+</tr>
+<tr>
+    <td>Password</td>
+    <td><input type="pass" name="password" /></td>
+</tr>
+</table>
+
+<input type="submit" value="login" />
+<input type="hidden" name="next" value="{{ next }}" />
+</form>
+
+			{% endif %}
 			<div class="cl"></div>
 			<div id="subnavigation"></div>
 		</div>
