@@ -32,7 +32,7 @@ class Tag(models.Model):
 		verbose_name_plural = _('tags')
 
 class Entry(models.Model):
-	url = models.SlugField(_('URL'), max_length=200, help_text = _('This field is automatically filled based on the title you enter, however if you want to customize the URL, here you can.'))
+	url = models.SlugField(_('URL'), max_length=200, unique=True, help_text = _('This field is automatically filled based on the title you enter, however if you want to customize the URL, here you can.'))
 
 	author = models.ForeignKey(User, verbose_name = _('author'))
 	creationDate = models.DateTimeField(_('publication date'), auto_now_add=True)

@@ -147,6 +147,8 @@ INSTALLED_APPS = (
 	'django.contrib.redirects',
 	# Comments
 	'django.contrib.comments',
+	# Sitemap
+	'django.contrib.sitemaps',
 
 	'homepage.navigation',
 	'homepage.blog',

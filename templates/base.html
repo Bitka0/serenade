@@ -33,10 +33,10 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 				{% simpleMenu top %}
 			</ul></div>
 			{% if user.is_authenticated %}
-			<p> Welcome {{ user.username }}. <a href="/user/logout">Logout</a></p>
+			<p> Welcome {{ user.username }}. <a href="{% url usermanag.views.userlogout %}">Logout</a></p>
 			{% else %}
 			not logged in
-			<form method="post" action="/user/login/">
+			<form method="post" action="{% url usermanag.views.userlogin %}">
 {% csrf_token %}
 <table>
 <tr>

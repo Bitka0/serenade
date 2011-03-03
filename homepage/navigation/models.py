@@ -16,9 +16,17 @@ class Entry(models.Model):
 		("top", _('Top Menu')))
 	
 	name = models.CharField(_('name'), max_length=200, help_text = _('This name will be shown in the navigation.'))
-	target = models.CharField(_('target'), max_length=200, help_text = _('Where the entry should point to.'))
+	target = models.CharField(_('target'), max_length=200, help_text = _('Where the entry should point to.'), unique=True)
 	menu = models.CharField(_('menu'), max_length=200, choices=menuChoices, help_text = _('To which menu the entry will be assigned'))
 	position = models.SmallIntegerField(_('position'), help_text = _('An integer, describing the position of this entry in the Navigation. Smaller numbers come first.'))
+	
+	parent = models.ForeignKey('self', related_name='children', blank=True, null=True)
+	
+	def __unicode__(self):
+		return self.name
+	
+	def get_absolute_url(self):
+		return '{0}'.format(self.target)
 	
 	class Meta:
 		verbose_name = _('navigation entry')

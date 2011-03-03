@@ -16,13 +16,21 @@ class SimpleMenuNode(Node):
 			self.menu = menu
 		else:
 			self.menu = 1
-	def render(self, context):
-		entrylist = Entry.objects.all().filter(menu = self.menu)
-		menu = '<ul>'
+	
+	def addmenu(self, parentid = None):
+		entrylist = Entry.objects.all().filter(menu = self.menu, parent__id = parentid)
+		self.menuhtml += '<ul>'
 		for entry in entrylist:
-			menu += '<li><a href="{0}">{1}</a></li>'.format(entry.target, entry.name)
-		menu += '</ul>'
-		return menu
+			self.menuhtml  += '<li><a href="{0}">{1}</a></li>'.format(entry.target, entry.name)
+			children = entry.children.all()
+			if children != None:
+				self.addmenu(entry.id)
+		self.menuhtml  += '</ul>'
+	
+	def render(self, context):
+		self.menuhtml = ''
+		self.addmenu()
+		return self.menuhtml
 
 
 def simpleMenu(parser, token):

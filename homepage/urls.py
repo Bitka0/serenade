@@ -7,10 +7,15 @@
 
 from django.conf.urls.defaults import *
 from feed.feeds import blogAll, selectGroup, selectTag
-
+from django.contrib.sitemaps import FlatPageSitemap
+from feed.sitemap import MainSitemap
 # Admin
 from django.contrib import admin
 admin.autodiscover()
+
+sitemaps = {
+    'main': MainSitemap,
+}
 
 urlpatterns = patterns('',
 	# Admin interface
@@ -36,4 +41,6 @@ urlpatterns = patterns('',
 	
 	(r'^user/login/$', 'usermanag.views.userlogin'),
 	(r'^user/logout/$', 'usermanag.views.userlogout'),
+	
+	(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps}),
 )

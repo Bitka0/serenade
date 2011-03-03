@@ -21,6 +21,17 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 {% endfor %}
 	<hr />
 	<div>
+{% get_comment_count for entry as comment_count %}
+{% if comment_count == 1 %}
+1 Comment.
+{% else %}
+{% if comment_count == 0 %}
+No
+{% else %}
+{{comment_count}}
+{% endif %}
+Comments.
+{% endif %}</p>
 		{% get_comment_list for entry as comment_list %}
 		{% for comment in comment_list %}
 	<dt id="c{{ comment.id }}">
@@ -39,9 +50,23 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 	</div>
 	{% get_comment_form for entry as form %}
 <form action="{% comment_form_target %}" method="post">{% csrf_token %}
-  {{ form }}
-  <tr>
-	<td></td>
+<table>
+<tr>
+	
+    <td>{{ form.name.label_tag }}</td>
+    <td>{% if user.is_authenticated %}{{ user.username }}{% else %}{{ form.name }}{% endif %}</td>
+</tr>
+<tr>
+    <td>{{ form.email.label_tag }}</td>
+    <td>{% if user.is_authenticated %}{{ user.email }}{% else %}{{ form.email }}{% endif %}</td>
+</tr>
+<tr>
+    <td>{{ form.url.label_tag }}</td>
+    <td>{{ form.url }}</td>
+</tr>
+</table>
+    <span>{{ form.comment.label_tag}}</span><br />
+    {{ form.comment }}
 	<input type="hidden" name="next" value="{% url blog.views.show url=url %}" />
 	<p class="submit">
 	<input type="submit" value="Abschicken" class="submit-post" name="post">

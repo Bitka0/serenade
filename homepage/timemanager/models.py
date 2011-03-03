@@ -10,7 +10,7 @@ from django.db import models
 
 class Entry(models.Model):
 	name = models.CharField(_('name'), max_length = 200)
-	url = models.SlugField(_('URL'), max_length=200, help_text = _('This field is automatically filled based on the title you enter, however if you want to customize the URL, here you can.'))
+	url = models.SlugField(_('URL'), max_length=200, unique=True, help_text = _('This field is automatically filled based on the title you enter, however if you want to customize the URL, here you can.'))
 	
 	description = models.TextField(_('description'), blank = True)
 	
@@ -27,6 +27,9 @@ class Entry(models.Model):
 	
 	
 	wholeDay.short_description = _('Whole day')
+	
+	def __unicode__(self):
+		return self.name
 	
 	class Meta:
 		verbose_name = _('Calendar entry')
