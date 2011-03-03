@@ -10,31 +10,31 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 {% block content %}
 {% for entry in entries.object_list %}
 <div class="post">
-<p class="meta">{{  entry.author.get_full_name }} - 
-{% for group in entry.groups.all %}
-<a href="/blog/group/{{ group }}/">{{ group }}</a>,&nbsp;
-{% endfor %} - 
-{{ entry.creationDate }} - 
-{% get_comment_count for entry as comment_count %}
-{% if comment_count == 1 %}
-1 Comment.
-{% else %}
-{% if comment_count == 0 %}
-No
-{% else %}
-{{comment_count}}
-{% endif %}
-Comments.
-{% endif %}</p>
-<h2><a href="/blog/{{entry.url}}/">{{ entry.title }}</a></h2>
-<div class="post-content">
-</div>
-<p>{{ entry.text|safe|truncatewords:500 }}</p>
-{% for tag in entry.tags.all %}
-<a href="/blog/tag/{{ tag }}/">{{ tag }}</a>,&nbsp;
-{% endfor %}
-<hr />
-<br class="cl" />
+	<p class="meta">{{  entry.author.get_full_name }} - 
+	{% for group in entry.groups.all %}
+	<a href="/blog/group/{{ group }}/">{{ group }}</a>,&nbsp;
+	{% endfor %} - 
+	{{ entry.creationDate }} - 
+	{% get_comment_count for entry as comment_count %}
+	{% if comment_count == 1 %}
+	1 Comment.
+	{% else %}
+	{% if comment_count == 0 %}
+	No
+	{% else %}
+	{{comment_count}}
+	{% endif %}
+	Comments.
+	{% endif %}</p>
+	<h2><a href="/blog/{{entry.url}}/">{{ entry.title }}</a></h2>
+	<div class="post-content">
+		<p>{{ entry.text|safe|truncatewords:500 }}</p>
+	</div>
+	{% for tag in entry.tags.all %}
+	<a href="/blog/tag/{{ tag }}/">{{ tag }}</a>,&nbsp;
+	{% endfor %}
+	<hr />
+	<br class="cl" />
 </div>
 {% endfor %}
 {% if entries.has_previous %}

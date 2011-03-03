@@ -12,15 +12,25 @@ from django.contrib.auth.models import User
 from settings import STATIC_URL
 from django.contrib.comments.moderation import CommentModerator, moderator
 
-def makePublished(modeladmin, request, queryset):
-    queryset.update(published = True)
-makePublished.short_description = _('Publish selected blog entries')
-
-def makeDraft(modeladmin, request, queryset):
-    queryset.update(published = False)
-makeDraft.short_description = _('Unpublish selected blog entries')
-
 class EntryAdmin(admin.ModelAdmin):
+	def makePublished(self, request, queryset):
+		rows_updated = queryset.update(published = True)
+		if rows_updated == 1:
+			message_bit = _("1 entry was")
+		else:
+			message_bit = _("{0} entries were").format(rows_updated)
+		self.message_user(request, _("{0} successfully marked as published.").format(message_bit))
+	makePublished.short_description = _('Publish selected entries')
+	
+	def makeDraft(self, request, queryset):
+		rows_updated = queryset.update(published = False)
+		if rows_updated == 1:
+			message_bit = _("1 entry was")
+		else:
+			message_bit = _("{0} entries were").format(rows_updated)
+		self.message_user(request, _("{0} successfully marked as draft.").format(message_bit))
+	makeDraft.short_description = _('Unpublish selected entries')
+	
 	fieldsets = [
 		(None,						{'fields': ['title', 'author', 'published']}),
 		(None,						{'fields': ['text']}),
@@ -41,6 +51,8 @@ class EntryAdmin(admin.ModelAdmin):
 	search_fields = ['title', 'url', 'text']
 	
 	actions = [makePublished, makeDraft]
+	
+	filter_horizontal = ('groups', 'tags')
 	
 	# WYSIWTF-Editor
 	class Media:

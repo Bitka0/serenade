@@ -10,7 +10,7 @@ from django.db import models
 
 class Entry(models.Model):
 	name = models.CharField(_('name'), max_length=200, help_text = _('This name will be shown in the navigation.'))
-	target = models.CharField(_('target'), max_length=200, help_text = _('Where the entry should point to.'), unique=True)
+	target = models.CharField(_('target'), max_length=200, help_text = _('Where the entry should point to.'))
 	menu = models.ForeignKey('Menu',  help_text = _('To which menu the entry will be assigned'))
 	position = models.SmallIntegerField(_('position'), help_text = _('An integer, describing the position of this entry in the Navigation. Smaller numbers come first.'))
 	
