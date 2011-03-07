@@ -34,3 +34,7 @@ def userlogout(request):
 	logout(request)
 	context = util.generateContext(request, contextType = 'RequestContext', title = _("Logout was successful"), message = _("You were successfully logged out"))
 	return render_to_response('user/login.html', context)
+
+def showlogin(request):
+	context = util.generateContext(request, contextType = 'RequestContext', title = _("Login"))
+	return render_to_response('user/login.html', context)

@@ -1,171 +1,373 @@
+/* JuPis Theme – Copyright © 2011 Lukas Martini. */
+
+/* –––– General stuff –––– */
+html, body {
+	font-family: 'Linux Liberation Sans', 'Arial', sans-serif;
+	font-size: 15px;
+	line-height: 1.22;
+	background: url('http://korbinian-polk.de/pp16/css/assets/bg-tags.png') #222;
+	
+	/* Don't scroll */
+	background-attachment: fixed;
+}
+
+h1 {
+	font-size: 24px;
+	font-weight: bold;
+	background: url('../images/bg.jpg');
+	text-shadow: 1px 1px 1px #DDD;
+	font-family: 'Ubuntu', arial, serif;
+	padding-left: 5px;
+}
+
+p {
+	margin-bottom: 15px;
+}
+
+img {
+	margin: 0px;
+	border-width: 0px;
+}
+
+a {
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	text-decoration: none;
+	color: #000;
+}
+
+a:hover {
+	color: #FF8800;
+}
+
+input {
+	background-color: #FFF;
+	height: 22px;
+	color: #222;
+	font-size: 13px;  
+	text-shadow: 0px 1px 0px #fff;  
+	outline: none;
+	border: 1px solid #AAA;  
+	-webkit-box-shadow: 1px 1px 0px #efefef;  
+	-moz-box-shadow: 1px 1px 0px #efefef;  
+	box-shadow:  1px 1px 0px #efefef;  
+}
+
+/* The all-mighty, all-surrounding box */
+#abox {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	width: 75%;
+	overflow: hidden;
+	background-image: url('../images/greytrans.png');
+}
+
+/* –––– Header –––– */
+#header {
+	padding: 10px;
+	background-color: #DDD;
+	background-image: url();
+	background-position: bottom right;
+	background-repeat: no-repeat;
+	height: 110px;
+	/*
+	margin-left: 30px;
+	*/
+	background: url('../images/bg.jpg');
+}
+
+#header input[type=text] {
+	width: 260px;
+	padding-left: 30px;
+	float: right;
+	background-image: url('../images/search.png');
+	background-position: 8px 10px;
+	background-repeat: no-repeat;
+	margin-top: 20px;
+	height: 35px;
+	-webkit-box-shadow: 0px 0px 0px;
+	-moz-box-shadow: 0px 0px 0px;
+	box-shadow:  0px 0px 0px;
+}
+
+#header a {
+	border-bottom-width: 0px;
+}
+
+/* –––– Content area –––– */
+
+/* You might ask yourself why we have such a thing. The answer is
+ * simple: We want to have the width of sidebar & content area in
+ * percent. However, padding is being added to the width (most stupid
+ * idea EVER), resulting in over 100% and failure.
+ */
+#contentDisc {
+	width: 67%;
+	float: left;
+}
+
+#content {
+	background-color: #FFF;
+	padding: 10px;
+	-webkit-box-shadow: 1px 1px 1px #CCC;
+	-moz-box-shadow: 1px 1px 1px #CCC;
+	box-shadow:  1px 1px 1px #CCC;
+}
+
+/* The grey bar beyond the title containing author etc. */
+#content .info {
+	font-size: 14px;
+	font-weight: bold;
+	margin-left: 30px;
+	margin-bottom: 15px;
+	background-color: #DDD;
+	text-shadow: 1px 1px 1px #FFF;
+	padding-left: 5px;
+}
+
+/* A single post */
+.entry {
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #444;
+	margin-bottom: 15px;
+	
+	/* For .commentlinkbox positioning */
+	position: relative;
+	padding-bottom: 25px;
+}
+
+.entry .commentlinkbox {
+	position: absolute;
+	right: 0px;
+
+	margin-right: 0px;
+	margin-left: auto;
+	margin-bottom: 15px;
+	font-family: 'PT Sans', 'Linux Liberation Sans', 'Arial', sans-serif;
+	background-image: url('../images/comment.png');
+	background-repeat: no-repeat;
+	padding-left: 35px;
+	
+	display: none;
+}
+
+/* –––– Sidebar –––– */
+#sidebar {
+	margin-top: 10px;
+	float: left;
+	text-shadow: 1px 1px 1px #FFF;
+	width: 33%;
+	font-family: 'PT Sans', 'Linux Liberation Sans', 'Arial', sans-serif;
+}
+
+#sidebar a:hover {
+	font-weight: bold;
+	color: #000;
+}
+
+.block {
+	background-color: #DDD;
+	padding: 15px;
+	padding-right: 0px;
+	margin-top: 20px;
+
+	outline: none;
+	-webkit-box-shadow: 1px 1px 0px #999;
+	-moz-box-shadow: 1px 1px 0px #999;  
+	box-shadow:  1px 1px 0px #999;  
+	
+	margin-left: 0px;
+	width: 320px;
+	z-index: -1;
+}
+
+.uiBlock {
+	color: #666;
+	text-shadow: 1px 1px 1px #222;
+	padding: 15px;
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-left: 15px;
+	margin-right: 15px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #393939;
+}
+
+.uiBlock h3 {
+	font-size: 24px;
+	font-weight: bold;
+	color: #666;
+	text-shadow: 1px 1px 1px #111;
+	font-family: 'Ubuntu', 'PT Sans', 'Linux Liberation Sans', 'Arial', sans-serif;
+}
+
+.uiBlock a, .uiBlock a:hover {
+	color: #666;
+}
+
+.uiBlock li, .block li {
+	line-height: 1.4;
+}
+
+.uiBlock li a, .block li a {
+	border-bottom-width: 0px;
+}
 /*
-Theme Name: Junge Piraten Orange
-Theme URI: http://junge-piraten.de/
-Author: Dennis Morhardt & Patrick Rauscher & Daniel Sabinizak
-Author URI: http://www.dennismorhardt.de/
-*/
+.uiBlock li:before, .block li:before {
+	content: '» ';
+}*/
 
-/* reset.css um einen einheitlichen Stand in allen Browsern zu haben */
-@import url("reset.css");
-
-/* Body */
-body { font:14px/20px sans-serif; color:#000; background:url("../images/background.png") repeat-x 0px 40px; }
-
-/* Basisklassen */
-.cl { clear:both; }
-
-/* Basiselemente */
-a { color:#2884D2; color: #f7931e; text-decoration:none; }
-a:hover { color:#333; text-decoration:underline; }
-h1 { font:bold 23px/normal sans-serif; margin:0 0 15px; }
-h3 { margin:0 0 10px; }
-
-h2 {
-    font-family: sans-serif;
-    font-size: 23px;
-    font-size-adjust: none;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: bold;
-    line-height: normal;
+/* Last .block element. NOT .uiBlock! */
+#lastblock {
+	margin-bottom: 40px;
 }
 
-/* Grundrahmen */
-#wrapper { width:960px; margin:0 auto; }
+.menu {
+	/*background-color: #DDD;*/
+	padding-top: 10px;
+	padding-bottom: 10px;
 
-/* Header mit Navigation und Subnavigation */
-#header { margin:22px 0px 25px; }
-#header h1 { width:180px; height:75px; float:left; }
-#header h1 a { display:block; width:180px; height:75px; text-indent:-9999999px; background:url("../images/logo.png") no-repeat; }
-#header #navigation { width:780px; float:right; font:bold 15px/normal sans-serif; }
-#header #navigation a { color:#fff; }
-#header #navigation ul { margin:27px 0 0 5px; }
-#header #navigation ul li { float:left; padding:0 0 0 15px; }
-#header #subnavigation { font:12px/normal sans-serif; padding:10px 0 0 200px; color:#999; margin:-20px 0 0; }
-
-.sidebar>ul>li { list-style:none; }
-.sidebar h2 { font:18px sans-serif; color:#0099FF; color: #f7931e; font-weight: bold; margin-top: 10px; margin-bottom:0px; padding-bottom:5px; }
-
-/* Hauptnavigation links */
-#sidebar-left { width:178px; float:left; margin:0 20px 30px 0; border-right:1px solid #e2e2e2;  }
-#sidebar-left>ul { /*background:#F1F7FD; background-color: #fff3e5; */ border-top:1px solid #D0E5F7; border-bottom:1px solid #D0E5F7; border: none; padding:10px 15px; font:bold 15px/25px sans-serif; color:#000; }
-#sidebar-left ul { padding:3px 0 7px 15px; color:#D0E5F7; list-style:square; font:normal 12px/21px sans-serif; color: #000; }
-
-#sidebar-left a, #sidebar-right  a {
-	color: #2884d2;
+	outline: none;
+	-webkit-box-shadow: 1px 1px 0px #999;
+	-moz-box-shadow: 1px 1px 0px #999;  
+	box-shadow:  1px 1px 0px #999;  
+	
+	border: 1px solid #CCC;
+	border-left-width: 0px;
+	border-right-width: 0px;
+	font-size: 15px;
+	font-weight: bold;
+	background: url(../images/fade.png) #FFF;
+	background-repeat: repeat-x;
 }
 
-/* Inhaltsbereich */
-#content { width:530px; margin:10px 30px 30px 0; float:left; }
-#content p {	margin:0 0 15px; }
-#content .more { font:normal 12px/21px sans-serif; border-top:1px dotted #d5d5d5; padding:5px 0 0; color:#999; }
-#content .more a { color:#666; }
-
-/* Sidebar */
-/*#sidebar-right { width:179px; float:right; margin:20px 0 30px; border-left:1px solid #e2e2e2; padding:15px 0 0 20px; font:12px/18px sans-serif; }*/
-#sidebar-right { width:179px; float:right; margin:20px 0 30px; border-left:1px solid #e2e2e2; padding:0 0 0 20px; font:12px/18px sans-serif; }
-
-#sidebar-right .widget { margin:5px 0 15px; }
-#sidebar-right p { padding:0 0 10px 0; }
-#sidebar-right>ul { list-style:square; padding:0 0 10px 0px; }
-
-/* Footer */
-#footer { border-top:1px solid #e2e2e2; padding:15px 0 20px; margin:10px 0 0; font:12px/18px "Lucida Grande","Lucida Sans Unicode",Helvetica,Tahoma,Verdana,Arial,sans-serif;color:#999; }
-#footer a { color:#666; }
-
-/* WordPress Pflicht CSS */
-.aligncenter, div.aligncenter { display:block; margin-left:auto; margin-right:auto;
+.menu ul, .menu li {
+	display: inline;
+	margin-left: 15px;
 }
 
-.alignleft {
-   float: left; margin:4px 20px 5px 0;
+.menu #array {
+	position: relative;
 }
 
-.alignright {
-   float: right; margin:4px 0 20px 5px;
+.menu a {
+	border-bottom-width: 0px;
 }
 
-.wp-caption {
-   border: 1px solid #ddd;
-   text-align: center;
-   background-color: #f3f3f3;
-   padding-top: 4px;
-   
-   /* optional rounded corners for browsers that support it */
-   -moz-border-radius: 3px;
-   -khtml-border-radius: 3px;
-   -webkit-border-radius: 3px;
-   border-radius: 3px;
+#submenu {
+	padding-top: 5px;
+	padding-bottom: 10px;
+	height: 10px;
+	font-size: 13px;
+	width: 67%;
+	background: #FFF;
+	}
+
+#submenu > * {
+	height: 10px;
 }
 
-.wp-caption img {
-   margin: 0;
-   padding: 0;
-   border: 0 none;
+.divisor {
+	height: 5px;
+	background-color: #FF8800;
 }
 
-.wp-caption p.wp-caption-text {
-   font-size: 11px;
-   line-height: 17px;
-   padding: 0 4px 0;
-   margin: 0 0 5px !important;
+#subdivisor {
+	width: 67%;
+}
+
+#badge {
+	margin-left: 50px;
+}
+
+/* Move badge down on mouseover */
+#badge:hover {
+	position: relative;
+	top: 5px;
+}
+
+#footer {
+	padding: 10px;
+	padding-left: 40px;
+	float: left;
+	margin-left: auto;
+	margin-right: auto;
+	color: #666;
+	font-family: 'PT Sans', 'Linux Liberation Sans', 'Arial', sans-serif;
+	min-width: 300px;
+}
+
+#slider {
+	width: 618px;
+}
+
+
+#slider img {
+	float: left;
 }
 
 .calendar {
-	width: 100%;
-	table-layout:auto;
+width: 100%;
+table-layout:auto;
 }
 
 .calendar td {
-	border:1px solid black;
+border:1px solid black;
 }
 
 .dayrow {
-	background-color: #EEE;
-	border:1px solid black;
-	padding:3px;
+background-color: #EEE;
+border:1px solid black;
+padding:3px;
 }
 
 .noday {
-	background-color: #DDD;
+background-color: #DDD;
 }
 
 .today .date {
-	background-color:#FFAA00;
+background-color:#FFAA00;
 }
 
 .date {
-	float:right;
-	border-left:1px solid grey;
-	border-bottom:1px solid grey;
-	font-size:11px;
-	width:17px;
-	height:17px;
-	text-align:center;
-	font-weight:bold;
-	background-color:#EEE;
-	margin-bottom:20px;
+float:right;
+border-left:1px solid grey;
+border-bottom:1px solid grey;
+font-size:11px;
+width:17px;
+height:17px;
+text-align:center;
+font-weight:bold;
+background-color:#EEE;
+margin-bottom:20px;
 }
 
 .monthdisplay {
-	border:1px solid black;
-	background-color: #EEE;
-	padding:3px;
-	color: #666;
-	font-weight:bold;
+border:1px solid black;
+background-color: #EEE;
+padding:3px;
+color: #666;
+font-weight:bold;
 }
 
 .calevent {
-	padding:0px;
-	margin:0px;
-	background-color:#FFFFCC;
-	border:1px solid #EEEEBB;
+padding:0px;
+margin:0px;
+background-color:#FFFFCC;
+border:1px solid #EEEEBB;
 }
 
 .calprev {
-	float:left;
+float:left;
 }
 
 .calnext {
-	float:right;
+float:right;
+}
+
+#id_honeypot {
+	display:none;
 }

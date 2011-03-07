@@ -40,6 +40,7 @@ urlpatterns = patterns('',
 	(r'^comments/', include('django.contrib.comments.urls')),
 	
 	(r'^user/login/$', 'usermanag.views.userlogin'),
+	(r'^user/showlogin/$', 'usermanag.views.showlogin'),
 	(r'^user/logout/$', 'usermanag.views.userlogout'),
 	
 	(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps}),

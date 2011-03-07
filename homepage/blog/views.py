@@ -27,7 +27,7 @@ def listAll(request, url=None):
 	except (EmptyPage, InvalidPage):
 		return redirect("/blog/")
 
-	context = util.generateContext(request, contextType = 'RequestContext', title = _('Blog'), entries = entrylist)
+	context = util.generateContext(request, contextType = 'RequestContext', entries = entrylist)
 	return render_to_response('blog/standard.html', context)
 
 def show(request, url):

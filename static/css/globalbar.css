@@ -1,0 +1,59 @@
+/* JuPis Theme – Copyright © 2011 Lukas Martini. */
+
+/* –––– Globalbar on top –––– */
+#globalbar
+{
+	background-color: #4C4642;
+	color: #CCC;
+	font-size: 14px;
+	padding: 2px;
+	padding-top: 1px;
+	height: 15px;
+
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #666;
+}
+
+#globalbar #right {
+	float: right;
+}
+
+#globalbar #left {
+	margin-left: 10px;
+}
+
+#globalbar a, #globalbar a:hover {
+	color: #CCC;
+	border-bottom-width: 0px;
+	font-weight: normal;
+}
+
+#globalbar ul, #globalbar li {
+	display: inline;
+	margin-right: 10px;
+}
+
+#globalbar #contact {
+	background-attachment: scroll;
+	background-clip: border-box;
+	background-color: transparent;
+	background-image: url("http://piratenpartei.ch/sites/all/themes/pirate2/images/kopfico.png");
+	background-origin: padding-box;
+	background-position: 0px -40px;
+	background-repeat: no-repeat;
+	background-size: auto;
+	padding-left: 17px;
+}
+
+#globalbar #signin {
+	background-attachment: scroll;
+	background-clip: border-box;
+	background-color: transparent;
+	background-image: url("http://piratenpartei.ch/sites/all/themes/pirate2/images/kopfico.png");
+	background-origin: padding-box;
+	background-position: 0px 2px;
+	background-repeat: no-repeat;
+	background-size: auto;
+	padding-left: 17px;
+}
