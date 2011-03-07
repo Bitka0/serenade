@@ -51,7 +51,7 @@ class SimpleMenuOneNode(Node):
 		menuhtml  += '</ul>'
 		return menuhtml
 
-class CheckMenuNode(Node):
+class CheckmenuNode(Node):
     def render(self, context):
         return ''
 
@@ -78,17 +78,18 @@ def simpleMenuOne(parser, token):
 			menu = content[1]
 	return SimpleMenuOneNode(menu, parent)
 
-def checkMenu(parser, token):
+def checkmenu(parser, token):
 	try:
-		tag_name, menu = token.split_contents()
+		tag_name, menuname = token.split_contents()
+		entrylist = Entry.objects.all().filter(menu__menuname = menuname)
 	except:
-		menu = None
-	entrylist = Entry.objects.all().filter(menu__menuname = menu)
-	if entrylist == []:
-		parser.skip_past('endcheckMenu')
-	return CheckMenuNode()
+		parser.skip_past('endcheckmenu')
+	return CheckmenuNode()
 
+def endcheckmenu(parser, token):
+	return CheckmenuNode()
 
 simpleMenu = register.tag(simpleMenu)
 simpleMenuOne = register.tag(simpleMenuOne)
-checkMenu = register.tag(checkMenu)
+checkmenu = register.tag(checkmenu)
+endcheckmenu = register.tag(endcheckmenu)

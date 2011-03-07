@@ -57,3 +57,10 @@ def doubleRange(a, b, **kwargs):
 
 def sendMail(to, subject, message):
 	send_mail('{0} {1}'.format(EMAIL_PREFIX, subject), message, EMAIL_SENDER, to, fail_silently = (DEBUG == False))
+
+def getUri(request):
+	uri = request.build_absolute_uri()
+	if uri[-1] == "/":
+		uri = uri[:-1]
+	uri, sep, c = uri.rpartition("/")
+	return uri + sep

@@ -15,19 +15,20 @@ from django import forms
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 import util
 
-def listAll(request, url=None):
+def listAll(request, page=None):
 	try:
-		url = int(util.stripSlash(url))
+		page = int(util.stripSlash(page))
 	except:
-		url = 1
+		page = 1
 	entrylist = Entry.objects.all().filter(published = True)
-	paginator = Paginator(entrylist, 15) # Show 25 contacts per page
+	paginator = Paginator(entrylist, 15)
 	try:
-		entrylist = paginator.page(url)
+		entrylist = paginator.page(page)
 	except (EmptyPage, InvalidPage):
 		return redirect("/blog/")
-
-	context = util.generateContext(request, contextType = 'RequestContext', entries = entrylist)
+	
+	uri = util.getUri(request)
+	context = util.generateContext(request, contextType = 'RequestContext', entries = entrylist, fulluri = uri)
 	return render_to_response('blog/standard.html', context)
 
 def show(request, url):
@@ -40,14 +41,28 @@ def show(request, url):
 
 def listGroups(request, url):
 	url = util.stripSlash(url)
+	try:
+		url, page = url.split("/")
+	except:
+		page = 1
 	entrylist = get_list_or_404(Entry, groups__name = url, published = True)
+	paginator = Paginator(entrylist, 15)
+	entrylist = paginator.page(page)
 	title = "Blog: " + url
-	context = util.generateContext(request, title = title, entries = entrylist)
+	uri = util.getUri(request)
+	context = util.generateContext(request, title = title, entries = entrylist, fulluri = uri)
 	return render_to_response('blog/standard.html', context)
 
-def listTags(request, url):
+def listTags(request, url, page=None):
+	try:
+		url = int(util.stripSlash(url))
+	except:
+		url = 1
 	url = util.stripSlash(url)
 	entrylist = get_list_or_404(Entry, tags__name = url, published = True)
+	paginator = Paginator(entrylist, 15)
+	entrylist = paginator.page(page)
 	title = "Blog: " + url
-	context = util.generateContext(request, title = title, entries = entrylist)
+	uri = util.getUri(request)
+	context = util.generateContext(request, title = title, entries = entrylist, fulluri = uri)
 	return render_to_response('blog/standard.html', context)

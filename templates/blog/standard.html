@@ -12,10 +12,10 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 <div class="entry">
 	<h1><a href="/blog/{{entry.url}}/">{{ entry.title }}</a></h1>
 	<div class="info">{{  entry.author.get_full_name }} - 
-	{% for group in entry.groups.all %}
-	<a href="/blog/group/{{ group }}/">{{ group }}</a>,&nbsp;
-	{% endfor %} - 
-	{{ entry.creationDate }}
+		{% for group in entry.groups.all %}
+		<a href="/blog/group/{{ group }}/">{{ group }}</a>,&nbsp;
+		{% endfor %} - 
+		{{ entry.creationDate }}
 	</div>
 	{{ entry.text|safe|truncatewords:500 }}
 	<div class="tagbox">
@@ -23,7 +23,7 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 	<a href="/blog/tag/{{ tag }}/">{{ tag }}</a>,&nbsp;
 	{% endfor %}</div>
 	<div class="commentlinkbox">
-	{% get_comment_count for entry as comment_count %}
+	<a href="/blog/{{entry.url}}/#comments">{% get_comment_count for entry as comment_count %}
 	{% if comment_count == 1 %}
 	1 Comment.
 	{% else %}
@@ -33,17 +33,17 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 	{{comment_count}}
 	{% endif %}
 	Comments.
-	{% endif %} </div>
+	{% endif %}</a></div>
 </div>
 {% endfor %}
 {% if entries.has_previous %}
-     <a href="{{ entries.previous_page_number }}">previous</a>
+     <a href="{{ fulluri }}{{ entries.previous_page_number }}">previous</a>
 {% endif %}
 <span class="current">
             Page {{ entries.number }} of {{ entries.paginator.num_pages }}.
 </span>
 
 {% if entries.has_next %}
-            <a href="{{ entries.next_page_number }}">next</a>
+            <a href="{{ fulluri }}{{ entries.next_page_number }}">next</a>
 {% endif %}
 {% endblock %}
