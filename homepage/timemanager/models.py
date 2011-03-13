@@ -35,4 +35,4 @@ class Entry(models.Model):
 	class Meta:
 		verbose_name = _('Calendar entry')
 		verbose_name_plural = _('Calendar entries')
-		ordering = ['-startDay']
+		ordering = ['startDay']
