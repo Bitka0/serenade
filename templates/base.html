@@ -76,7 +76,7 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 				
 				<ul id="right">
 					{% if user.is_authenticated %}
-						<li> Welcome {{ user.username }}.  <a href="{% url usermanag.views.userlogout %}" id="signout">Logout</li>
+						<li> Welcome {{ user.username }}.<a href="{% url usermanag.views.userlogout %}" id="signout">Logout</a></li>
 					{% else %}
 						<li><a href="{% url usermanag.views.showlogin %}" id="signin">Anmelden</a></li>
 					{% endif %}
@@ -102,17 +102,16 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 				{% simpleMenuOne sub %}
 			</div>
 			
-			
 			<div class="divisor" id="subdivisor">
 				&nbsp;
 			</div>
 			{% endcheckmenu %}
-			<div id="contentDisc">
+			<div id="contentDisc{{contentwidth}}">
 				<div id="content">
 			{% block content %}{% endblock %}
 				</div>
 			</div>
-
+			{% if contentwidth != "wide" %}
 			<div id="sidebar">
 				{% checkmenu %}
 				<div class="block" id="lastblock">
@@ -132,8 +131,8 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 			<div class="uiBlock">
 					<h3>Kalender</h3>
 					{% tmSidebar %}
-
 			</div>
+			{%endif%}
 			<!--
 			<div id="footer">
 				Fooooter.

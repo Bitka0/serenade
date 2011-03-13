@@ -14,5 +14,5 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 Whole Day
 {% else %}{{event.startTime}} - {{event.endTime}}
 {% endif %}<br />
-{{event.description}}
+{{event.description|safe}}
 {% endblock %}

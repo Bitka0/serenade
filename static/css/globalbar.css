@@ -57,3 +57,16 @@
 	background-size: auto;
 	padding-left: 17px;
 }
+
+#globalbar #signout {
+	background-attachment: scroll;
+	background-clip: border-box;
+	background-color: transparent;
+	background-image: url("http://piratenpartei.ch/sites/all/themes/pirate2/images/kopfico.png");
+	background-origin: padding-box;
+	background-position: 0px 2px;
+	background-repeat: no-repeat;
+	background-size: auto;
+	padding-left: 17px;
+	margin-left:10px;
+}

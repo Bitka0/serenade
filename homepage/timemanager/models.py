@@ -21,6 +21,7 @@ class Entry(models.Model):
 	endDay = models.DateField(_('end day'))
 	
 	wholeDay = models.BooleanField(_('whole day'))
+	daily = models.BooleanField(_('daily'), default = True, help_text = _('If selected the event starts and ends everyday at the specific time. if not selected it starts at day 1 and ends at the last day'))
 	
 	startTime = models.TimeField(_('start time'), blank = True, help_text = _('If you omit this field, it is assumed this event takes part the whole day.'))
 	endTime = models.TimeField(_('end time'), blank = True, help_text = _('If you omit this field, it is assumed this event takes part the whole day.'))

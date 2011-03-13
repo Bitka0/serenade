@@ -45,7 +45,7 @@ class EntryAdmin(admin.ModelAdmin):
 	fieldsets = [
 		(None,						{'fields': ['name', 'published']}),
 		(None,						{'fields': ['description']}),
-		(_('Date'),					{'fields': [('startDay', 'endDay'), ('startTime', 'endTime')]}),
+		(_('Date'),					{'fields': [('startDay', 'endDay'), 'daily', ('startTime', 'endTime')]}),
 		(_('Further options'),		{'fields': ['url']}),
 	]
 	

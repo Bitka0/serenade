@@ -32,6 +32,7 @@ def showCalendar(request, url):
 	entrylist = Entry.objects.all().filter(published = True, startDay__year = year, startDay__month = month)
 	for i in range(len(weeks)):
 		for o in range(len(weeks[i])):
+			eventlist = []
 			if weeks[i][o] == 0:
 				day = ""
 				htmlclass = "noday"
@@ -41,14 +42,14 @@ def showCalendar(request, url):
 					htmlclass = "today"
 				else:
 					htmlclass = "day"
-			eventlist = []
-			for entry in entrylist:
-				if entry.startDay.day <= day and entry.endDay.day >= day:
-					eventlist.append(entry)
+				for entry in entrylist:
+					if entry.startDay.day <= day and entry.endDay.day >= day:
+						eventlist.append(entry)
+
 			weeks[i][o] = [day, htmlclass, eventlist]
 	monthname = calendar.month_name[month]
 	weekdays = [_("Mo"), _("Tu"), _("We"), _("Th"), _("Fr"), _("Sa"), _("Su")] 
-	context = util.generateContext(request, contextType = 'RequestContext', title = _('Calendar'), entries = weeks, url = url, year = year, month = month, monthname = monthname, weekdays = weekdays)
+	context = util.generateContext(request, contextType = 'RequestContext', title = _('Calendar'), entries = weeks, url = url, year = year, month = month, monthname = monthname, weekdays = weekdays, contentwidth = "wide")
 	return render_to_response('calendar/show.html', context)
 
 

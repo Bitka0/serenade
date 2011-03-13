@@ -340,6 +340,7 @@ font-size:11px;
 width:17px;
 height:17px;
 text-align:center;
+vertical-align:center;
 font-weight:bold;
 background-color:#EEE;
 margin-bottom:20px;
@@ -354,10 +355,12 @@ font-weight:bold;
 }
 
 .calevent {
-padding:0px;
-margin:0px;
+padding:4px;
+margin:3px;
 background-color:#FFFFCC;
-border:1px solid #EEEEBB;
+border:1px solid #D9D998;
+font-size:12px;
+line-height:17px;
 }
 
 .calprev {

@@ -28,16 +28,33 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 		{% endfor %}
 	</tr>
 	{% for row in entries %}
-	<tr>
-	{% for day in row %}
-	<td class="{{ day.1 }}">{% if day.0 != "" %}
-	<div class="date">{{ day.0 }}</div><br>
-	{% for event in day.2 %}
-	<p class="calevent"><a href="/calendar/show/{{event.url}}">{{ event.name|wordwrap:15 }}</a> ({{event.startTime}} - {{event.endTime}})</p>
-	{% endfor %}
-	{% endif %}</td>
-	{% endfor %}
-	</tr>
+		<tr>
+		{% for day in row %}
+			<td class="{{ day.1 }}">{% if day.0 != "" %}
+				<div class="date">{{ day.0 }}</div><br>
+				{% for event in day.2 %}
+					<p class="calevent"><a href="/calendar/show/{{event.url}}">{{ event.name|wordwrap:15 }}</a>
+					{% if event.wholeDay == 0 %}
+						{% if event.daily == 0 %}
+							{% if event.startDay.day == day.0 %}
+								begin: {{event.startTime|time:"H:i" }}</p>
+							{% else %}
+								{% if event.endDay.day == day.0 %}
+									end: {{event.endTime|time:"H:i" }} (started: {{day.0}}.{{month}}.{{year}})</p>
+								{% else %}
+									Whole Day (started: {{day.0}}.{{month}}.{{year}})</p>
+								{% endif %}
+							{% endif %}
+						{% else %}
+							({{event.startTime|time:"H:i" }} - {{event.endTime|time:"H:i" }})</p>
+						{% endif %}
+					{% else %}
+						Whole Day</p>
+					{% endif %}
+				{% endfor %}
+			{% endif %}</td>
+		{% endfor %}
+		</tr>
 	{% endfor %}
 </table>
 {% endblock %}
