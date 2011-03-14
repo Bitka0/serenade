@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-03-03 22:48+0100\n"
+"POT-Creation-Date: 2011-03-14 22:51+0100\n"
 "PO-Revision-Date: 2011-03-01 14:36+0100\n"
 "Last-Translator: Lukas Martini <lukas.martini@unionhost.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,7 +40,7 @@ msgstr "Seitenverwaltung"
 msgid "Redirector"
 msgstr "Weiterleiter"
 
-#: __init__.py:16 blog/views.py:30
+#: __init__.py:16
 msgid "Blog"
 msgstr "Blog"
 
@@ -84,19 +84,37 @@ msgstr "Letzte Wiki-Änderungen"
 msgid "Recent Actions"
 msgstr "Kürzliche Aktionen"
 
-#: blog/admin.py:17
-msgid "Publish selected blog entries"
+#: blog/admin.py:19 blog/admin.py:28
+msgid "1 entry was"
+msgstr "1 Eintrag wurde"
+
+#: blog/admin.py:21 blog/admin.py:30
+msgid "{0} entries were"
+msgstr "{0} Einträge wurden"
+
+#: blog/admin.py:22 timemanager/admin.py:31
+msgid "{0} successfully marked as published."
+msgstr "{0} wurde erfolgreich als veröffentlicht markiert"
+
+#: blog/admin.py:23
+#, fuzzy
+msgid "Publish selected entries"
 msgstr "Ausgewählte Blogeinträge veröffentlichen"
 
-#: blog/admin.py:21
-msgid "Unpublish selected blog entries"
+#: blog/admin.py:31 timemanager/admin.py:40
+msgid "{0} successfully marked as draft."
+msgstr "{0} wurde erfolgreich als Arbeitsdassung markiert"
+
+#: blog/admin.py:32
+#, fuzzy
+msgid "Unpublish selected entries"
 msgstr "Ausgewählte Blogeinträge als Entwurf markieren"
 
-#: blog/admin.py:27
+#: blog/admin.py:37
 msgid "Categorisation"
 msgstr "Einordnung"
 
-#: blog/admin.py:28 timemanager/admin.py:29
+#: blog/admin.py:38 timemanager/admin.py:49
 msgid "Further options"
 msgstr "Weitere Optionen"
 
@@ -183,6 +201,10 @@ msgstr "Blogeintrag"
 msgid "blogentries"
 msgstr "Blogeinträge"
 
+#: navigation/admin.py:18
+msgid "A Menupoint cant be parent of itself"
+msgstr "Ein Menüpunkt kann sich nicht selbst als Elternelement haben"
+
 #: navigation/models.py:12
 msgid "This name will be shown in the navigation."
 msgstr "Dieser Name wird in der Navigation gezeigt."
@@ -236,7 +258,25 @@ msgstr "Der Name des Menüs, unter dem es später im Template verfügbar ist"
 msgid "Search"
 msgstr "Suche"
 
-#: timemanager/admin.py:28
+#: timemanager/admin.py:28 timemanager/admin.py:37
+msgid "1 event was"
+msgstr "1 Event wurde"
+
+#: timemanager/admin.py:30 timemanager/admin.py:39
+msgid "{0} events were"
+msgstr "{0} Events wurden"
+
+#: timemanager/admin.py:32
+#, fuzzy
+msgid "Publish selected events"
+msgstr "Ausgewählte Blogeinträge veröffentlichen"
+
+#: timemanager/admin.py:41
+#, fuzzy
+msgid "Unpublish selected events"
+msgstr "Ausgewählte Blogeinträge als Entwurf markieren"
+
+#: timemanager/admin.py:48
 msgid "Date"
 msgstr "Datum"
 
@@ -256,69 +296,94 @@ msgstr "Endtag"
 msgid "whole day"
 msgstr "Ganztägig"
 
-#: timemanager/models.py:25
+#: timemanager/models.py:24
+msgid "daily"
+msgstr "täglich"
+
+#: timemanager/models.py:24
+msgid ""
+"If selected the event starts and ends everyday at the specific time. if not "
+"selected it starts at day 1 and ends at the last day"
+msgstr ""
+"Wenn ausgewählt, startet und endet das Event jeden Tag zum "
+"angegebenenZeitpunkt. Wenn nicht, startet es an Tag 1 und endet am letzten "
+"Tag"
+
+#: timemanager/models.py:26
 msgid "start time"
 msgstr "Startzeit"
 
-#: timemanager/models.py:25 timemanager/models.py:26
+#: timemanager/models.py:26 timemanager/models.py:27
 msgid ""
 "If you omit this field, it is assumed this event takes part the whole day."
 msgstr ""
 "Wenn du dieses Feld auslässt, wird angenommen, dass diese Veranstaltung den "
 "ganzen Tag stattfindet."
 
-#: timemanager/models.py:26
+#: timemanager/models.py:27
 msgid "end time"
 msgstr "Endzeit"
 
-#: timemanager/models.py:29
+#: timemanager/models.py:30
 msgid "Whole day"
 msgstr "Ganztägig"
 
-#: timemanager/models.py:35
+#: timemanager/models.py:36
 msgid "Calendar entry"
 msgstr "Kalendereintrag"
 
-#: timemanager/models.py:36
+#: timemanager/models.py:37
 msgid "Calendar entries"
 msgstr "Kalendereinträge"
 
-#: timemanager/views.py:50
+#: timemanager/views.py:51
 msgid "Mo"
 msgstr "Mo"
 
-#: timemanager/views.py:50
+#: timemanager/views.py:51
 msgid "Tu"
 msgstr "Di"
 
-#: timemanager/views.py:50
+#: timemanager/views.py:51
 msgid "We"
 msgstr "Mi"
 
-#: timemanager/views.py:50
+#: timemanager/views.py:51
 msgid "Th"
 msgstr "Do"
 
-#: timemanager/views.py:50
+#: timemanager/views.py:51
 msgid "Fr"
 msgstr "Fr"
 
-#: timemanager/views.py:50
+#: timemanager/views.py:51
 msgid "Sa"
 msgstr "Sa"
 
-#: timemanager/views.py:50
+#: timemanager/views.py:51
 msgid "Su"
 msgstr "So"
 
-#: timemanager/views.py:51
+#: timemanager/views.py:52
 msgid "Calendar"
 msgstr "Kalender"
 
-#: timemanager/views.py:59
+#: timemanager/views.py:60
 #, fuzzy
 msgid "Event"
 msgstr "Ereignis: {0}"
+
+#: timemanager/templatetags/timemanager_t.py:25
+msgid "today"
+msgstr "Heute"
+
+#: timemanager/templatetags/timemanager_t.py:27
+msgid "tomorrow"
+msgstr "Morgen"
+
+#: timemanager/templatetags/timemanager_t.py:32
+msgid "More..."
+msgstr "Mehr..."
 
 #: usermanag/views.py:22
 msgid "Login was successful"
@@ -348,6 +413,14 @@ msgstr "Das Ausloggen war erfolgreich"
 msgid "You were successfully logged out"
 msgstr "Du wurdest erfolgreich ausgeloggt"
 
+#: usermanag/views.py:39
+msgid "Login"
+msgstr "Login"
+
+#: templates/calendar/show.html:45
+msgid "Whole Day (started: "
+msgstr "Ganztägig (Begonnen: "
+
 #~ msgid "related blog entry"
 #~ msgstr "Zugehöriger Blogeintrag"
 
@@ -374,9 +447,6 @@ msgstr "Du wurdest erfolgreich ausgeloggt"
 
 #~ msgid "menu"
 #~ msgstr "Menü"
-
-#~ msgid "More..."
-#~ msgstr "Mehr..."
 
 #~ msgid "Published"
 #~ msgstr "Veröffentlicht"

@@ -6,6 +6,7 @@
 # program. If you haven't, please refer to bofh@junge-piraten.de.
 
 from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import string_concat
 from django.template import Library, Node
 from homepage.timemanager.models import Entry
 from datetime import date
@@ -18,18 +19,17 @@ class TmSidebarNode(Node):
 		entrylist = Entry.objects.all().filter(published = True, startDay__gte = today)
 		calendar = '<ul>'
 		for entry in entrylist:
-			calendar += '<li><a href="/calendar/show/{0}">{1}</a> ('.format(entry.url, entry.name)
+			calendar += u'<li><a href="/calendar/show/{0}">{1}</a> ('.format(entry.url, entry.name)
 			diff = entry.startDay - today
 			if diff.days == 0:
-				dates = 'today'
+				calendar = string_concat(calendar, '', _('today'))
 			elif diff.days == 1:
-				dates = 'tomorrow'
+				calendar = string_concat(calendar, '', _('tomorrow'))
 			else:
-				dates = '{0}'.format(entry.startDay)
-			calendar += dates
+				calendar += u'{0}'.format(entry.startDay)
 			calendar += ')</li>'
 		calendar += '</ul><a href="/calendar/">'
-		calendar += 'More...'
+		calendar = string_concat(calendar, '', _('More...'))
 		calendar += '</a>'
 		return calendar
 

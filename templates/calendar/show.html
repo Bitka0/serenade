@@ -42,14 +42,14 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 								{% if event.endDay.day == day.0 %}
 									end: {{event.endTime|time:"H:i" }} (started: {{day.0}}.{{month}}.{{year}})</p>
 								{% else %}
-									Whole Day (started: {{day.0}}.{{month}}.{{year}})</p>
+									{% blocktrans %}Whole Day (started: {% endblocktrans %}{{day.0}}.{{month}}.{{year}})</p>
 								{% endif %}
 							{% endif %}
 						{% else %}
 							({{event.startTime|time:"H:i" }} - {{event.endTime|time:"H:i" }})</p>
 						{% endif %}
 					{% else %}
-						Whole Day</p>
+						{% blocktrans %}Whole Day{% endblocktrans %}</p>
 					{% endif %}
 				{% endfor %}
 			{% endif %}</td>
