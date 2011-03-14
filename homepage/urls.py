@@ -45,4 +45,7 @@ urlpatterns = patterns('',
 	(r'^user/logout/$', 'usermanag.views.userlogout'),
 	
 	(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps}),
+	
+	(r'^ping/', include('trackback.urls')),
+
 )

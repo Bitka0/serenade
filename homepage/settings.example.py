@@ -101,6 +101,7 @@ MIDDLEWARE_CLASSES = (
 	'django.middleware.csrf.CsrfViewMiddleware',
 	'django.contrib.auth.middleware.AuthenticationMiddleware',
 	'django.contrib.messages.middleware.MessageMiddleware',
+	'homepage.trackback.middleware.PingbackUrlInjectionMiddleware',
 	
 	# Intentionally last
 	'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
@@ -155,4 +156,5 @@ INSTALLED_APPS = (
 	'homepage.timemanager',
 	'homepage.search',
 	'homepage.usermanag',
+	'homepage.trackback',
 )

@@ -9,7 +9,8 @@ from django.utils.translation import ugettext_lazy as _
 from django.db import models
 from django.contrib.auth.models import User
 from django import forms
-
+from django.db.models import signals
+from trackback.utils.handlers import send_trackback, send_pingback
 
 class Group(models.Model):
 	name = models.CharField(_('name'), max_length=200)
@@ -32,6 +33,12 @@ class Tag(models.Model):
 		verbose_name_plural = _('tags')
 
 class Entry(models.Model):
+	def post_save(self):
+		super(Entry, self).save()
+		if self.published: # or some other condition
+			send_pingback.send(sender=self.__class__, instance=self)
+			send_trackback.send(sender=self.__class__, instance=self)
+
 	url = models.SlugField(_('URL'), max_length=200, unique=True, help_text = _('This field is automatically filled based on the title you enter, however if you want to customize the URL, here you can.'))
 
 	author = models.ForeignKey(User, verbose_name = _('author'))
@@ -65,3 +72,6 @@ class Entry(models.Model):
 		verbose_name = _('blogentry')
 		verbose_name_plural = _('blogentries')
 		ordering = ['-creationDate']
+
+signals.post_save.connect(send_trackback, sender=Entry)  
+signals.post_save.connect(send_pingback, sender=Entry)

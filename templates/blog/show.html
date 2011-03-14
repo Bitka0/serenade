@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load comments %}
+{% load trackback_tags %}
 {% comment %}
 Copyright (c) 2011 Lukas Martini, Phillip Thelen.
 This file may be used and distributed under the terms found in the
@@ -32,6 +33,7 @@ program. If you haven't, please refer to bofh@junge-piraten.de.
 	{% endif %}
 	Comments.
 	{% endif %}
+	{% get_trackback_rdf_for entry %}
 	</div>
 <a name="comments"></a>
 		{% get_comment_list for entry as comment_list %}
