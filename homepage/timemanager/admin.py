@@ -9,6 +9,8 @@ from django.utils.translation import ugettext_lazy as _
 from models import Entry
 from django.contrib import admin
 from settings import STATIC_URL
+from django.contrib.flatpages.models import FlatPage
+from django.contrib.flatpages.admin import FlatPageAdmin as FlatPageAdminOld
 
 class EntryAdmin(admin.ModelAdmin):
 	def save_model(self, request, obj, form, change):
@@ -63,3 +65,11 @@ class EntryAdmin(admin.ModelAdmin):
 		js = [STATIC_URL + 'grappelli/tinymce/jscripts/tiny_mce/tiny_mce.js', STATIC_URL + 'grappelli/tinymce_setup/tinymce_setup.js',]
 
 admin.site.register(Entry, EntryAdmin)
+
+class FlatPageAdmin(FlatPageAdminOld):
+	class Media:
+		js = [STATIC_URL + 'grappelli/tinymce/jscripts/tiny_mce/tiny_mce.js', STATIC_URL + 'grappelli/tinymce_setup/tinymce_setup.js',]
+
+# We have to unregister it, and then reregister
+admin.site.unregister(FlatPage)
+admin.site.register(FlatPage, FlatPageAdmin)
