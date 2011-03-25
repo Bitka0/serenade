@@ -58,7 +58,7 @@ def listTags(request, url, page=None):
 		url = int(util.stripSlash(url))
 	except:
 		url = 1
-	url = util.stripSlash(url)
+
 	entrylist = get_list_or_404(Entry, tags__name = url, published = True)
 	paginator = Paginator(entrylist, 15)
 	entrylist = paginator.page(page)
