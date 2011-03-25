@@ -26,7 +26,7 @@ def userlogin(request):
 			message = _("The account is disabled")
 	else:
 		title = _("Login failed")
-		message = _("Username and/or password war wrong")
+		message = _("Username and/or password wrong")
 	context = util.generateContext(request, contextType = 'RequestContext', title = title, message = message)
 	return render_to_response('user/login.html', context)
 
